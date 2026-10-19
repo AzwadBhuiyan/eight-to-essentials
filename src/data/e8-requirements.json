@@ -1,0 +1,4505 @@
+[
+  {
+    "id": "ISM-1807",
+    "idSource": "ism",
+    "strategies": ["Patch applications", "Patch operating systems"],
+    "levels": [1, 2, 3],
+    "plainText": "An automated tool discovers the devices and systems on your network at least every two weeks, so new assets are found and can be scanned for missing patches.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "You cannot patch what you do not know about, and unknown systems are often the ones attackers find first.",
+    "evidence": [
+      "Asset discovery tool configuration showing the schedule",
+      "Recent discovery reports or logs",
+      "Asset inventory showing newly discovered items"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.DET-05.1", "IT.IDE-01.1", "IT.PRO-06.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 5",
+        "Appendix B (Maturity Level Two), p. 8",
+        "Appendix C (Maturity Level Three), p. 15"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1808",
+    "idSource": "ism",
+    "strategies": ["Patch applications", "Patch operating systems"],
+    "levels": [1, 2, 3],
+    "plainText": "Your vulnerability scanner uses an up-to-date vulnerability database.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "A scanner with an old database will miss recently published vulnerabilities, which are the ones attackers move on quickest.",
+    "evidence": [
+      "Scanner settings showing automatic database updates",
+      "Screenshot of the database or plugin version and update date"
+    ],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-06.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 5",
+        "Appendix B (Maturity Level Two), p. 8",
+        "Appendix C (Maturity Level Three), p. 15"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1698",
+    "idSource": "ism",
+    "strategies": ["Patch applications"],
+    "levels": [1, 2, 3],
+    "plainText": "A vulnerability scanner checks your online services for missing patches or updates at least once a day.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Online services face the internet, so attackers can find and exploit a missing patch within hours of it becoming public.",
+    "evidence": [
+      "Scanner schedule showing daily scans of online services",
+      "Recent daily scan reports"
+    ],
+    "effort": "moderate",
+    "exposure": "boundary",
+    "naAllowed": true,
+    "naGuidance": "Your organisation does not run any internet-facing online services of its own that it is responsible for patching.",
+    "essentialsActions": ["IT.PRO-06.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 5",
+        "Appendix B (Maturity Level Two), p. 8",
+        "Appendix C (Maturity Level Three), p. 15"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1699",
+    "idSource": "ism",
+    "strategies": ["Patch applications"],
+    "levels": [1, 2, 3],
+    "plainText": "A vulnerability scanner checks commonly targeted applications for missing patches or updates at least once a week.",
+    "conditions": [
+      "Office productivity suites (for example, Microsoft 365 apps)",
+      "Web browsers and their extensions",
+      "Email clients",
+      "PDF software",
+      "Security products (for example, antivirus)"
+    ],
+    "helpText": null,
+    "whyItMatters": "These applications open content from the internet every day, which makes them a common way in for attackers.",
+    "evidence": [
+      "Scanner schedule showing weekly scans of these applications",
+      "Recent weekly scan reports"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-06.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 5",
+        "Appendix B (Maturity Level Two), p. 8",
+        "Appendix C (Maturity Level Three), p. 15"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1876",
+    "idSource": "ism",
+    "strategies": ["Patch applications"],
+    "levels": [1, 2, 3],
+    "plainText": "Patches, updates or other vendor fixes (such as workarounds) for your online services are applied within 48 hours of release when the vendor rates the vulnerability critical or a working exploit exists.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Critical flaws in internet-facing services are often exploited within days of disclosure.",
+    "evidence": [
+      "Patch records for online services showing release and install dates",
+      "Change records for recent critical patches",
+      "Vulnerability reports showing no critical findings older than 48 hours"
+    ],
+    "effort": "moderate",
+    "exposure": "boundary",
+    "naAllowed": true,
+    "naGuidance": "Your organisation does not run any internet-facing online services of its own that it is responsible for patching.",
+    "essentialsActions": ["IT.PRO-06.2", "IT.PRO-06.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 5",
+        "Appendix B (Maturity Level Two), p. 8",
+        "Appendix C (Maturity Level Three), p. 15"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1690",
+    "idSource": "ism",
+    "strategies": ["Patch applications"],
+    "levels": [1, 2, 3],
+    "plainText": "Patches, updates or other vendor fixes (such as workarounds) for your online services are applied within two weeks of release when the vendor rates the vulnerability non-critical and no working exploit exists.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Even lower-rated flaws in internet-facing services are regularly combined by attackers to break in.",
+    "evidence": [
+      "Patch records for online services showing release and install dates",
+      "Vulnerability reports showing no non-critical findings older than two weeks"
+    ],
+    "effort": "moderate",
+    "exposure": "boundary",
+    "naAllowed": true,
+    "naGuidance": "Your organisation does not run any internet-facing online services of its own that it is responsible for patching.",
+    "essentialsActions": ["IT.PRO-06.2", "IT.PRO-06.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 5",
+        "Appendix B (Maturity Level Two), p. 8",
+        "Appendix C (Maturity Level Three), p. 15"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1691",
+    "idSource": "ism",
+    "strategies": ["Patch applications"],
+    "levels": [1, 2],
+    "plainText": "Patches, updates or other vendor fixes (such as workarounds) for commonly targeted applications are applied within two weeks of release.",
+    "conditions": [
+      "Office productivity suites (for example, Microsoft 365 apps)",
+      "Web browsers and their extensions",
+      "Email clients",
+      "PDF software",
+      "Security products (for example, antivirus)"
+    ],
+    "helpText": null,
+    "whyItMatters": "These applications handle untrusted content all day, so unpatched versions are an easy target for malicious files and websites.",
+    "evidence": [
+      "Patch management or update reports for these applications",
+      "Software inventory showing current versions"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-06.2", "IT.PRO-06.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 5",
+        "Appendix B (Maturity Level Two), p. 8"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "E8MM-2023-01",
+    "idSource": "local",
+    "strategies": ["Patch applications"],
+    "levels": [1, 2, 3],
+    "plainText": "Online services that the vendor no longer supports are removed.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Unsupported services never receive security fixes, so any new vulnerability in them stays open for good.",
+    "evidence": [
+      "List of online services with their vendor support status",
+      "Decommissioning records for unsupported services"
+    ],
+    "effort": "project",
+    "exposure": "boundary",
+    "naAllowed": true,
+    "naGuidance": "Your organisation does not run any internet-facing online services of its own that it is responsible for patching.",
+    "essentialsActions": [],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 5",
+        "Appendix B (Maturity Level Two), p. 8",
+        "Appendix C (Maturity Level Three), p. 15"
+      ],
+      "ismId": null,
+      "essentialsActions": null
+    }
+  },
+  {
+    "id": "E8MM-2023-02",
+    "idSource": "local",
+    "strategies": ["Patch applications"],
+    "levels": [1, 2, 3],
+    "plainText": "Commonly targeted applications that the vendor no longer supports are removed.",
+    "conditions": [
+      "Office productivity suites",
+      "Web browsers and their extensions",
+      "Email clients",
+      "PDF software",
+      "Adobe Flash Player",
+      "Security products"
+    ],
+    "helpText": null,
+    "whyItMatters": "Unsupported software never receives security fixes, so known vulnerabilities stay open permanently.",
+    "evidence": [
+      "Software inventory showing vendor support status",
+      "Removal records or reports showing no unsupported versions installed"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": [],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 5",
+        "Appendix B (Maturity Level Two), p. 8",
+        "Appendix C (Maturity Level Three), p. 15"
+      ],
+      "ismId": null,
+      "essentialsActions": null
+    }
+  },
+  {
+    "id": "ISM-1700",
+    "idSource": "ism",
+    "strategies": ["Patch applications"],
+    "levels": [2, 3],
+    "plainText": "A vulnerability scanner checks all your other applications (anything not in the commonly targeted group) for missing patches or updates at least every two weeks.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Less obvious applications still contain vulnerabilities that attackers use once they have a foothold.",
+    "evidence": [
+      "Scanner schedule covering other applications every two weeks",
+      "Recent scan reports"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-06.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 8",
+        "Appendix C (Maturity Level Three), p. 15"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1693",
+    "idSource": "ism",
+    "strategies": ["Patch applications"],
+    "levels": [2, 3],
+    "plainText": "Patches, updates or other vendor fixes (such as workarounds) for all your other applications are applied within one month of release.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Unpatched line-of-business and utility software gives attackers a way to spread or escalate access.",
+    "evidence": [
+      "Patch or update reports for other applications",
+      "Software inventory showing current versions"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-06.2", "IT.PRO-06.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 8",
+        "Appendix C (Maturity Level Three), p. 15"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1692",
+    "idSource": "ism",
+    "strategies": ["Patch applications"],
+    "levels": [3],
+    "plainText": "Patches, updates or other vendor fixes (such as workarounds) for commonly targeted applications are applied within 48 hours of release when the vendor rates the vulnerability critical or a working exploit exists.",
+    "conditions": [
+      "Office productivity suites (for example, Microsoft 365 apps)",
+      "Web browsers and their extensions",
+      "Email clients",
+      "PDF software",
+      "Security products (for example, antivirus)"
+    ],
+    "helpText": null,
+    "whyItMatters": "Capable attackers use newly published exploits for everyday applications very quickly.",
+    "evidence": [
+      "Patch records showing release and install dates for critical updates",
+      "Vulnerability reports showing no critical findings older than 48 hours"
+    ],
+    "effort": "project",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-06.2", "IT.PRO-06.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 15"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1901",
+    "idSource": "ism",
+    "strategies": ["Patch applications"],
+    "levels": [3],
+    "plainText": "Patches, updates or other vendor fixes (such as workarounds) for commonly targeted applications are applied within two weeks of release when the vendor rates the vulnerability non-critical and no working exploit exists.",
+    "conditions": [
+      "Office productivity suites (for example, Microsoft 365 apps)",
+      "Web browsers and their extensions",
+      "Email clients",
+      "PDF software",
+      "Security products (for example, antivirus)"
+    ],
+    "helpText": null,
+    "whyItMatters": "Keeping everyday applications current closes the gaps that attackers chain together.",
+    "evidence": [
+      "Patch records showing release and install dates",
+      "Vulnerability reports showing no non-critical findings older than two weeks"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-06.2", "IT.PRO-06.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 15"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "E8MM-2023-07",
+    "idSource": "local",
+    "strategies": ["Patch applications"],
+    "levels": [3],
+    "plainText": "All other applications that the vendor no longer supports are removed.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Unsupported applications of any kind stay vulnerable forever and are a reliable foothold for attackers.",
+    "evidence": [
+      "Software inventory showing vendor support status for all applications",
+      "Removal records for unsupported applications"
+    ],
+    "effort": "project",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": [],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 16"],
+      "ismId": null,
+      "essentialsActions": null
+    }
+  },
+  {
+    "id": "ISM-1701",
+    "idSource": "ism",
+    "strategies": ["Patch operating systems"],
+    "levels": [1, 2, 3],
+    "plainText": "A vulnerability scanner checks the operating systems of your internet-facing servers and network devices for missing patches or updates at least once a day.",
+    "conditions": [],
+    "helpText": "Your office router or firewall usually counts as an internet-facing network device.",
+    "whyItMatters": "Internet-facing systems are scanned by attackers constantly, so missing patches on them are found fast.",
+    "evidence": [
+      "Scanner schedule showing daily scans of internet-facing servers and network devices",
+      "Recent daily scan reports"
+    ],
+    "effort": "moderate",
+    "exposure": "boundary",
+    "naAllowed": true,
+    "naGuidance": "Your organisation has no internet-facing servers or internet-facing network devices.",
+    "essentialsActions": ["IT.PRO-06.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 5",
+        "Appendix B (Maturity Level Two), p. 9",
+        "Appendix C (Maturity Level Three), p. 16"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1702",
+    "idSource": "ism",
+    "strategies": ["Patch operating systems"],
+    "levels": [1, 2, 3],
+    "plainText": "A vulnerability scanner checks the operating systems of your workstations, internal servers and internal network devices for missing patches or updates at least every two weeks.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Once inside, attackers look for unpatched internal systems to spread across the network.",
+    "evidence": [
+      "Scanner schedule covering workstations, internal servers and network devices",
+      "Recent scan reports"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-06.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 5",
+        "Appendix B (Maturity Level Two), p. 9",
+        "Appendix C (Maturity Level Three), p. 16"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1877",
+    "idSource": "ism",
+    "strategies": ["Patch operating systems"],
+    "levels": [1, 2, 3],
+    "plainText": "Patches, updates or other vendor fixes (such as workarounds) for the operating systems of your internet-facing servers and network devices are applied within 48 hours of release when the vendor rates the vulnerability critical or a working exploit exists.",
+    "conditions": [],
+    "helpText": "Your office router or firewall usually counts as an internet-facing network device.",
+    "whyItMatters": "Critical flaws in edge devices and internet-facing servers are among the most common ways attackers get in.",
+    "evidence": [
+      "Patch records showing release and install dates",
+      "Vulnerability reports showing no critical findings older than 48 hours"
+    ],
+    "effort": "moderate",
+    "exposure": "boundary",
+    "naAllowed": true,
+    "naGuidance": "Your organisation has no internet-facing servers or internet-facing network devices.",
+    "essentialsActions": ["IT.PRO-06.2", "IT.PRO-06.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 6",
+        "Appendix B (Maturity Level Two), p. 9",
+        "Appendix C (Maturity Level Three), p. 16"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1694",
+    "idSource": "ism",
+    "strategies": ["Patch operating systems"],
+    "levels": [1, 2, 3],
+    "plainText": "Patches, updates or other vendor fixes (such as workarounds) for the operating systems of your internet-facing servers and network devices are applied within two weeks of release when the vendor rates the vulnerability non-critical and no working exploit exists.",
+    "conditions": [],
+    "helpText": "Your office router or firewall usually counts as an internet-facing network device.",
+    "whyItMatters": "Lower-rated flaws on exposed systems are still regularly exploited, often in combination.",
+    "evidence": [
+      "Patch records showing release and install dates",
+      "Vulnerability reports showing no non-critical findings older than two weeks"
+    ],
+    "effort": "moderate",
+    "exposure": "boundary",
+    "naAllowed": true,
+    "naGuidance": "Your organisation has no internet-facing servers or internet-facing network devices.",
+    "essentialsActions": ["IT.PRO-06.2", "IT.PRO-06.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 6",
+        "Appendix B (Maturity Level Two), p. 9",
+        "Appendix C (Maturity Level Three), p. 16"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1695",
+    "idSource": "ism",
+    "strategies": ["Patch operating systems"],
+    "levels": [1, 2],
+    "plainText": "Patches, updates or other vendor fixes (such as workarounds) for the operating systems of your workstations, internal servers and internal network devices are applied within one month of release.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Unpatched internal systems let an attacker who gets in escalate privileges and move around.",
+    "evidence": [
+      "Patch compliance report for workstations and internal servers",
+      "Update management console showing deployment dates"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-06.2", "IT.PRO-06.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 6",
+        "Appendix B (Maturity Level Two), p. 9"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1501",
+    "idSource": "ism",
+    "strategies": ["Patch operating systems"],
+    "levels": [1, 2, 3],
+    "plainText": "Operating systems that the vendor no longer supports are replaced.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Unsupported operating systems never get security fixes, so every new vulnerability stays open.",
+    "evidence": [
+      "Operating system inventory showing versions and support status",
+      "Replacement or upgrade records"
+    ],
+    "effort": "project",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.GOV-14.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 6",
+        "Appendix B (Maturity Level Two), p. 9",
+        "Appendix C (Maturity Level Three), p. 17"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1703",
+    "idSource": "ism",
+    "strategies": ["Patch operating systems"],
+    "levels": [3],
+    "plainText": "A vulnerability scanner checks drivers for missing patches or updates at least every two weeks.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Vulnerable drivers run with high privileges and are used by attackers to disable security tools.",
+    "evidence": [
+      "Scanner configuration covering drivers",
+      "Recent scan reports listing driver findings"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-06.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 16"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1900",
+    "idSource": "ism",
+    "strategies": ["Patch operating systems"],
+    "levels": [3],
+    "plainText": "A vulnerability scanner checks firmware for missing patches or updates at least every two weeks.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Firmware flaws sit below the operating system, where they are hard to detect and remove.",
+    "evidence": [
+      "Scanner configuration covering firmware",
+      "Recent scan reports listing firmware findings"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-06.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 16"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1696",
+    "idSource": "ism",
+    "strategies": ["Patch operating systems"],
+    "levels": [3],
+    "plainText": "Patches, updates or other vendor fixes (such as workarounds) for the operating systems of your workstations, internal servers and internal network devices are applied within 48 hours of release when the vendor rates the vulnerability critical or a working exploit exists.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Capable attackers use fresh exploits against internal systems to escalate access quickly.",
+    "evidence": [
+      "Patch records showing release and install dates for critical updates",
+      "Vulnerability reports showing no critical findings older than 48 hours"
+    ],
+    "effort": "project",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-06.2", "IT.PRO-06.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 16"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1902",
+    "idSource": "ism",
+    "strategies": ["Patch operating systems"],
+    "levels": [3],
+    "plainText": "Patches, updates or other vendor fixes (such as workarounds) for the operating systems of your workstations, internal servers and internal network devices are applied within one month of release when the vendor rates the vulnerability non-critical and no working exploit exists.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Steady monthly patching keeps internal systems from accumulating weaknesses an attacker can chain.",
+    "evidence": [
+      "Patch compliance report showing deployment within one month",
+      "Update management console records"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-06.2", "IT.PRO-06.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 16"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1879",
+    "idSource": "ism",
+    "strategies": ["Patch operating systems"],
+    "levels": [3],
+    "plainText": "Patches, updates or other vendor fixes (such as workarounds) for drivers are applied within 48 hours of release when the vendor rates the vulnerability critical or a working exploit exists.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Exploited drivers give attackers deep control of a device, so critical fixes are urgent.",
+    "evidence": [
+      "Driver update records showing release and install dates",
+      "Vulnerability reports for drivers"
+    ],
+    "effort": "project",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-06.2", "IT.PRO-06.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 16"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1697",
+    "idSource": "ism",
+    "strategies": ["Patch operating systems"],
+    "levels": [3],
+    "plainText": "Patches, updates or other vendor fixes (such as workarounds) for drivers are applied within one month of release when the vendor rates the vulnerability non-critical and no working exploit exists.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Out-of-date drivers are a known way to bypass security controls.",
+    "evidence": ["Driver update records", "Vulnerability reports for drivers"],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-06.2", "IT.PRO-06.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 17"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1903",
+    "idSource": "ism",
+    "strategies": ["Patch operating systems"],
+    "levels": [3],
+    "plainText": "Patches, updates or other vendor fixes (such as workarounds) for firmware are applied within 48 hours of release when the vendor rates the vulnerability critical or a working exploit exists.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Compromised firmware can survive reinstalling the operating system.",
+    "evidence": [
+      "Firmware update records showing release and install dates",
+      "Vulnerability reports for firmware"
+    ],
+    "effort": "project",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-06.2", "IT.PRO-06.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 17"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1904",
+    "idSource": "ism",
+    "strategies": ["Patch operating systems"],
+    "levels": [3],
+    "plainText": "Patches, updates or other vendor fixes (such as workarounds) for firmware are applied within one month of release when the vendor rates the vulnerability non-critical and no working exploit exists.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Keeping firmware current removes weaknesses that are very hard to detect once exploited.",
+    "evidence": ["Firmware update records", "Vulnerability reports for firmware"],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-06.2", "IT.PRO-06.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 17"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "E8MM-2023-08",
+    "idSource": "local",
+    "strategies": ["Patch operating systems"],
+    "levels": [3],
+    "plainText": "Every device runs either the latest release or the previous release of its operating system.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Newer operating system releases include security features and fixes that older ones lack.",
+    "evidence": [
+      "Operating system version report across all devices",
+      "Upgrade plan and records for older releases"
+    ],
+    "effort": "project",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": [],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 17"],
+      "ismId": null,
+      "essentialsActions": null
+    }
+  },
+  {
+    "id": "ISM-1504",
+    "idSource": "ism",
+    "strategies": ["Multi-factor authentication"],
+    "levels": [1, 2, 3],
+    "plainText": "Users must use multi-factor authentication (MFA) to sign in to your organisation's own online services that handle its sensitive data.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Stolen or guessed passwords are one of the most common ways in; MFA stops a password alone from being enough.",
+    "evidence": [
+      "Identity provider or application settings showing MFA enforced",
+      "Sign-in logs showing MFA used",
+      "List of in-scope online services"
+    ],
+    "effort": "quick-win",
+    "exposure": "identity",
+    "naAllowed": true,
+    "naGuidance": "Your organisation does not run any online services of its own that process, store or communicate its sensitive data.",
+    "essentialsActions": ["IT.PRO-13.4"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 6",
+        "Appendix B (Maturity Level Two), p. 9",
+        "Appendix C (Maturity Level Three), p. 17"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1679",
+    "idSource": "ism",
+    "strategies": ["Multi-factor authentication"],
+    "levels": [1, 2, 3],
+    "plainText": "Users must use MFA to sign in to third-party online services (for example, SaaS apps) that handle your organisation's sensitive data.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Cloud services holding sensitive data are reachable from anywhere, so a stolen password is enough without MFA.",
+    "evidence": [
+      "MFA policy in your identity provider or each service's admin settings",
+      "List of third-party services holding sensitive data",
+      "Sign-in logs showing MFA used"
+    ],
+    "effort": "quick-win",
+    "exposure": "identity",
+    "naAllowed": true,
+    "naGuidance": "Your organisation does not use any third-party online services that process, store or communicate its sensitive data.",
+    "essentialsActions": ["IT.PRO-13.4"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 6",
+        "Appendix B (Maturity Level Two), p. 9",
+        "Appendix C (Maturity Level Three), p. 17"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1680",
+    "idSource": "ism",
+    "strategies": ["Multi-factor authentication"],
+    "levels": [1, 2, 3],
+    "plainText": "Where a third-party online service offers MFA, users must use it, even if the service only holds non-sensitive data.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Compromised accounts on low-value services are still used for phishing, password reuse and further attacks.",
+    "evidence": [
+      "Admin settings showing MFA enabled where available",
+      "List of third-party services and whether they support MFA"
+    ],
+    "effort": "quick-win",
+    "exposure": "identity",
+    "naAllowed": true,
+    "naGuidance": "Your organisation does not use any third-party online services.",
+    "essentialsActions": ["IT.PRO-13.4"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 6",
+        "Appendix B (Maturity Level Two), p. 9",
+        "Appendix C (Maturity Level Three), p. 17"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1892",
+    "idSource": "ism",
+    "strategies": ["Multi-factor authentication"],
+    "levels": [1, 2, 3],
+    "plainText": "Your staff must use MFA to sign in to your organisation's own online customer services that handle sensitive customer data.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Staff accounts on customer-facing systems can expose many customers' data at once if compromised.",
+    "evidence": [
+      "Application settings showing MFA enforced for staff",
+      "Sign-in logs showing MFA used"
+    ],
+    "effort": "quick-win",
+    "exposure": "identity",
+    "naAllowed": true,
+    "naGuidance": "Your organisation does not offer or use online customer services that hold sensitive customer data.",
+    "essentialsActions": ["IT.PRO-13.4"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 6",
+        "Appendix B (Maturity Level Two), p. 9",
+        "Appendix C (Maturity Level Three), p. 17"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1893",
+    "idSource": "ism",
+    "strategies": ["Multi-factor authentication"],
+    "levels": [1, 2, 3],
+    "plainText": "Your staff must use MFA to sign in to third-party online customer services that handle your organisation's sensitive customer data.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Third-party platforms holding customer data are a high-value target, and a password alone is easy to steal.",
+    "evidence": [
+      "MFA settings in each third-party customer service",
+      "Sign-in logs showing MFA used"
+    ],
+    "effort": "quick-win",
+    "exposure": "identity",
+    "naAllowed": true,
+    "naGuidance": "Your organisation does not offer or use online customer services that hold sensitive customer data.",
+    "essentialsActions": ["IT.PRO-13.4"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 6",
+        "Appendix B (Maturity Level Two), p. 9",
+        "Appendix C (Maturity Level Three), p. 17"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1681",
+    "idSource": "ism",
+    "strategies": ["Multi-factor authentication"],
+    "levels": [1, 2, 3],
+    "plainText": "Your customers must use MFA to sign in to online customer services that handle their sensitive data.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Customer accounts protected only by passwords are routinely taken over using passwords leaked from other sites.",
+    "evidence": [
+      "Customer sign-in settings showing MFA enforced",
+      "Customer-facing documentation or screenshots of the MFA step"
+    ],
+    "effort": "moderate",
+    "exposure": "identity",
+    "naAllowed": true,
+    "naGuidance": "Your organisation does not offer or use online customer services that hold sensitive customer data.",
+    "essentialsActions": ["IT.PRO-13.4"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 6",
+        "Appendix B (Maturity Level Two), p. 9",
+        "Appendix C (Maturity Level Three), p. 17"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1401",
+    "idSource": "ism",
+    "strategies": ["Multi-factor authentication"],
+    "levels": [1, 2, 3],
+    "plainText": "Your MFA uses an approved combination of factors.",
+    "conditions": [
+      "Something the user has (for example, a phone app or security key) plus something they know (a password or PIN), or",
+      "Something the user has that is unlocked by something they know or are (for example, a security key unlocked by a PIN or fingerprint)"
+    ],
+    "helpText": null,
+    "whyItMatters": "Some 'two-step' methods only use two things a user knows, which an attacker can phish just as easily as a password.",
+    "evidence": [
+      "MFA policy listing allowed methods",
+      "Identity provider settings showing permitted authenticators"
+    ],
+    "effort": "quick-win",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-13.4"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 6",
+        "Appendix B (Maturity Level Two), p. 9",
+        "Appendix C (Maturity Level Three), p. 17"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1173",
+    "idSource": "ism",
+    "strategies": ["Multi-factor authentication"],
+    "levels": [2, 3],
+    "plainText": "Privileged users (administrators) must use MFA to sign in to your systems.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Administrator accounts give attackers the keys to everything, so they need the strongest sign-in protection.",
+    "evidence": [
+      "Conditional access or MFA policy covering admin accounts",
+      "Sign-in logs for admin accounts showing MFA"
+    ],
+    "effort": "quick-win",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-13.4"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 9",
+        "Appendix C (Maturity Level Three), p. 17"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-0974",
+    "idSource": "ism",
+    "strategies": ["Multi-factor authentication"],
+    "levels": [2, 3],
+    "plainText": "Ordinary (unprivileged) users must use MFA to sign in to your systems.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Any user account can be a starting point for an attack, so a stolen password alone should not be enough.",
+    "evidence": ["MFA policy covering all users", "Report of users registered for and using MFA"],
+    "effort": "moderate",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-13.4"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 9",
+        "Appendix C (Maturity Level Three), p. 17"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1872",
+    "idSource": "ism",
+    "strategies": ["Multi-factor authentication"],
+    "levels": [2, 3],
+    "plainText": "The MFA users use for online services is phishing-resistant (for example, passkeys or security keys rather than SMS codes or push approvals).",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Attackers now routinely steal one-time codes and trick users into approving push prompts; phishing-resistant MFA blocks this.",
+    "evidence": [
+      "Authentication method policy showing only phishing-resistant methods allowed",
+      "Sign-in logs showing the method used"
+    ],
+    "effort": "project",
+    "exposure": "identity",
+    "naAllowed": true,
+    "naGuidance": "Your organisation's users do not sign in to any online services.",
+    "essentialsActions": ["IT.PRO-13.4"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 10",
+        "Appendix C (Maturity Level Three), p. 17"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1873",
+    "idSource": "ism",
+    "strategies": ["Multi-factor authentication"],
+    "levels": [2],
+    "plainText": "Customers of your online customer services are offered a phishing-resistant MFA option.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Giving customers a phishing-resistant option protects those most at risk from account takeover.",
+    "evidence": [
+      "Customer sign-in settings showing passkeys or security keys available",
+      "Customer-facing documentation of the option"
+    ],
+    "effort": "project",
+    "exposure": "identity",
+    "naAllowed": true,
+    "naGuidance": "Your organisation does not offer or use online customer services that hold sensitive customer data.",
+    "essentialsActions": ["IT.PRO-13.4"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix B (Maturity Level Two), p. 10"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1682",
+    "idSource": "ism",
+    "strategies": ["Multi-factor authentication"],
+    "levels": [2, 3],
+    "plainText": "The MFA users use to sign in to your systems is phishing-resistant.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Capable attackers bypass weaker MFA with fake sign-in pages and push fatigue; phishing-resistant MFA stops these tricks.",
+    "evidence": [
+      "Authentication method policy for systems",
+      "Sign-in logs showing phishing-resistant methods used"
+    ],
+    "effort": "project",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-13.4"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 10",
+        "Appendix C (Maturity Level Three), p. 18"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1683",
+    "idSource": "ism",
+    "strategies": ["Multi-factor authentication"],
+    "levels": [2, 3],
+    "plainText": "Successful and failed MFA sign-in events are sent to a central log.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Central MFA logs let you spot attacks such as repeated failed prompts or sign-ins from unusual places.",
+    "evidence": [
+      "Log forwarding configuration from the identity provider",
+      "Sample of MFA events in the central log or SIEM"
+    ],
+    "effort": "moderate",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.DET-01.2", "IT.DET-02.2"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 10",
+        "Appendix C (Maturity Level Three), p. 18"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1815",
+    "idSource": "ism",
+    "strategies": [
+      "Multi-factor authentication",
+      "Restrict administrative privileges",
+      "Application control",
+      "User application hardening"
+    ],
+    "levels": [2, 3],
+    "plainText": "Event logs are protected so that no one can change or delete them without authorisation.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Attackers try to erase their tracks; protected logs keep the evidence you need to detect and investigate them.",
+    "evidence": [
+      "Log storage access controls",
+      "Retention or immutability settings on the log platform"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.DET-01.1", "IT.DET-01.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 10",
+        "Appendix C (Maturity Level Three), p. 18"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1906",
+    "idSource": "ism",
+    "strategies": [
+      "Multi-factor authentication",
+      "Restrict administrative privileges",
+      "Application control",
+      "User application hardening"
+    ],
+    "levels": [2, 3],
+    "plainText": "Event logs from internet-facing servers are reviewed promptly to detect security events.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Internet-facing servers are attacked most often, so their logs give the earliest warning.",
+    "evidence": [
+      "Monitoring procedure or SOC runbook",
+      "Alert rules or SIEM dashboards for internet-facing servers",
+      "Records of recent reviews or alerts handled"
+    ],
+    "effort": "moderate",
+    "exposure": "boundary",
+    "naAllowed": true,
+    "naGuidance": "Your organisation has no internet-facing servers or internet-facing network devices.",
+    "essentialsActions": ["IT.DET-03.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 10",
+        "Appendix C (Maturity Level Three), p. 18"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1228",
+    "idSource": "ism",
+    "strategies": [
+      "Multi-factor authentication",
+      "Restrict administrative privileges",
+      "Application control",
+      "User application hardening"
+    ],
+    "levels": [2, 3],
+    "plainText": "Security events are analysed promptly to decide whether they are security incidents.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Collecting logs is not enough; someone has to look at the events in time to stop an attack.",
+    "evidence": [
+      "Event triage procedure",
+      "Ticketing or SIEM records showing timely triage",
+      "Defined response timeframes"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.DET-03.1", "IT.DET-03.2", "IT.DET-04.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 10",
+        "Appendix C (Maturity Level Three), p. 18"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "E8MM-2023-03",
+    "idSource": "local",
+    "strategies": [
+      "Multi-factor authentication",
+      "Restrict administrative privileges",
+      "Application control",
+      "User application hardening"
+    ],
+    "levels": [2, 3],
+    "plainText": "Security incidents are reported to your chief information security officer (or their delegate) as soon as possible after they happen or are discovered.",
+    "conditions": [],
+    "helpText": "If you don't have a CISO, this means the person responsible for cyber security.",
+    "whyItMatters": "Fast internal reporting means the right person can make decisions and contain an incident early.",
+    "evidence": [
+      "Incident response plan showing the internal reporting path",
+      "Incident records showing when the CISO or delegate was told"
+    ],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": [],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 10",
+        "Appendix C (Maturity Level Three), p. 18"
+      ],
+      "ismId": null,
+      "essentialsActions": null
+    }
+  },
+  {
+    "id": "ISM-0140",
+    "idSource": "ism",
+    "strategies": [
+      "Multi-factor authentication",
+      "Restrict administrative privileges",
+      "Application control",
+      "User application hardening"
+    ],
+    "levels": [2, 3],
+    "plainText": "Security incidents are reported to ASD as soon as possible after they happen or are discovered.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Reporting to ASD helps you get support and helps ASD warn other organisations about the same threat.",
+    "evidence": [
+      "Incident response plan that includes reporting to ASD",
+      "Records of past reports to ASD"
+    ],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.RES-05.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 10",
+        "Appendix C (Maturity Level Three), p. 18"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1819",
+    "idSource": "ism",
+    "strategies": [
+      "Multi-factor authentication",
+      "Restrict administrative privileges",
+      "Application control",
+      "User application hardening"
+    ],
+    "levels": [2, 3],
+    "plainText": "When a security incident is identified, your incident response plan is put into action.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "A plan only helps if it is actually followed when an incident happens.",
+    "evidence": [
+      "Current incident response plan",
+      "Incident records or post-incident reviews showing the plan was used",
+      "Exercise reports"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.RES-03.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 10",
+        "Appendix C (Maturity Level Three), p. 18"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1505",
+    "idSource": "ism",
+    "strategies": ["Multi-factor authentication"],
+    "levels": [3],
+    "plainText": "Users must use MFA to access data repositories (for example, file shares, databases and document stores).",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Data repositories hold the information attackers want most, so access should need more than a password.",
+    "evidence": [
+      "Access policy for data repositories showing MFA enforced",
+      "Access logs showing MFA used"
+    ],
+    "effort": "project",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-13.2", "IT.PRO-13.4"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 17"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1874",
+    "idSource": "ism",
+    "strategies": ["Multi-factor authentication"],
+    "levels": [3],
+    "plainText": "Customers of your online customer services must use phishing-resistant MFA.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Making phishing-resistant MFA mandatory removes the weakest sign-in options attackers target.",
+    "evidence": ["Customer sign-in settings showing only phishing-resistant methods allowed"],
+    "effort": "project",
+    "exposure": "identity",
+    "naAllowed": true,
+    "naGuidance": "Your organisation does not offer or use online customer services that hold sensitive customer data.",
+    "essentialsActions": ["IT.PRO-13.4"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 17"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1894",
+    "idSource": "ism",
+    "strategies": ["Multi-factor authentication"],
+    "levels": [3],
+    "plainText": "The MFA used to access data repositories is phishing-resistant.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Sensitive data stores are high-value targets for attackers who can bypass weaker MFA.",
+    "evidence": [
+      "Authentication policy for data repositories showing phishing-resistant methods only",
+      "Access logs showing the method used"
+    ],
+    "effort": "project",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-13.2", "IT.PRO-13.4"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 18"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1907",
+    "idSource": "ism",
+    "strategies": [
+      "Multi-factor authentication",
+      "Restrict administrative privileges",
+      "Application control",
+      "User application hardening"
+    ],
+    "levels": [3],
+    "plainText": "Event logs from internal (non-internet-facing) servers are reviewed promptly to detect security events.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "After getting in, attackers move to internal servers; their logs show that movement.",
+    "evidence": [
+      "Alert rules or SIEM dashboards for internal servers",
+      "Records of recent reviews or alerts handled"
+    ],
+    "effort": "project",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "Your organisation has no internal (non-internet-facing) servers.",
+    "essentialsActions": ["IT.DET-03.1", "IT.DET-04.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 18"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-0109",
+    "idSource": "ism",
+    "strategies": [
+      "Multi-factor authentication",
+      "Restrict administrative privileges",
+      "Application control",
+      "User application hardening"
+    ],
+    "levels": [3],
+    "plainText": "Event logs from workstations are reviewed promptly to detect security events.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Most attacks start on a user's device, so workstation logs often show the first signs.",
+    "evidence": [
+      "Endpoint detection or SIEM rules covering workstations",
+      "Records of recent reviews or alerts handled"
+    ],
+    "effort": "project",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.DET-02.2", "IT.DET-03.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 18"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1507",
+    "idSource": "ism",
+    "strategies": ["Restrict administrative privileges"],
+    "levels": [1, 2, 3],
+    "plainText": "Requests for privileged access to systems, applications and data repositories are checked and approved when first requested.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Checking requests up front stops people getting admin rights they do not need.",
+    "evidence": [
+      "Privileged access request and approval procedure",
+      "Sample of approved access requests"
+    ],
+    "effort": "quick-win",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-12.1", "IT.PRO-12.2"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 6",
+        "Appendix B (Maturity Level Two), p. 10",
+        "Appendix C (Maturity Level Three), p. 18"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-0445",
+    "idSource": "ism",
+    "strategies": ["Restrict administrative privileges"],
+    "levels": [1, 2, 3],
+    "plainText": "Each privileged user has a separate admin account, used only for tasks that need admin rights.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "If a user's everyday account is compromised, the attacker should not automatically get admin rights.",
+    "evidence": [
+      "List of privileged accounts mapped to their owners",
+      "Account naming standard or directory export"
+    ],
+    "effort": "quick-win",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-12.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 6",
+        "Appendix B (Maturity Level Two), p. 10",
+        "Appendix C (Maturity Level Three), p. 18"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1175",
+    "idSource": "ism",
+    "strategies": ["Restrict administrative privileges"],
+    "levels": [1, 2, 3],
+    "plainText": "Privileged accounts cannot access the internet, email or web services, unless an account has been specifically authorised to use online services.",
+    "conditions": ["No internet access", "No email", "No web services"],
+    "helpText": null,
+    "whyItMatters": "Browsing and email are how most malware arrives; keeping admin accounts away from them limits the damage.",
+    "evidence": [
+      "Proxy or firewall rules blocking privileged accounts",
+      "Mail settings showing privileged accounts have no mailbox",
+      "List of authorised exceptions"
+    ],
+    "effort": "moderate",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-12.2", "IT.PRO-12.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 6",
+        "Appendix B (Maturity Level Two), p. 10",
+        "Appendix C (Maturity Level Three), p. 18"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1883",
+    "idSource": "ism",
+    "strategies": ["Restrict administrative privileges"],
+    "levels": [1, 2, 3],
+    "plainText": "Privileged accounts that are authorised to use online services have only the access they need to do their job.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Limiting these accounts reduces what an attacker can do if one is compromised.",
+    "evidence": ["List of authorised accounts and their permissions", "Access review records"],
+    "effort": "moderate",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-12.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 6",
+        "Appendix B (Maturity Level Two), p. 10",
+        "Appendix C (Maturity Level Three), p. 18"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1380",
+    "idSource": "ism",
+    "strategies": ["Restrict administrative privileges"],
+    "levels": [1, 2, 3],
+    "plainText": "Privileged users carry out admin work in a separate operating environment from their everyday work.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Separating admin work from email and browsing stops malware on a user's desktop from capturing admin credentials.",
+    "evidence": [
+      "Architecture showing separate admin environments (for example, admin workstations or virtual desktops)",
+      "Procedure requiring their use"
+    ],
+    "effort": "project",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-05.1", "IT.PRO-18.2"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 7",
+        "Appendix B (Maturity Level Two), p. 10",
+        "Appendix C (Maturity Level Three), p. 19"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1688",
+    "idSource": "ism",
+    "strategies": ["Restrict administrative privileges"],
+    "levels": [1, 2, 3],
+    "plainText": "Ordinary user accounts cannot sign in to privileged (admin) operating environments.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Keeping ordinary accounts out of admin environments protects them from being misused.",
+    "evidence": [
+      "Sign-in restriction policies (for example, group policy or conditional access)",
+      "Test results showing ordinary accounts are blocked"
+    ],
+    "effort": "moderate",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-05.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 7",
+        "Appendix B (Maturity Level Two), p. 11",
+        "Appendix C (Maturity Level Three), p. 19"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1689",
+    "idSource": "ism",
+    "strategies": ["Restrict administrative privileges"],
+    "levels": [1, 2, 3],
+    "plainText": "Privileged accounts cannot sign in to ordinary user environments (local administrator accounts are excluded).",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Signing in to an ordinary desktop with an admin account can expose that admin credential to malware.",
+    "evidence": [
+      "Sign-in restriction policies",
+      "Test results showing admin accounts are blocked from ordinary environments"
+    ],
+    "effort": "moderate",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-05.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 7",
+        "Appendix B (Maturity Level Two), p. 11",
+        "Appendix C (Maturity Level Three), p. 19"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1647",
+    "idSource": "ism",
+    "strategies": ["Restrict administrative privileges"],
+    "levels": [2, 3],
+    "plainText": "Privileged access to systems, applications and data repositories is switched off after 12 months unless it is re-approved.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Admin rights tend to pile up over time; regular revalidation removes access people no longer need.",
+    "evidence": [
+      "Revalidation procedure",
+      "Records of the last revalidation",
+      "Reports of accounts disabled for not being revalidated"
+    ],
+    "effort": "moderate",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-12.1", "IT.PRO-13.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 10",
+        "Appendix C (Maturity Level Three), p. 18"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1648",
+    "idSource": "ism",
+    "strategies": ["Restrict administrative privileges"],
+    "levels": [2, 3],
+    "plainText": "Privileged access to systems and applications is switched off after 45 days of not being used.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Dormant admin accounts are an easy target because no one notices when they are misused.",
+    "evidence": [
+      "Automated inactivity rule or script",
+      "Report of accounts disabled for inactivity"
+    ],
+    "effort": "moderate",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-13.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 10",
+        "Appendix C (Maturity Level Three), p. 18"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "E8MM-2023-04",
+    "idSource": "local",
+    "strategies": ["Restrict administrative privileges"],
+    "levels": [2, 3],
+    "plainText": "Privileged (admin) operating environments are not run as virtual machines inside ordinary user environments.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "If the ordinary environment is compromised, an admin environment hosted inside it can be compromised too.",
+    "evidence": [
+      "Architecture showing how admin environments are hosted",
+      "Device or virtualisation configuration"
+    ],
+    "effort": "project",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": [],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 10",
+        "Appendix C (Maturity Level Three), p. 19"
+      ],
+      "ismId": null,
+      "essentialsActions": null
+    }
+  },
+  {
+    "id": "ISM-1387",
+    "idSource": "ism",
+    "strategies": ["Restrict administrative privileges"],
+    "levels": [2, 3],
+    "plainText": "Admin work is carried out through jump servers.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Jump servers give one controlled, monitored path for admin access instead of many direct connections.",
+    "evidence": [
+      "Network rules forcing admin access through jump servers",
+      "Jump server access logs"
+    ],
+    "effort": "project",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-05.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 11",
+        "Appendix C (Maturity Level Three), p. 19"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1685",
+    "idSource": "ism",
+    "strategies": ["Restrict administrative privileges"],
+    "levels": [2, 3],
+    "plainText": "Credentials for break glass accounts, local administrator accounts and service accounts meet all the conditions below.",
+    "conditions": [
+      "Long",
+      "Unique to each account",
+      "Unpredictable",
+      "Managed (for example, stored and rotated in a password vault)"
+    ],
+    "helpText": null,
+    "whyItMatters": "Shared or predictable admin passwords let one compromise spread across many systems.",
+    "evidence": [
+      "Password management or vault configuration",
+      "Local administrator password solution settings",
+      "Service account inventory"
+    ],
+    "effort": "moderate",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-13.6"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 11",
+        "Appendix C (Maturity Level Three), p. 19"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1509",
+    "idSource": "ism",
+    "strategies": ["Restrict administrative privileges"],
+    "levels": [2, 3],
+    "plainText": "Privileged access events are sent to a central log.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Logging admin activity centrally helps you spot misuse of the most powerful accounts.",
+    "evidence": [
+      "Log forwarding configuration",
+      "Sample privileged access events in the central log"
+    ],
+    "effort": "moderate",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.DET-01.2", "IT.PRO-05.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 11",
+        "Appendix C (Maturity Level Three), p. 19"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1650",
+    "idSource": "ism",
+    "strategies": ["Restrict administrative privileges"],
+    "levels": [2, 3],
+    "plainText": "Changes to privileged accounts and security groups are sent to a central log.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Attackers often create accounts or add themselves to admin groups; central logs reveal it.",
+    "evidence": [
+      "Audit policy settings",
+      "Sample account and group change events in the central log"
+    ],
+    "effort": "moderate",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.DET-01.2", "IT.PRO-05.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 11",
+        "Appendix C (Maturity Level Three), p. 19"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1508",
+    "idSource": "ism",
+    "strategies": ["Restrict administrative privileges"],
+    "levels": [3],
+    "plainText": "Privileged access to systems, applications and data repositories is limited to what each user and service needs to do their job.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Least privilege limits how far an attacker can go with any one compromised account.",
+    "evidence": [
+      "Role and permission matrix",
+      "Access review records",
+      "Directory export of admin group memberships"
+    ],
+    "effort": "project",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-01.1", "IT.PRO-12.1", "IT.PRO-12.2", "IT.PRO-12.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 18"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1898",
+    "idSource": "ism",
+    "strategies": ["Restrict administrative privileges"],
+    "levels": [3],
+    "plainText": "Admin work is carried out using Secure Admin Workstations.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Dedicated, hardened admin workstations keep admin credentials away from everyday threats such as email and browsing.",
+    "evidence": [
+      "Secure Admin Workstation build standard",
+      "List of admins and their assigned workstations",
+      "Sign-in policy restricting admin access to these workstations"
+    ],
+    "effort": "project",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-05.1", "IT.PRO-07.2"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 19"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1649",
+    "idSource": "ism",
+    "strategies": ["Restrict administrative privileges"],
+    "levels": [3],
+    "plainText": "Just-in-time administration is used, so admin rights are granted only when needed and for a limited time.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Standing admin rights are always available to an attacker; time-limited rights shrink that window.",
+    "evidence": [
+      "Privileged access management tool configuration",
+      "Logs of time-limited access grants"
+    ],
+    "effort": "project",
+    "exposure": "identity",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-05.2"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 19"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "E8MM-2023-09",
+    "idSource": "local",
+    "strategies": ["Restrict administrative privileges"],
+    "levels": [3],
+    "plainText": "Memory integrity (a Windows security feature) is turned on.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Memory integrity helps stop malicious code from tampering with the core of the operating system.",
+    "evidence": [
+      "Device configuration policy showing memory integrity enabled",
+      "Device compliance report"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "No device or server in your organisation runs Windows.",
+    "essentialsActions": [],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 19"],
+      "ismId": null,
+      "essentialsActions": null
+    }
+  },
+  {
+    "id": "E8MM-2023-10",
+    "idSource": "local",
+    "strategies": ["Restrict administrative privileges"],
+    "levels": [3],
+    "plainText": "Local Security Authority (LSA) protection (a Windows security feature) is turned on.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "LSA protection makes it harder for attackers to steal credentials from a device's memory.",
+    "evidence": [
+      "Device configuration policy showing LSA protection enabled",
+      "Device compliance report"
+    ],
+    "effort": "quick-win",
+    "exposure": "identity",
+    "naAllowed": true,
+    "naGuidance": "No device or server in your organisation runs Windows.",
+    "essentialsActions": [],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 19"],
+      "ismId": null,
+      "essentialsActions": null
+    }
+  },
+  {
+    "id": "E8MM-2023-11",
+    "idSource": "local",
+    "strategies": ["Restrict administrative privileges"],
+    "levels": [3],
+    "plainText": "Credential Guard (a Windows security feature) is turned on.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Credential Guard isolates stored credentials so that common credential-theft tools cannot read them.",
+    "evidence": [
+      "Device configuration policy showing Credential Guard enabled",
+      "Device compliance report"
+    ],
+    "effort": "moderate",
+    "exposure": "identity",
+    "naAllowed": true,
+    "naGuidance": "No device or server in your organisation runs Windows.",
+    "essentialsActions": [],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 19"],
+      "ismId": null,
+      "essentialsActions": null
+    }
+  },
+  {
+    "id": "E8MM-2023-12",
+    "idSource": "local",
+    "strategies": ["Restrict administrative privileges"],
+    "levels": [3],
+    "plainText": "Remote Credential Guard (a Windows security feature) is turned on.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Remote Credential Guard stops admin credentials being left on a remote machine during a remote desktop session.",
+    "evidence": [
+      "Policy showing Remote Credential Guard required for remote desktop",
+      "Configuration screenshots"
+    ],
+    "effort": "moderate",
+    "exposure": "identity",
+    "naAllowed": true,
+    "naGuidance": "No device or server in your organisation runs Windows.",
+    "essentialsActions": [],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 19"],
+      "ismId": null,
+      "essentialsActions": null
+    }
+  },
+  {
+    "id": "ISM-0843",
+    "idSource": "ism",
+    "strategies": ["Application control"],
+    "levels": [1, 2, 3],
+    "plainText": "Application control is in place on workstations.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Application control stops unapproved programs, including most malware, from running at all.",
+    "evidence": [
+      "Application control policy (for example, WDAC or AppLocker) deployed to workstations",
+      "Coverage report showing all workstations enforced"
+    ],
+    "effort": "project",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-07.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 7",
+        "Appendix B (Maturity Level Two), p. 11",
+        "Appendix C (Maturity Level Three), p. 20"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1870",
+    "idSource": "ism",
+    "strategies": ["Application control"],
+    "levels": [1, 2, 3],
+    "plainText": "Application control covers user profile folders and the temporary folders used by operating systems, web browsers and email clients.",
+    "conditions": [
+      "User profile folders",
+      "Temporary folders used by the operating system",
+      "Temporary folders used by web browsers",
+      "Temporary folders used by email clients"
+    ],
+    "helpText": null,
+    "whyItMatters": "Malware usually lands in these folders first, so they must be covered.",
+    "evidence": [
+      "Application control rules covering these folders",
+      "Test results showing blocked execution from these folders"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-07.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 7",
+        "Appendix B (Maturity Level Two), p. 11",
+        "Appendix C (Maturity Level Three), p. 20"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1657",
+    "idSource": "ism",
+    "strategies": ["Application control"],
+    "levels": [1, 2, 3],
+    "plainText": "Application control only lets an approved set of the file types below run.",
+    "conditions": [
+      "Executables",
+      "Software libraries",
+      "Scripts",
+      "Installers",
+      "Compiled HTML",
+      "HTML applications",
+      "Control panel applets"
+    ],
+    "helpText": null,
+    "whyItMatters": "Attackers use many file types besides programs; each one needs to be controlled.",
+    "evidence": ["Application control rule set", "Test results trying each file type"],
+    "effort": "project",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-07.1", "IT.PRO-07.2"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 7",
+        "Appendix B (Maturity Level Two), p. 11",
+        "Appendix C (Maturity Level Three), p. 20"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1490",
+    "idSource": "ism",
+    "strategies": ["Application control"],
+    "levels": [2, 3],
+    "plainText": "Application control is in place on internet-facing servers.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Internet-facing servers are attacked directly, and application control stops dropped malware from running.",
+    "evidence": ["Application control policy on internet-facing servers", "Coverage report"],
+    "effort": "project",
+    "exposure": "boundary",
+    "naAllowed": true,
+    "naGuidance": "Your organisation has no internet-facing servers or internet-facing network devices.",
+    "essentialsActions": ["IT.PRO-07.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 11",
+        "Appendix C (Maturity Level Three), p. 20"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1871",
+    "idSource": "ism",
+    "strategies": ["Application control"],
+    "levels": [2, 3],
+    "plainText": "Application control covers every location, not just user profiles and temporary folders.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Attackers will look for any folder where code can still run, so full coverage matters.",
+    "evidence": [
+      "Application control rules showing all locations covered",
+      "Test results from several locations"
+    ],
+    "effort": "project",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-07.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 11",
+        "Appendix C (Maturity Level Three), p. 20"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1544",
+    "idSource": "ism",
+    "strategies": ["Application control"],
+    "levels": [2, 3],
+    "plainText": "Microsoft's recommended application blocklist is in place.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Some legitimate Microsoft tools can be abused to run malicious code; the blocklist stops them.",
+    "evidence": [
+      "Application control policy showing the blocklist rules",
+      "Policy version or update date"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "No device or server in your organisation runs Windows.",
+    "essentialsActions": ["IT.PRO-07.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 11",
+        "Appendix C (Maturity Level Three), p. 20"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1582",
+    "idSource": "ism",
+    "strategies": ["Application control"],
+    "levels": [2, 3],
+    "plainText": "Application control rule sets are checked at least once a year.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Rules drift as software changes, and gaps creep in unless someone reviews them.",
+    "evidence": ["Records of the last rule set review", "Review procedure and schedule"],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-04.3", "IT.PRO-07.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 11",
+        "Appendix C (Maturity Level Three), p. 20"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1660",
+    "idSource": "ism",
+    "strategies": ["Application control"],
+    "levels": [2, 3],
+    "plainText": "Allowed and blocked application control events are sent to a central log.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Blocked events can be the first sign of an attack attempt; allowed events help investigations.",
+    "evidence": [
+      "Log forwarding configuration",
+      "Sample application control events in the central log"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.DET-01.2", "IT.DET-02.2", "IT.DET-04.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 12",
+        "Appendix C (Maturity Level Three), p. 20"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1656",
+    "idSource": "ism",
+    "strategies": ["Application control"],
+    "levels": [3],
+    "plainText": "Application control is in place on internal (non-internet-facing) servers.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Attackers who get inside move to internal servers; application control limits what they can run there.",
+    "evidence": ["Application control policy on internal servers", "Coverage report"],
+    "effort": "project",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "Your organisation has no internal (non-internet-facing) servers.",
+    "essentialsActions": ["IT.PRO-07.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 20"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1658",
+    "idSource": "ism",
+    "strategies": ["Application control"],
+    "levels": [3],
+    "plainText": "Application control only lets an approved set of drivers run.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Malicious or vulnerable drivers are used to switch off security tools.",
+    "evidence": ["Driver control rules in the application control policy", "Test results"],
+    "effort": "project",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-07.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 20"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1659",
+    "idSource": "ism",
+    "strategies": ["Application control"],
+    "levels": [3],
+    "plainText": "Microsoft's vulnerable driver blocklist is in place.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "The blocklist stops known-vulnerable drivers that attackers bring with them to gain deep control.",
+    "evidence": [
+      "Policy setting showing the vulnerable driver blocklist enabled",
+      "Device compliance report"
+    ],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "No device or server in your organisation runs Windows.",
+    "essentialsActions": ["IT.PRO-07.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 20"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1671",
+    "idSource": "ism",
+    "strategies": ["Restrict Microsoft Office macros"],
+    "levels": [1, 2, 3],
+    "plainText": "Microsoft Office macros are turned off for users who do not have a demonstrated business need for them.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Malicious macros in documents are a long-standing way to infect computers.",
+    "evidence": [
+      "Group policy or Intune settings disabling macros",
+      "List of users approved to use macros and the business reason"
+    ],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "Microsoft Office is not installed or used anywhere in your organisation.",
+    "essentialsActions": ["IT.PRO-04.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 7",
+        "Appendix B (Maturity Level Two), p. 12",
+        "Appendix C (Maturity Level Three), p. 21"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1488",
+    "idSource": "ism",
+    "strategies": ["Restrict Microsoft Office macros"],
+    "levels": [1, 2, 3],
+    "plainText": "Microsoft Office macros in files that came from the internet are blocked.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Most malicious macros arrive by email attachment or download, so blocking internet macros stops most of them.",
+    "evidence": [
+      "Policy setting blocking macros from the internet",
+      "Test result opening a downloaded file with a macro"
+    ],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "Microsoft Office is not installed or used anywhere in your organisation.",
+    "essentialsActions": ["IT.PRO-04.1", "IT.PRO-07.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 7",
+        "Appendix B (Maturity Level Two), p. 12",
+        "Appendix C (Maturity Level Three), p. 21"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1672",
+    "idSource": "ism",
+    "strategies": ["Restrict Microsoft Office macros"],
+    "levels": [1, 2, 3],
+    "plainText": "Microsoft Office macro antivirus scanning is turned on.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Scanning macros as they run can catch malicious code that other checks miss.",
+    "evidence": [
+      "Policy setting enabling macro antivirus scanning",
+      "Antivirus product configuration"
+    ],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "Microsoft Office is not installed or used anywhere in your organisation.",
+    "essentialsActions": ["IT.PRO-04.2", "IT.PRO-07.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 7",
+        "Appendix B (Maturity Level Two), p. 12",
+        "Appendix C (Maturity Level Three), p. 21"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1489",
+    "idSource": "ism",
+    "strategies": ["Restrict Microsoft Office macros"],
+    "levels": [1, 2, 3],
+    "plainText": "Users cannot change Microsoft Office macro security settings.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "If users can change the settings, an attacker can trick them into turning the protection off.",
+    "evidence": [
+      "Policy showing settings enforced centrally",
+      "Screenshot showing the options greyed out for users"
+    ],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "Microsoft Office is not installed or used anywhere in your organisation.",
+    "essentialsActions": ["IT.PRO-04.2"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 7",
+        "Appendix B (Maturity Level Two), p. 12",
+        "Appendix C (Maturity Level Three), p. 21"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1673",
+    "idSource": "ism",
+    "strategies": ["Restrict Microsoft Office macros"],
+    "levels": [2, 3],
+    "plainText": "Microsoft Office macros are blocked from making Win32 API calls.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Win32 API calls let macros reach deep into Windows, which malicious macros use to run code.",
+    "evidence": [
+      "Attack surface reduction rule or policy setting blocking Win32 API calls from macros",
+      "Rule status report"
+    ],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "Microsoft Office is not installed or used anywhere in your organisation.",
+    "essentialsActions": ["IT.PRO-04.1", "IT.PRO-07.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 12",
+        "Appendix C (Maturity Level Three), p. 21"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1674",
+    "idSource": "ism",
+    "strategies": ["Restrict Microsoft Office macros"],
+    "levels": [3],
+    "plainText": "Only Microsoft Office macros from one of the sources below are allowed to run.",
+    "conditions": [
+      "Running inside a sandboxed environment",
+      "Stored in a Trusted Location",
+      "Digitally signed by a trusted publisher"
+    ],
+    "helpText": null,
+    "whyItMatters": "Limiting macros to trusted sources stops unknown macros from running at all.",
+    "evidence": [
+      "Policy settings for macro execution",
+      "List of Trusted Locations and trusted publishers"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "Microsoft Office is not installed or used anywhere in your organisation.",
+    "essentialsActions": ["IT.PRO-07.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 21"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1890",
+    "idSource": "ism",
+    "strategies": ["Restrict Microsoft Office macros"],
+    "levels": [3],
+    "plainText": "Microsoft Office macros are checked to make sure they contain no malicious code before they are digitally signed or placed in a Trusted Location.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Signing or trusting a macro without checking it could approve malicious code.",
+    "evidence": ["Macro review procedure", "Records of macros reviewed before signing"],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "Microsoft Office is not installed or used anywhere in your organisation.",
+    "essentialsActions": ["IT.PRO-07.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 21"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1487",
+    "idSource": "ism",
+    "strategies": ["Restrict Microsoft Office macros"],
+    "levels": [3],
+    "plainText": "Only the privileged users responsible for checking macros can add or change content in Trusted Locations.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "If anyone can write to a Trusted Location, an attacker can drop a malicious macro there and it will run.",
+    "evidence": ["Folder permissions on Trusted Locations", "List of authorised users"],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "Microsoft Office is not installed or used anywhere in your organisation.",
+    "essentialsActions": ["IT.PRO-07.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 21"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1675",
+    "idSource": "ism",
+    "strategies": ["Restrict Microsoft Office macros"],
+    "levels": [3],
+    "plainText": "Users cannot enable Microsoft Office macros signed by an untrusted publisher through the Message Bar or Backstage View.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Attackers sign their macros too; users should not be able to approve unknown publishers.",
+    "evidence": [
+      "Policy setting preventing users from enabling untrusted signed macros",
+      "Screenshot or test result"
+    ],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "Microsoft Office is not installed or used anywhere in your organisation.",
+    "essentialsActions": ["IT.PRO-04.1", "IT.PRO-07.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 21"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1891",
+    "idSource": "ism",
+    "strategies": ["Restrict Microsoft Office macros"],
+    "levels": [3],
+    "plainText": "Users cannot enable Microsoft Office macros signed with anything other than a V3 signature through the Message Bar or Backstage View.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Older signature formats are weaker and can be abused to make malicious macros look legitimate.",
+    "evidence": ["Policy setting requiring V3 signatures", "Screenshot or test result"],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "Microsoft Office is not installed or used anywhere in your organisation.",
+    "essentialsActions": ["IT.PRO-04.1", "IT.PRO-07.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 21"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "E8MM-2023-13",
+    "idSource": "local",
+    "strategies": ["Restrict Microsoft Office macros"],
+    "levels": [3],
+    "plainText": "Microsoft Office's list of trusted publishers is checked at least once a year.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Publishers that are no longer needed or trusted should not keep the ability to run macros.",
+    "evidence": ["Records of the last trusted publisher review", "Current trusted publisher list"],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "Microsoft Office is not installed or used anywhere in your organisation.",
+    "essentialsActions": [],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 21"],
+      "ismId": null,
+      "essentialsActions": null
+    }
+  },
+  {
+    "id": "ISM-1654",
+    "idSource": "ism",
+    "strategies": ["User application hardening"],
+    "levels": [1, 2, 3],
+    "plainText": "Internet Explorer 11 is turned off or removed. (If it is not installed at all, the answer is yes.)",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Internet Explorer 11 no longer receives security fixes and is easy for attackers to exploit.",
+    "evidence": [
+      "Policy or script disabling Internet Explorer 11",
+      "Software inventory showing it is not present"
+    ],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-04.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 7",
+        "Appendix B (Maturity Level Two), p. 12",
+        "Appendix C (Maturity Level Three), p. 21"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1486",
+    "idSource": "ism",
+    "strategies": ["User application hardening"],
+    "levels": [1, 2, 3],
+    "plainText": "Web browsers do not run Java content from the internet.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Java in the browser has a long history of security flaws used to infect computers.",
+    "evidence": [
+      "Browser policy blocking Java",
+      "Software inventory showing no Java browser plug-in"
+    ],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-04.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 7",
+        "Appendix B (Maturity Level Two), p. 12",
+        "Appendix C (Maturity Level Three), p. 21"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1485",
+    "idSource": "ism",
+    "strategies": ["User application hardening"],
+    "levels": [1, 2, 3],
+    "plainText": "Web browsers do not show web advertisements from the internet.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Malicious advertising can deliver malware through otherwise legitimate websites.",
+    "evidence": ["Browser policy or managed ad-blocking extension", "Web filtering configuration"],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-04.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 7",
+        "Appendix B (Maturity Level Two), p. 12",
+        "Appendix C (Maturity Level Three), p. 21"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1585",
+    "idSource": "ism",
+    "strategies": ["User application hardening"],
+    "levels": [1, 2, 3],
+    "plainText": "Users cannot change web browser security settings.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "If users can change the settings, attackers can talk them into weakening them.",
+    "evidence": [
+      "Browser policies enforced through group policy or device management",
+      "Screenshot showing settings locked"
+    ],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-04.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 7",
+        "Appendix B (Maturity Level Two), p. 12",
+        "Appendix C (Maturity Level Three), p. 21"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1412",
+    "idSource": "ism",
+    "strategies": ["User application hardening"],
+    "levels": [2, 3],
+    "plainText": "Web browsers are hardened using ASD's and the vendor's hardening guidance, and where the two conflict, the stricter one is followed.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Default browser settings favour convenience over security; hardening closes common attack paths.",
+    "evidence": [
+      "Browser hardening baseline document",
+      "Policy settings deployed to devices",
+      "Comparison against ASD and vendor guidance"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-04.1", "IT.PRO-04.2"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 12",
+        "Appendix C (Maturity Level Three), p. 21"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1667",
+    "idSource": "ism",
+    "strategies": ["User application hardening"],
+    "levels": [2, 3],
+    "plainText": "Microsoft Office is blocked from creating child processes.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Malicious documents often try to launch other programs; this rule stops that.",
+    "evidence": ["Attack surface reduction rule settings", "Rule status report"],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "Microsoft Office is not installed or used anywhere in your organisation.",
+    "essentialsActions": ["IT.PRO-04.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 12",
+        "Appendix C (Maturity Level Three), p. 21"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1668",
+    "idSource": "ism",
+    "strategies": ["User application hardening"],
+    "levels": [2, 3],
+    "plainText": "Microsoft Office is blocked from creating executable content.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Stops malicious documents from writing programs to disk to run later.",
+    "evidence": ["Attack surface reduction rule settings", "Rule status report"],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "Microsoft Office is not installed or used anywhere in your organisation.",
+    "essentialsActions": ["IT.PRO-04.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 12",
+        "Appendix C (Maturity Level Three), p. 22"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1669",
+    "idSource": "ism",
+    "strategies": ["User application hardening"],
+    "levels": [2, 3],
+    "plainText": "Microsoft Office is blocked from injecting code into other processes.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Code injection lets malware hide inside legitimate programs.",
+    "evidence": ["Attack surface reduction rule settings", "Rule status report"],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "Microsoft Office is not installed or used anywhere in your organisation.",
+    "essentialsActions": ["IT.PRO-04.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 12",
+        "Appendix C (Maturity Level Three), p. 22"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1542",
+    "idSource": "ism",
+    "strategies": ["User application hardening"],
+    "levels": [2, 3],
+    "plainText": "Microsoft Office is set up to prevent Object Linking and Embedding (OLE) packages from being activated.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Embedded OLE packages are used to hide malicious files inside documents.",
+    "evidence": ["Policy setting blocking OLE package activation", "Test result"],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "Microsoft Office is not installed or used anywhere in your organisation.",
+    "essentialsActions": ["IT.PRO-04.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 12",
+        "Appendix C (Maturity Level Three), p. 22"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1859",
+    "idSource": "ism",
+    "strategies": ["User application hardening"],
+    "levels": [2, 3],
+    "plainText": "Office productivity suites are hardened using ASD's and the vendor's hardening guidance, and where the two conflict, the stricter one is followed.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Hardened office settings reduce the ways a malicious document can harm a device.",
+    "evidence": [
+      "Office hardening baseline",
+      "Deployed policy settings",
+      "Comparison against ASD and vendor guidance"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-04.1", "IT.PRO-04.2"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 13",
+        "Appendix C (Maturity Level Three), p. 22"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1823",
+    "idSource": "ism",
+    "strategies": ["User application hardening"],
+    "levels": [2, 3],
+    "plainText": "Users cannot change office productivity suite security settings.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Locked settings stop attackers persuading users to weaken protections.",
+    "evidence": ["Policies enforced centrally", "Screenshot showing settings locked"],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-04.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 13",
+        "Appendix C (Maturity Level Three), p. 22"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1670",
+    "idSource": "ism",
+    "strategies": ["User application hardening"],
+    "levels": [2, 3],
+    "plainText": "PDF software is blocked from creating child processes.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Malicious PDFs try to launch other programs; this stops them.",
+    "evidence": ["Attack surface reduction rule or equivalent setting", "Rule status report"],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-04.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 13",
+        "Appendix C (Maturity Level Three), p. 22"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1860",
+    "idSource": "ism",
+    "strategies": ["User application hardening"],
+    "levels": [2, 3],
+    "plainText": "PDF software is hardened using ASD's and the vendor's hardening guidance, and where the two conflict, the stricter one is followed.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "PDF readers handle untrusted files daily, so their settings need tightening.",
+    "evidence": ["PDF software hardening baseline", "Deployed policy settings"],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-04.1", "IT.PRO-04.2"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 13",
+        "Appendix C (Maturity Level Three), p. 22"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1824",
+    "idSource": "ism",
+    "strategies": ["User application hardening"],
+    "levels": [2, 3],
+    "plainText": "Users cannot change PDF software security settings.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Locked settings stop attackers persuading users to weaken protections.",
+    "evidence": ["Policies enforced centrally", "Screenshot showing settings locked"],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-04.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 13",
+        "Appendix C (Maturity Level Three), p. 22"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1623",
+    "idSource": "ism",
+    "strategies": ["User application hardening"],
+    "levels": [2, 3],
+    "plainText": "PowerShell logging events are sent to a central log.",
+    "conditions": ["Module logging", "Script block logging", "Transcription"],
+    "helpText": null,
+    "whyItMatters": "Attackers misuse PowerShell heavily; detailed logs show exactly what was run.",
+    "evidence": [
+      "Group policy or device settings enabling the three logging types",
+      "Sample PowerShell events in the central log"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "No device or server in your organisation runs Windows, so PowerShell is not present.",
+    "essentialsActions": ["IT.DET-01.2", "IT.DET-04.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 13",
+        "Appendix C (Maturity Level Three), p. 22"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1889",
+    "idSource": "ism",
+    "strategies": ["User application hardening"],
+    "levels": [2, 3],
+    "plainText": "Command line process creation events are sent to a central log.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Recording the command lines that programs start with reveals many attacker techniques.",
+    "evidence": ["Audit policy enabling command line capture", "Sample events in the central log"],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.DET-01.2"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 13",
+        "Appendix C (Maturity Level Three), p. 22"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1655",
+    "idSource": "ism",
+    "strategies": ["User application hardening"],
+    "levels": [3],
+    "plainText": ".NET Framework 3.5 (which includes .NET 2.0 and 3.0) is turned off or removed. (If it is not installed at all, the answer is yes.)",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Old .NET versions lack modern security protections and are used to bypass them.",
+    "evidence": [
+      "Policy or script removing .NET Framework 3.5",
+      "Software inventory showing it is not present"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-04.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 22"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1621",
+    "idSource": "ism",
+    "strategies": ["User application hardening"],
+    "levels": [3],
+    "plainText": "Windows PowerShell 2.0 is turned off or removed. (If it is not installed at all, the answer is yes.)",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "PowerShell 2.0 skips modern logging and security features, so attackers use it to avoid detection.",
+    "evidence": ["Policy or script removing PowerShell 2.0", "Device compliance report"],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-04.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 22"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1622",
+    "idSource": "ism",
+    "strategies": ["User application hardening"],
+    "levels": [3],
+    "plainText": "PowerShell runs in Constrained Language Mode.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Constrained Language Mode limits the powerful features attackers rely on in malicious scripts.",
+    "evidence": [
+      "Application control or policy configuration enforcing Constrained Language Mode",
+      "Test result showing the language mode"
+    ],
+    "effort": "project",
+    "exposure": "other",
+    "naAllowed": true,
+    "naGuidance": "No device or server in your organisation runs Windows, so PowerShell is not present.",
+    "essentialsActions": ["IT.PRO-04.1", "IT.PRO-04.2"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 22"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1511",
+    "idSource": "ism",
+    "strategies": ["Regular backups"],
+    "levels": [1, 2, 3],
+    "plainText": "Backups of data, applications and settings are made and kept according to how critical they are to the business and your business continuity requirements.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Backups are your last line of defence against ransomware and data loss, but only if they cover what the business needs.",
+    "evidence": [
+      "Backup policy linked to business criticality",
+      "Backup job schedules and retention settings",
+      "Business continuity plan"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-10.1", "IT.PRO-10.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 7",
+        "Appendix B (Maturity Level Two), p. 13",
+        "Appendix C (Maturity Level Three), p. 23"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1810",
+    "idSource": "ism",
+    "strategies": ["Regular backups"],
+    "levels": [1, 2, 3],
+    "plainText": "Backups of data, applications and settings are synchronised so they can be restored to the same point in time.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Restoring systems from different points in time can leave them inconsistent and unusable.",
+    "evidence": ["Backup schedule showing coordinated backup times", "Backup tool configuration"],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-10.1"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 7",
+        "Appendix B (Maturity Level Two), p. 13",
+        "Appendix C (Maturity Level Three), p. 23"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1811",
+    "idSource": "ism",
+    "strategies": ["Regular backups"],
+    "levels": [1, 2, 3],
+    "plainText": "Backups of data, applications and settings are kept in a secure and resilient way.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Attackers target backups so that victims cannot recover without paying.",
+    "evidence": [
+      "Backup storage architecture (for example, offsite, offline or immutable copies)",
+      "Encryption and access settings"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-10.1", "IT.PRO-10.2"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 7",
+        "Appendix B (Maturity Level Two), p. 13",
+        "Appendix C (Maturity Level Three), p. 23"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1515",
+    "idSource": "ism",
+    "strategies": ["Regular backups"],
+    "levels": [1, 2, 3],
+    "plainText": "Restoring data, applications and settings from backups to the same point in time is tested as part of disaster recovery exercises.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "A backup that has never been restored may not work when you need it.",
+    "evidence": ["Disaster recovery exercise reports", "Restore test results with dates"],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-10.3"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 7",
+        "Appendix B (Maturity Level Two), p. 13",
+        "Appendix C (Maturity Level Three), p. 23"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1812",
+    "idSource": "ism",
+    "strategies": ["Regular backups"],
+    "levels": [1, 2, 3],
+    "plainText": "Ordinary user accounts cannot access backups that belong to other accounts.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Limiting access stops one compromised account from reading or damaging everyone's backups.",
+    "evidence": ["Backup system access controls", "Permission report for backup repositories"],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-10.2"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 7",
+        "Appendix B (Maturity Level Two), p. 13",
+        "Appendix C (Maturity Level Three), p. 23"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1814",
+    "idSource": "ism",
+    "strategies": ["Regular backups"],
+    "levels": [1, 2, 3],
+    "plainText": "Ordinary user accounts cannot change or delete backups.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Ransomware running as a user should not be able to destroy the backups you need to recover.",
+    "evidence": [
+      "Backup system permissions",
+      "Test result showing an ordinary account cannot delete backups"
+    ],
+    "effort": "quick-win",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-10.2"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix A (Maturity Level One), p. 7",
+        "Appendix B (Maturity Level Two), p. 14",
+        "Appendix C (Maturity Level Three), p. 23"
+      ],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "E8MM-2023-05",
+    "idSource": "local",
+    "strategies": ["Regular backups"],
+    "levels": [2, 3],
+    "plainText": "Privileged accounts (other than backup administrator accounts) cannot access backups that belong to other accounts.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Admin accounts are prime targets, so they should not have broad access to backups unless that is their job.",
+    "evidence": [
+      "Backup system access controls",
+      "Permission report showing admin accounts excluded"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": [],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 13",
+        "Appendix C (Maturity Level Three), p. 23"
+      ],
+      "ismId": null,
+      "essentialsActions": null
+    }
+  },
+  {
+    "id": "E8MM-2023-06",
+    "idSource": "local",
+    "strategies": ["Regular backups"],
+    "levels": [2, 3],
+    "plainText": "Privileged accounts (other than backup administrator accounts) cannot change or delete backups.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "An attacker with admin rights should not be able to destroy your backups.",
+    "evidence": [
+      "Backup system permissions",
+      "Test result showing an admin account cannot delete backups"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": [],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": [
+        "Appendix B (Maturity Level Two), p. 14",
+        "Appendix C (Maturity Level Three), p. 23"
+      ],
+      "ismId": null,
+      "essentialsActions": null
+    }
+  },
+  {
+    "id": "ISM-1813",
+    "idSource": "ism",
+    "strategies": ["Regular backups"],
+    "levels": [3],
+    "plainText": "Ordinary user accounts cannot access their own backups.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Removing all user access to backups stops compromised accounts from tampering with them.",
+    "evidence": ["Backup system permissions", "Test result"],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-10.2"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 23"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1706",
+    "idSource": "ism",
+    "strategies": ["Regular backups"],
+    "levels": [3],
+    "plainText": "Privileged accounts (other than backup administrator accounts) cannot access their own backups.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Keeping admin accounts completely away from backups reduces the risk of them being damaged.",
+    "evidence": ["Backup system permissions", "Test result"],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-10.2"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 23"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  },
+  {
+    "id": "ISM-1708",
+    "idSource": "ism",
+    "strategies": ["Regular backups"],
+    "levels": [3],
+    "plainText": "Backup administrator accounts cannot change or delete backups during their retention period.",
+    "conditions": [],
+    "helpText": null,
+    "whyItMatters": "Even the backup administrator's account can be stolen, so backups should be locked until they expire.",
+    "evidence": [
+      "Immutability or retention lock settings",
+      "Test result showing deletion is blocked"
+    ],
+    "effort": "moderate",
+    "exposure": "other",
+    "naAllowed": false,
+    "naGuidance": null,
+    "essentialsActions": ["IT.PRO-10.2"],
+    "source": {
+      "document": "Essential Eight maturity model (November 2023)",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "locations": ["Appendix C (Maturity Level Three), p. 23"],
+      "ismId": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Existing E8 Controls sheet"
+      },
+      "essentialsActions": {
+        "document": "Assessment evidence guide for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+        "location": "Potential evidence sources, E8 references for each action"
+      }
+    }
+  }
+]
