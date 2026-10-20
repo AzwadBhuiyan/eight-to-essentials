@@ -185,7 +185,7 @@ Two scoring questions are deferred until the phase 1 check is built: how a princ
 
 - **Across strategies:** where several strategies map the same action and domain (for example macros and user application hardening for IT.PRO-04.1 in User devices), the weakest strategy sets the action's status. Within one strategy, the highest row reached is used (D15).
 - **Mapped actions set the finding:** within each domain, the weakest **mapped** action (one with a row in ASD's transition tables) sets the principle's finding, using ASD's gap terms: "may contribute" → already effectively addressed; "may partly contribute" → partially addressed; "gap" → not addressed; an incomplete strategy → unknown.
-- **Unmapped actions are not "not addressed":** an action with no E8 mapping (including "E8 evidence to check" actions, which also have no mapping row) does **not** count as "not addressed". "Not addressed" is a statement about the organisation; "no E8 mapping" is only a statement about the framework.
+- **Unmapped actions are not "not addressed":** an action with no E8 mapping (including "E8 evidence to check" actions, which also have no mapping row) does **not** count as "not addressed". Treating "E8 evidence to check" actions as unmapped, both for the cap and for the count of mapped actions, is an approved interpretation: otherwise a principle could read as fully addressed while one of its actions only has evidence to check. "Not addressed" is a statement about the organisation; "no E8 mapping" is only a statement about the framework.
 - **Cap:** if any applicable action in the domain is unmapped, the principle's finding is capped at **partially addressed**, so it can never read as fully addressed when part of it has no E8 mapping. The app shows how many actions are mapped, for example "1 of 5 actions mapped; assess the rest separately."
 - **No mapped actions:** the finding is "E8 evidence to check" if ASD cites E8 controls for any of the actions, otherwise "no E8 mapping". Neither is a statement about the organisation.
 - **Reason:** a principle should not look worse because the Essential Eight never covered part of it, and should not look better than the evidence supports. The cap keeps the second promise; leaving unmapped actions out of the weakest-link calculation keeps the first.
@@ -195,6 +195,18 @@ Two scoring questions are deferred until the phase 1 check is built: how a princ
 
 - **Decision:** Domains are shown with priority phase 1 (Boundary services, Identity services) first, then the capability domains (Governance and culture, Visibility and response), then phase 2 and phase 3.
 - **Reason:** ASD recommends addressing priority phase 1 first. The capability domains apply in every phase and are part of the phase 1 scoping step in Transitioning from the Essential Eight (page 22), so they follow straight after.
+
+### D27. Where shared controls are asked
+
+- **Decision:** A requirement shared by several strategies is asked once, in the step for the first of its strategies in ASD's order. For example, the event logging and incident response controls shared by four strategies are asked under Multi-factor authentication, and asset discovery and the vulnerability scanner database under Patch applications. The other strategies' steps show a short note with the answer and a link back to where it is asked.
+- **Reason:** One answer per requirement (D5), while still showing every strategy what it depends on.
+
+### D28. Saving, importing and exporting
+
+- **Saving is opt-in.** Nothing is written to the browser's storage until the user ticks "Save my progress on this device". Turning saving off, or "Clear my data", removes what was saved. Every storage call is wrapped in try/catch, and the page says if the browser blocks saving.
+- **Imported files and saved data are untrusted.** They are checked against a strict schema before use: files over 1 MB are rejected before they are read; unknown fields, wrong types, unknown requirement IDs and over-long text are rejected.
+- **Work in progress is allowed.** An imported answer that is well-formed but incomplete (for example an exception without an approver) is accepted, because it may be unfinished. The wizard shows what is still needed, and the answer does not count until it is complete (D21).
+- **CSV export** protects against spreadsheet formula injection: any cell starting with `=`, `+`, `-` or `@` (and, following OWASP guidance, a tab or carriage return) is prefixed with a single quote, and every cell is quoted.
 
 ## Differences between the E8 sources
 

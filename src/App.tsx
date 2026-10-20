@@ -1,25 +1,46 @@
-import { author, repositoryUrl } from './config/author.ts';
+import { Layout } from './components/Layout.tsx';
+import { usePageFocus } from './components/usePageFocus.ts';
+import { STRATEGIES } from './data/types.ts';
+import { AssessmentPage } from './pages/AssessmentPage.tsx';
+import { ContextPage } from './pages/ContextPage.tsx';
+import { HomePage } from './pages/HomePage.tsx';
+import { ResultsPage } from './pages/ResultsPage.tsx';
+import { href, useRoute } from './router.ts';
+import { AssessmentProvider } from './state/AssessmentProvider.tsx';
 
-// Placeholder shell. Pages, routing and the real footer arrive in later phases.
-export default function App() {
+function Page({ path }: { path: string }) {
+  if (path === '/') return <HomePage />;
+  if (path === '/context') return <ContextPage />;
+  if (path === '/results') return <ResultsPage />;
+  const step = /^\/assessment\/(\d+)$/.exec(path);
+  if (step) {
+    const n = Number(step[1]);
+    if (n >= 1 && n <= STRATEGIES.length) return <AssessmentPage key={n} step={n} />;
+  }
+  return <NotFound />;
+}
+
+function NotFound() {
+  const headingRef = usePageFocus<HTMLHeadingElement>('Page not found');
   return (
     <>
-      <main>
-        <h1>Eight to Essentials</h1>
-        <p>Check your Essential Eight. Plan your move to ASD Essentials.</p>
-      </main>
-      <footer>
-        <p>
-          Built by{' '}
-          <a href={author.linkedInUrl} rel="noopener noreferrer" target="_blank">
-            {author.name}
-          </a>{' '}
-          ·{' '}
-          <a href={repositoryUrl} rel="noopener noreferrer" target="_blank">
-            Source on GitHub
-          </a>
-        </p>
-      </footer>
+      <h1 ref={headingRef} tabIndex={-1}>
+        Page not found
+      </h1>
+      <p>
+        <a href={href('/')}>Go to the home page</a>
+      </p>
     </>
+  );
+}
+
+export default function App() {
+  const path = useRoute();
+  return (
+    <AssessmentProvider>
+      <Layout>
+        <Page path={path} />
+      </Layout>
+    </AssessmentProvider>
   );
 }

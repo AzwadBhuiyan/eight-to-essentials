@@ -43,3 +43,24 @@ export function mappedActionsNote(mapped: number, applicable: number): string | 
   if (mapped === applicable) return null;
   return `${mapped} of ${applicable} actions mapped; assess the rest separately.`;
 }
+
+/** Labels for the six answer options, used by the wizard and the CSV export. */
+export const ANSWER_LABELS = {
+  yes: 'Yes, and we can show evidence',
+  partly: 'Partly',
+  no: 'No',
+  'not-sure': 'Not sure',
+  'not-applicable': 'Does not apply',
+  exception: 'Exception with compensating control',
+} as const;
+
+export const LEVEL_NAMES = {
+  0: 'Maturity Level Zero',
+  1: 'Maturity Level One',
+  2: 'Maturity Level Two',
+  3: 'Maturity Level Three',
+} as const;
+
+/** ASD Essentials publication date, cited from the ASD news release of 15 October 2026 (methodology D16). */
+export const LAUNCH_NOTICE =
+  'ASD published ASD Essentials on 15 October 2026. Many organisations still need to show Essential Eight progress while planning the move.';

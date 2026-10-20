@@ -1,22 +1,452 @@
-/* Minimal base styles. The full design system (light and dark themes) arrives in the UI phases. */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+/*
+ * Eight to Essentials styles.
+ * Mobile-first (works from 360px wide), light and dark themes, visible keyboard focus.
+ * Colour pairs are chosen to meet WCAG 2.2 AA contrast (4.5:1 for text, 3:1 for UI parts).
+ * No inline styles are used anywhere, so the Content Security Policy can stay strict.
+ */
 
 :root {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --surface: #f4f6f8;
+  --text: #1b1f24;
+  --muted: #4a5360; /* 7.8:1 on --bg */
+  --border: #8a94a1; /* 3.1:1 on --bg, for form controls */
+  --rule: #d5dae0;
+  --primary: #0b5394; /* 7.8:1 on --bg */
+  --primary-text: #ffffff;
+  --focus: #b4580b;
+  --danger: #a3271b; /* 7.3:1 on --bg */
+  --notice-bg: #eaf2fb;
+  --notice-border: #0b5394;
+  --warning-bg: #fff4e5;
+  --warning-border: #8a4b00;
+  --success-bg: #e8f5ec;
+  --success-border: #1e6b3a;
+
   font-family:
     system-ui,
     -apple-system,
     'Segoe UI',
     Roboto,
     sans-serif;
-  line-height: 1.5;
-  color-scheme: light dark;
+  font-size: 100%;
+  line-height: 1.55;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121417;
+    --surface: #1c2026;
+    --text: #e8eaed;
+    --muted: #b3bac4; /* 9.4:1 on --bg */
+    --border: #7f8995;
+    --rule: #333a43;
+    --primary: #8ab4f8; /* 8.8:1 on --bg */
+    --primary-text: #0b1320;
+    --focus: #ffb26b;
+    --danger: #ff8a80;
+    --notice-bg: #172636;
+    --notice-border: #8ab4f8;
+    --warning-bg: #2e2416;
+    --warning-border: #f0b35b;
+    --success-bg: #15281c;
+    --success-border: #6fcf8f;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+main {
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+main:focus {
+  outline: none;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin: 0.5rem 0 1rem;
+}
+
+h1:focus {
+  outline: none;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin-top: 2rem;
+}
+
+a {
+  color: var(--primary);
+}
+
+/* Visible focus for keyboard users on every interactive element. */
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  padding: 0.5rem 1rem;
+  background: var(--primary);
+  color: var(--primary-text);
+  z-index: 10;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------- header and footer */
+
+.site-header {
+  border-bottom: 1px solid var(--rule);
+  background: var(--surface);
+}
+
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.site-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-list {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  background: var(--surface);
+  padding: 1rem 0;
+  font-size: 0.95rem;
+}
+
+/* ---------------------------------------------------------------- text */
+
+.lead {
+  font-size: 1.15rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.notice,
+.disclaimer,
+.message {
+  padding: 0.75rem 1rem;
+  border-left: 4px solid var(--notice-border);
+  background: var(--notice-bg);
+  border-radius: 0.25rem;
+}
+
+.disclaimer {
+  border-left-color: var(--warning-border);
+  background: var(--warning-bg);
+}
+
+.message--success {
+  border-left-color: var(--success-border);
+  background: var(--success-bg);
+}
+
+.message--error {
+  border-left-color: var(--danger);
+  background: var(--warning-bg);
+}
+
+.message p,
+.message ul {
+  margin: 0.25rem 0;
+}
+
+.benefits li {
+  margin-bottom: 0.5rem;
+}
+
+/* ---------------------------------------------------------------- buttons */
+
+.button {
+  display: inline-block;
+  min-height: 2.75rem; /* comfortable touch target */
+  padding: 0.6rem 1.1rem;
+  border: 2px solid var(--primary);
+  border-radius: 0.35rem;
+  background: var(--primary);
+  color: var(--primary-text);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button--secondary {
+  background: transparent;
+  color: var(--primary);
+}
+
+.button--danger {
+  background: transparent;
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.button-row,
+.step-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.step-nav {
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+/* The file input is hidden; its label looks like a button. Show focus on the label instead. */
+.file-button:focus-within {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------- forms */
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+legend {
+  padding: 0;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+}
+
+input[type='text'],
+input[type='date'],
+textarea {
+  display: block;
+  width: 100%;
+  max-width: 36rem;
+  margin: 0.25rem 0 0.75rem;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+
+textarea {
+  min-height: 4.5rem;
+  resize: vertical;
+}
+
+.form-field {
+  margin: 1.5rem 0;
+}
+
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.35rem 0;
+  cursor: pointer;
+}
+
+.option input {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0.15rem 0 0;
+  flex-shrink: 0;
+  accent-color: var(--primary);
+}
+
+/* ---------------------------------------------------------------- questions */
+
+.question {
+  margin: 1rem 0;
   padding: 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.5rem;
+  background: var(--surface);
+}
+
+.question__text {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.question__conditions {
+  margin: 0.25rem 0 0.75rem;
+}
+
+.question__help {
+  margin: 0.25rem 0 0.75rem;
+  font-style: italic;
+}
+
+.question__meta {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+
+.question__options {
+  margin-bottom: 0.5rem;
+}
+
+.question__details {
+  margin: 0.75rem 0;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--rule);
+}
+
+.question__problems {
+  margin: 0.75rem 0;
+  padding: 0.5rem 0.75rem;
+  border-left: 4px solid var(--warning-border);
+  background: var(--warning-bg);
+}
+
+.question__problems p,
+.question__problems ul {
+  margin: 0.25rem 0;
+}
+
+.question--shared {
+  border-style: dashed;
+}
+
+details {
+  margin-top: 0.5rem;
+}
+
+summary {
+  cursor: pointer;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------------- progress, panels, tables */
+
+.progress {
+  margin: 1rem 0;
+}
+
+progress {
+  width: 100%;
+  height: 0.9rem;
+  accent-color: var(--primary);
+}
+
+.panel {
+  margin-top: 2.5rem;
+  padding: 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.5rem;
+}
+
+.panel__title {
+  margin-top: 0;
+}
+
+.save-status {
+  font-size: 0.95rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+caption {
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+th,
+td {
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  vertical-align: top;
+}
+
+@media (min-width: 40rem) {
+  h1 {
+    font-size: 2.1rem;
+  }
 }
