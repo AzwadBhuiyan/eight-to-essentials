@@ -18,6 +18,24 @@ This document explains where the app's data comes from, how it is scored, and th
 
 The cyber.gov.au publications are © Commonwealth of Australia and are used under the [Creative Commons Attribution 4.0 International licence](https://creativecommons.org/licenses/by/4.0/). The app paraphrases them in plain English and links back to the original. The ASD news page is cited for facts only.
 
+## How it is scored
+
+### Essential Eight self-check
+
+- Each requirement is answered once. **Yes** counts as met. **Partly**, **No** and **Not sure** never count as met; **Not sure** also adds an item to the evidence request list.
+- **Does not apply** (only where allowed, with a reason) and **Exception with compensating control** (reason, compensating control, approver and review date) count as met, and are listed under "Exceptions to review" (D6, D21, D22).
+- A strategy is at Maturity Level L when every requirement at levels 1 to L is met. If any Maturity Level One requirement is not met, it is at Maturity Level Zero. If any of its questions is unanswered, it shows as incomplete instead of a level.
+- A shared control's answer counts for every strategy it belongs to (D5).
+- The headline is the lowest strategy level, because ASD recommends reaching each maturity level across all eight strategies before moving to the next. It is not an official "overall maturity".
+
+### Prioritised action list
+
+Unmet requirements, ordered by level, then exposure, then effort (D7, D8, D23). The title and order depend on whether the organisation is still required to report Essential Eight maturity.
+
+### Transition view
+
+An indicative gap analysis built on ASD's mapping tables (D9 to D15, D20, D24 to D26). It never converts Essential Eight levels into ASD Essentials effectiveness ratings.
+
 ## Design decisions
 
 Decisions marked **(author's rule)** are the author's own and are not taken from ASD. They are labelled the same way in the app.
@@ -135,6 +153,48 @@ Two scoring questions are deferred until the phase 1 check is built: how a princ
   - T9-03, T9-04 and T9-05: IT.PRO-10.1 in Boundary services, Identity services and Privileged environments ("strong starting point")
 - **Decision (rule for the transition view, built in Phase 6):** For any row ASD marks as partial, the transition view always shows a clear "Partial coverage in [domain]" label as the row's status, placed before the note and not only conveyed by colour. The note is never shown on its own and never replaces the status. The note's wording is kept as written; the status comes only from ASD's full/partial marking.
 - **Reason:** Stops a positive-sounding note from making partial coverage read as full, consistent with the rule that a partial contribution never shows as "may contribute" in full.
+
+### D21. Invalid answers count as unanswered
+
+- **Decision:** An answer that breaks the answer rules (for example "Does not apply" without a reason, or an exception missing its compensating control, approver or a real review date) is treated as unanswered. The strategy shows as incomplete until it is fixed.
+- **Reason:** An incomplete answer should never produce a maturity level or count as met.
+
+### D22. Overdue exception reviews are flagged (author's rule)
+
+- **Decision:** In "Exceptions to review", an exception whose review date is before today is flagged as overdue. This does not change scoring: a valid exception still counts as met.
+- **Reason:** The maturity model expects exceptions to be reviewed regularly, and Transitioning from the Essential Eight (page 21) warns against relying on expired exceptions without review.
+
+### D23. Action list details (author's rules)
+
+- **Exposure ranking:** `boundary` and `identity` rank equally, ahead of `other` (D7).
+- **"Linked to priority phase 1":** a requirement is linked when at least one of its Essentials actions applies in a priority phase 1 technical domain (Boundary services or Identity services). The capability domains are not counted, because they apply in every phase and would not distinguish anything.
+- **Risk-reduction order:** when Essential Eight reporting is not required (or the answer is "not sure"), linked items come first; within each group the usual order applies (level, exposure, effort).
+- **Ties:** items that tie keep the order of the data file (strategy, then level).
+- **Unanswered questions** are not actions; they make the strategy incomplete instead.
+- **Next step:** a short generic step based on the answer ("Not sure": find out and collect evidence; "Partly": extend coverage; "No": plan and put in place), with the requirement's first evidence example.
+
+### D24. Actions with no mapping row in a domain
+
+- **Context:** D10 covers Visibility and response. Five other actions also have E8 controls cited in the evidence guide but no row in any transition table: IT.DET-01.1, IT.DET-01.2, IT.DET-04.1 and IT.PRO-01.1 (technical domains) and IT.GOV-14.1 (Governance and culture).
+- **Decision (approved):**
+  - An action with **no mapping row anywhere** but with E8 controls cited shows "E8 evidence to check" in every domain where it applies, with the controls and the organisation's answers, and no status. This extends D10 to these five actions (23 action and domain pairs).
+  - An action that ASD **maps in some domains but not this one** shows "no E8 mapping" in this domain, because ASD's table defines which domains the E8 contributes to.
+  - An action with **no mapping row and no E8 controls** shows "no E8 mapping". These are the actions in "Not covered by the Essential Eight".
+
+### D25. Transition roll-up (author's rule)
+
+- **Across strategies:** where several strategies map the same action and domain (for example macros and user application hardening for IT.PRO-04.1 in User devices), the weakest strategy sets the action's status. Within one strategy, the highest row reached is used (D15).
+- **Mapped actions set the finding:** within each domain, the weakest **mapped** action (one with a row in ASD's transition tables) sets the principle's finding, using ASD's gap terms: "may contribute" → already effectively addressed; "may partly contribute" → partially addressed; "gap" → not addressed; an incomplete strategy → unknown.
+- **Unmapped actions are not "not addressed":** an action with no E8 mapping (including "E8 evidence to check" actions, which also have no mapping row) does **not** count as "not addressed". "Not addressed" is a statement about the organisation; "no E8 mapping" is only a statement about the framework.
+- **Cap:** if any applicable action in the domain is unmapped, the principle's finding is capped at **partially addressed**, so it can never read as fully addressed when part of it has no E8 mapping. The app shows how many actions are mapped, for example "1 of 5 actions mapped; assess the rest separately."
+- **No mapped actions:** the finding is "E8 evidence to check" if ASD cites E8 controls for any of the actions, otherwise "no E8 mapping". Neither is a statement about the organisation.
+- **Reason:** a principle should not look worse because the Essential Eight never covered part of it, and should not look better than the evidence supports. The cap keeps the second promise; leaving unmapped actions out of the weakest-link calculation keeps the first.
+- **Shown as indicative:** findings are labelled as the author's roll-up, not ASD ratings. Tests check, for every combination of statuses and across the real data, that an unmapped action can never make a principle read as fully addressed.
+
+### D26. Transition grouping order
+
+- **Decision:** Domains are shown with priority phase 1 (Boundary services, Identity services) first, then the capability domains (Governance and culture, Visibility and response), then phase 2 and phase 3.
+- **Reason:** ASD recommends addressing priority phase 1 first. The capability domains apply in every phase and are part of the phase 1 scoping step in Transitioning from the Essential Eight (page 22), so they follow straight after.
 
 ## Differences between the E8 sources
 
