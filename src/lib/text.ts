@@ -67,9 +67,11 @@ export const LAUNCH_NOTICE =
 
 /**
  * Hint under the target level question (methodology D29). Transitioning from the Essential Eight,
- * page 9: Maturity Level Two was the required baseline for Commonwealth entities.
+ * page 9: Maturity Level Two was the required baseline for Commonwealth entities. The second
+ * sentence is guidance from the author, not from ASD.
  */
-export const TARGET_HINT = 'Government entities and many contracts ask for Maturity Level Two.';
+export const TARGET_HINT =
+  'Commonwealth entities have been required to reach Maturity Level Two. If a contract, customer or insurer asks for a level, choose that one.';
 
 export const TARGET_HINT_SOURCE = {
   text: 'Transitioning from the Essential Eight, page 9',

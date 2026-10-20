@@ -196,7 +196,7 @@ describe('target level and product groups (D29, D31)', () => {
     await go('/context');
     const target = screen.getByRole('group', { name: 'Which maturity level are you aiming for?' });
     expect(target).toHaveTextContent(
-      'Government entities and many contracts ask for Maturity Level Two.',
+      'Commonwealth entities have been required to reach Maturity Level Two. If a contract, customer or insurer asks for a level, choose that one.',
     );
     expect(
       within(target).getByRole('link', { name: /Transitioning from the Essential Eight, page 9/ }),
