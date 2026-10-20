@@ -499,3 +499,90 @@ td {
 .group-option__details p {
   margin: 0.25rem 0 0.25rem 1.85rem;
 }
+
+/* ---------------------------------------------------------------- results (Phase 5) */
+
+.chart {
+  margin: 1rem 0;
+}
+
+.chart__canvas {
+  position: relative;
+  height: 22rem;
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+.chart figcaption {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.item-list {
+  padding-left: 1.25rem;
+}
+
+.item {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.5rem;
+  background: var(--surface);
+}
+
+.item p {
+  margin: 0.35rem 0;
+}
+
+.item__title {
+  font-weight: 600;
+}
+
+.item__meta {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.item__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  font-size: 0.85rem;
+}
+
+.details-list {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 0.75rem;
+  margin: 0.5rem 0 0;
+}
+
+.details-list dt {
+  font-weight: 600;
+}
+
+.details-list dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.warning-text {
+  color: var(--danger);
+}
+
+@media (max-width: 30rem) {
+  .details-list {
+    grid-template-columns: 1fr;
+  }
+
+  .details-list dd {
+    margin-bottom: 0.4rem;
+  }
+}

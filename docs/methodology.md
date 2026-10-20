@@ -247,6 +247,18 @@ Two scoring questions are deferred until the phase 1 check is built: how a princ
 - **Rows above the target:** if a strategy reached the target and a mapping row needs a higher Essential Eight level, the row shows "Not assessed (above your target)", not a gap, because those questions were not asked. In the roll-up (D25) it ranks like "unknown": it neither makes a principle "not addressed" nor lets it read as fully addressed. If the strategy is below the target, the row is a gap as before.
 - **Later (version 1.1):** the ASD Essentials phase 1 check can be offered as a separate "ASD Essentials only" path from the home page. It uses only the Essentials structure data, with its own state and results, and never takes Essential Eight answers as input, so it cannot convert levels into ratings. It needs paraphrased Indicators of Good Practice for each action and answers to the questions deferred in D19 first. Version 1.0 mentions it only on the roadmap.
 
+### D34. Results page
+
+- **Order:** headline (with the target, and "Not final" while any strategy is incomplete), the disclaimer, a radar chart with a levels table, the prioritised action list, evidence to find, exceptions to review, then the CSV export. The optional ASD Essentials transition view is linked from here once it exists (D33).
+- **Chart:** a radar chart of each strategy's level against the target. The target is a dashed line and the levels a solid filled shape, so they differ by more than colour. Incomplete strategies are left as a gap rather than drawn at zero. The chart has a text alternative listing every strategy's result, and the table below it shows the same information. It is loaded only when the results page opens.
+- **Action list:** the top five actions are shown, with a button to show the rest. Each action shows what is missing, why it matters, a next step, the effort estimate (labelled as the author's estimate) and the related ASD Essentials principles.
+- **Exceptions:** "Does not apply" answers from a product group are shown once for the group (with its reason and the requirement IDs), not once per requirement. Exceptions past their review date are marked "Review overdue".
+- **Results CSV:** one file laid out for spreadsheets. Columns: Section, Strategy, Requirement ID, Item, Strategy level, Requirement level, Status, Details.
+  - **Section** holds one word (Note, Headline, Strategy, Action, Evidence, Exception), so the first column stays narrow and can be filtered. Long text goes in **Item**: the first row is a Note with the disclaimer, and a Note row just above the actions gives the list's framing ("Actions to lift your Essential Eight maturity" or "Risk-reduction actions"), with ASD's advice and the coverage note in Details.
+  - **Headline row:** the level is the headline's own level (final, or the lowest completed strategy while not final), never the target. Status is "Final" or "Not final", and the target goes in Details ("Target: Maturity Level One").
+  - **Strategy level** is filled only for the headline and strategy rows; **Requirement level** only for action and evidence rows.
+  - The headline and strategy wording come from the same functions as the page, and every cell is protected against formula injection (D28).
+
 ## Differences between the E8 sources
 
 Results of comparing the maturity model (November 2023) with the workbook's "Existing E8 Controls" sheet (113 controls) and the E8 references in the Assessment evidence guide.

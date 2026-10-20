@@ -315,3 +315,76 @@ describe('skipping and partial results (D30, D32)', () => {
     expect(row).toHaveTextContent('Cannot be higher than Maturity Level One so far');
   });
 });
+
+describe('results page (Phase 5)', () => {
+  async function answerApplicationControl(user: ReturnType<typeof userEvent.setup>, value: string) {
+    await go('/assessment/5');
+    const question = screen.getByRole('group', {
+      name: /Application control is in place on workstations/,
+    });
+    await user.click(within(question).getByRole('radio', { name: value }));
+  }
+
+  it('shows the headline, chart, levels table, actions, evidence and exceptions', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await answerApplicationControl(user, 'No');
+    await go('/results');
+    expect(
+      screen.getByRole('heading', { level: 1, name: 'Essential Eight results' }),
+    ).toBeInTheDocument();
+    expect(screen.getByText(DISCLAIMER)).toBeInTheDocument();
+    expect(
+      await screen.findByRole('img', { name: /Radar chart of Essential Eight maturity/ }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('table', { name: /Essential Eight maturity by strategy/ }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Risk-reduction actions' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Evidence to find' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Exceptions to review' })).toBeInTheDocument();
+  });
+
+  it('lists a "Not sure" answer as evidence to find', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await answerApplicationControl(user, 'Not sure');
+    await go('/results');
+    const section = screen.getByRole('heading', { name: 'Evidence to find' }).closest('section')!;
+    expect(section).toHaveTextContent('ISM-0843');
+  });
+
+  it('asks the user to start when nothing is answered', async () => {
+    render(<App />);
+    await go('/results');
+    expect(screen.getByText(/You have not answered any questions yet/)).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'Evidence to find' })).toBeNull();
+  });
+
+  it('exports the results as CSV', async () => {
+    const user = userEvent.setup();
+    const created: Blob[] = [];
+    const originalCreate = URL.createObjectURL;
+    const originalRevoke = URL.revokeObjectURL;
+    URL.createObjectURL = (blob: Blob) => {
+      created.push(blob);
+      return 'blob:test';
+    };
+    URL.revokeObjectURL = () => {};
+    const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
+    try {
+      render(<App />);
+      await answerApplicationControl(user, 'No');
+      await go('/results');
+      await user.click(screen.getByRole('button', { name: 'Export results (CSV)' }));
+      expect(click).toHaveBeenCalled();
+      const text = await created[0]!.text();
+      expect(text).toContain('"Section","Strategy","Requirement ID"');
+      expect(text).toContain('"ISM-0843"');
+    } finally {
+      URL.createObjectURL = originalCreate;
+      URL.revokeObjectURL = originalRevoke;
+      click.mockRestore();
+    }
+  });
+});
