@@ -1,0 +1,66 @@
+{
+  "dataCheckedOn": "2026-10-20",
+  "frameworks": [
+    {
+      "id": "e8",
+      "name": "Essential Eight maturity model",
+      "version": "November 2023",
+      "firstPublished": "2017-06",
+      "lastUpdated": "2023-11",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "note": "Authority for requirement wording and maturity levels. ISM IDs and Essentials action links come from the Assessment Workbook and Assessment evidence guide, which reference the 02 October 2024 Essential Eight."
+    },
+    {
+      "id": "essentials-enterprise-it",
+      "name": "ASD Essentials for enterprise IT",
+      "version": "October 2026",
+      "published": "2026-10-15",
+      "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+      "note": "This version covers the enterprise IT chapter only. The cloud and operational technology chapters are not included."
+    }
+  ],
+  "documents": [
+    {
+      "name": "Essential Eight maturity model",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model"
+    },
+    {
+      "name": "ASD Essentials for enterprise IT",
+      "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it"
+    },
+    {
+      "name": "Essentials for enterprise IT Assessment Workbook",
+      "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it"
+    },
+    {
+      "name": "Transitioning from the Essential Eight",
+      "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight"
+    },
+    {
+      "name": "Assessment process guide",
+      "url": "https://www.cyber.gov.au/publication/assessment-process-guide"
+    },
+    {
+      "name": "Assessment evidence guide for enterprise IT",
+      "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it"
+    },
+    {
+      "name": "ASD Essentials overview: Frequently asked questions",
+      "url": "https://www.cyber.gov.au/publication/frequently-asked-questions"
+    },
+    {
+      "name": "ASD Essentials overview: Which chapter should I start with?",
+      "url": "https://www.cyber.gov.au/publication/which-chapter-should-i-start-with"
+    },
+    {
+      "name": "ASD Essentials: evolving our approach to cyber security resilience (ASD news, 15 October 2026)",
+      "url": "https://www.asd.gov.au/news/2026-10-15-asd-essentials-evolving-our-approach-cyber-security-resilience"
+    }
+  ],
+  "licence": {
+    "name": "Creative Commons Attribution 4.0 International",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "Summarises and paraphrases material © Commonwealth of Australia, published by the Australian Signals Directorate on cyber.gov.au under CC BY 4.0. The Commonwealth Coat of Arms and the ASD logo are not used.",
+    "exclusions": "The ASD news release is cited for facts only; no text from it is reproduced."
+  }
+}

@@ -80,6 +80,7 @@ Each requirement is tagged `quick-win`, `moderate` or `project` as the author's 
 - **Context:** Transitioning from the Essential Eight has a section on event logging, detection and response but no action mapping table for it.
 - **Decision:** For Visibility and response actions, the transition view lists the E8 controls the evidence guide cites as "E8 evidence to check", with no status and no gap.
 - **Reason:** ASD gives no contributing maturity level or full/partial contribution here, so any status would be invented.
+- **Clarification (IT.IDE-01.1):** Transitioning from the Essential Eight, Table 4 (page 12), gives one Visibility and response action an explicit mapping row: IT.IDE-01.1 (approved asset inventory with automated discovery), contributing in full at Maturity Level One for both patching strategies. That action uses ASD's Table 4 row like any other mapped action. "E8 evidence to check" applies only to the Visibility and response actions without a mapping row.
 
 ### D11. Known inconsistencies between ASD documents
 
@@ -124,6 +125,16 @@ Each requirement is tagged `quick-win`, `moderate` or `project` as the author's 
 ### D19. Deferred to the ASD Essentials phase 1 check (version 1.1)
 
 Two scoring questions are deferred until the phase 1 check is built: how a principle is rated when one action is not effective and another is not assessed (the Assessment Workbook and the Assessment process guide differ), and whether not-assessed principles stay in the domain percentage denominator.
+
+### D20. Partial rows always read as partial
+
+- **Context:** In Transitioning from the Essential Eight, each action has one "Existing E8 contribution" note, shared by every domain in that row, even where ASD marks some domains as partial. So a note can say "strong evidence" or "strong starting point" on a row that ASD marks as partial for that domain. This affects 9 rows:
+  - T5-05 and T5-06: IT.PRO-13.4 in Identity services and User devices (note: "strong evidence")
+  - T6-02, T6-03 and T6-04: IT.PRO-05.1 in Boundary services, Identity services and Critical processes and services ("strong evidence")
+  - T6-12: IT.PRO-12.3 in Identity services ("strong starting point")
+  - T9-03, T9-04 and T9-05: IT.PRO-10.1 in Boundary services, Identity services and Privileged environments ("strong starting point")
+- **Decision (rule for the transition view, built in Phase 6):** For any row ASD marks as partial, the transition view always shows a clear "Partial coverage in [domain]" label as the row's status, placed before the note and not only conveyed by colour. The note is never shown on its own and never replaces the status. The note's wording is kept as written; the status comes only from ASD's full/partial marking.
+- **Reason:** Stops a positive-sounding note from making partial coverage read as full, consistent with the rule that a partial contribution never shows as "may contribute" in full.
 
 ## Differences between the E8 sources
 

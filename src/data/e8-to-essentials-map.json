@@ -1,0 +1,1549 @@
+{
+  "strategies": [
+    {
+      "strategy": "Patch applications",
+      "table2Principles": ["PRO-06", "IDE-01", "GOV-14"],
+      "sectionPrinciples": ["PRO-06", "IDE-01", "GOV-14"],
+      "principlesWithoutActionMapping": ["GOV-14"],
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 2, page 10; strategy section, page 12"
+      }
+    },
+    {
+      "strategy": "Patch operating systems",
+      "table2Principles": ["PRO-06", "IDE-01", "GOV-14"],
+      "sectionPrinciples": ["PRO-06", "IDE-01", "GOV-14"],
+      "principlesWithoutActionMapping": ["GOV-14"],
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 2, page 10; strategy section, page 12"
+      }
+    },
+    {
+      "strategy": "Multi-factor authentication",
+      "table2Principles": ["PRO-13"],
+      "sectionPrinciples": ["PRO-13"],
+      "principlesWithoutActionMapping": [],
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 2, page 10; strategy section, page 13"
+      }
+    },
+    {
+      "strategy": "Restrict administrative privileges",
+      "table2Principles": ["PRO-13", "PRO-12", "PRO-05", "PRO-18"],
+      "sectionPrinciples": ["PRO-13", "PRO-12", "PRO-05", "PRO-18"],
+      "principlesWithoutActionMapping": [],
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 2, page 10; strategy section, page 14"
+      }
+    },
+    {
+      "strategy": "Application control",
+      "table2Principles": ["PRO-07", "PRO-04"],
+      "sectionPrinciples": ["PRO-07", "PRO-04"],
+      "principlesWithoutActionMapping": [],
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 2, page 10; strategy section, page 11"
+      }
+    },
+    {
+      "strategy": "Restrict Microsoft Office macros",
+      "table2Principles": ["PRO-07", "PRO-04"],
+      "sectionPrinciples": ["PRO-07", "PRO-04"],
+      "principlesWithoutActionMapping": [],
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 2, page 10; strategy section, page 16"
+      }
+    },
+    {
+      "strategy": "User application hardening",
+      "table2Principles": ["PRO-04"],
+      "sectionPrinciples": ["PRO-04", "PRO-09"],
+      "principlesWithoutActionMapping": ["PRO-09"],
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 2, page 10; strategy section, page 18"
+      }
+    },
+    {
+      "strategy": "Regular backups",
+      "table2Principles": ["PRO-10", "PRO-12"],
+      "sectionPrinciples": ["PRO-10", "PRO-12"],
+      "principlesWithoutActionMapping": ["PRO-12"],
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 2, page 10; strategy section, page 19"
+      }
+    }
+  ],
+  "mappings": [
+    {
+      "id": "T3-01",
+      "strategies": ["Application control"],
+      "actionId": "IT.PRO-07.1",
+      "principleId": "PRO-07",
+      "domain": "User devices",
+      "contributingLevel": 1,
+      "contribution": "full",
+      "strengthenNote": "Existing application control rule sets, approved software lists and blocklists can be strong evidence that software execution is controlled.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 3, page 11"
+      }
+    },
+    {
+      "id": "T3-02",
+      "strategies": ["Application control"],
+      "actionId": "IT.PRO-07.1",
+      "principleId": "PRO-07",
+      "domain": "Boundary services",
+      "contributingLevel": 2,
+      "contribution": "full",
+      "strengthenNote": "Existing application control rule sets, approved software lists and blocklists can be strong evidence that software execution is controlled.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 3, page 11"
+      }
+    },
+    {
+      "id": "T3-03",
+      "strategies": ["Application control"],
+      "actionId": "IT.PRO-07.1",
+      "principleId": "PRO-07",
+      "domain": "Business systems",
+      "contributingLevel": 3,
+      "contribution": "full",
+      "strengthenNote": "Existing application control rule sets, approved software lists and blocklists can be strong evidence that software execution is controlled.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 3, page 11"
+      }
+    },
+    {
+      "id": "T3-04",
+      "strategies": ["Application control"],
+      "actionId": "IT.PRO-07.1",
+      "principleId": "PRO-07",
+      "domain": "Critical processes and services",
+      "contributingLevel": 3,
+      "contribution": "full",
+      "strengthenNote": "Existing application control rule sets, approved software lists and blocklists can be strong evidence that software execution is controlled.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 3, page 11"
+      }
+    },
+    {
+      "id": "T3-05",
+      "strategies": ["Application control"],
+      "actionId": "IT.PRO-07.2",
+      "principleId": "PRO-07",
+      "domain": "User devices",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Application control may cover part of this. Admin and management tools may need to be identified and controlled separately.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 3, page 11"
+      }
+    },
+    {
+      "id": "T3-06",
+      "strategies": ["Application control"],
+      "actionId": "IT.PRO-07.2",
+      "principleId": "PRO-07",
+      "domain": "Boundary services",
+      "contributingLevel": 2,
+      "contribution": "partial",
+      "strengthenNote": "Application control may cover part of this. Admin and management tools may need to be identified and controlled separately.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 3, page 11"
+      }
+    },
+    {
+      "id": "T3-07",
+      "strategies": ["Application control"],
+      "actionId": "IT.PRO-04.3",
+      "principleId": "PRO-04",
+      "domain": "User devices",
+      "contributingLevel": 2,
+      "contribution": "partial",
+      "strengthenNote": "Rule set reviews and validation records may help, but a broader way of detecting configuration drift may be needed.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 3, page 11"
+      }
+    },
+    {
+      "id": "T3-08",
+      "strategies": ["Application control"],
+      "actionId": "IT.PRO-04.3",
+      "principleId": "PRO-04",
+      "domain": "Boundary services",
+      "contributingLevel": 2,
+      "contribution": "partial",
+      "strengthenNote": "Rule set reviews and validation records may help, but a broader way of detecting configuration drift may be needed.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 3, page 11"
+      }
+    },
+    {
+      "id": "T4-01",
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "actionId": "IT.PRO-06.1",
+      "principleId": "PRO-06",
+      "domain": "Boundary services",
+      "contributingLevel": 1,
+      "contribution": "full",
+      "strengthenNote": "Scanner configurations, scan schedules and scan results can be useful evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 4, page 12"
+      }
+    },
+    {
+      "id": "T4-02",
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "actionId": "IT.PRO-06.1",
+      "principleId": "PRO-06",
+      "domain": "User devices",
+      "contributingLevel": 1,
+      "contribution": "full",
+      "strengthenNote": "Scanner configurations, scan schedules and scan results can be useful evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 4, page 12"
+      }
+    },
+    {
+      "id": "T4-03",
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "actionId": "IT.PRO-06.1",
+      "principleId": "PRO-06",
+      "domain": "Business systems",
+      "contributingLevel": 1,
+      "contribution": "full",
+      "strengthenNote": "Scanner configurations, scan schedules and scan results can be useful evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 4, page 12"
+      }
+    },
+    {
+      "id": "T4-04",
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "actionId": "IT.PRO-06.1",
+      "principleId": "PRO-06",
+      "domain": "Critical processes and services",
+      "contributingLevel": 2,
+      "contribution": "full",
+      "strengthenNote": "Scanner configurations, scan schedules and scan results can be useful evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 4, page 12"
+      }
+    },
+    {
+      "id": "T4-05",
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "actionId": "IT.PRO-06.2",
+      "principleId": "PRO-06",
+      "domain": "Boundary services",
+      "contributingLevel": 1,
+      "contribution": "full",
+      "strengthenNote": "Patch deployment records and patch compliance reports remain relevant.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 4, page 12"
+      }
+    },
+    {
+      "id": "T4-06",
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "actionId": "IT.PRO-06.2",
+      "principleId": "PRO-06",
+      "domain": "User devices",
+      "contributingLevel": 1,
+      "contribution": "full",
+      "strengthenNote": "Patch deployment records and patch compliance reports remain relevant.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 4, page 12"
+      }
+    },
+    {
+      "id": "T4-07",
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "actionId": "IT.PRO-06.2",
+      "principleId": "PRO-06",
+      "domain": "Business systems",
+      "contributingLevel": 1,
+      "contribution": "full",
+      "strengthenNote": "Patch deployment records and patch compliance reports remain relevant.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 4, page 12"
+      }
+    },
+    {
+      "id": "T4-08",
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "actionId": "IT.PRO-06.2",
+      "principleId": "PRO-06",
+      "domain": "Critical processes and services",
+      "contributingLevel": 2,
+      "contribution": "full",
+      "strengthenNote": "Patch deployment records and patch compliance reports remain relevant.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 4, page 12"
+      }
+    },
+    {
+      "id": "T4-09",
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "actionId": "IT.PRO-06.3",
+      "principleId": "PRO-06",
+      "domain": "Boundary services",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Records of how vulnerabilities were treated or mitigated can contribute evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 4, page 12"
+      }
+    },
+    {
+      "id": "T4-10",
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "actionId": "IT.PRO-06.3",
+      "principleId": "PRO-06",
+      "domain": "Identity services",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Records of how vulnerabilities were treated or mitigated can contribute evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 4, page 12"
+      }
+    },
+    {
+      "id": "T4-11",
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "actionId": "IT.PRO-06.3",
+      "principleId": "PRO-06",
+      "domain": "Critical processes and services",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Records of how vulnerabilities were treated or mitigated can contribute evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 4, page 12"
+      }
+    },
+    {
+      "id": "T4-12",
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "actionId": "IT.PRO-06.3",
+      "principleId": "PRO-06",
+      "domain": "Privileged environments",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Records of how vulnerabilities were treated or mitigated can contribute evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 4, page 12"
+      }
+    },
+    {
+      "id": "T4-13",
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "actionId": "IT.PRO-06.3",
+      "principleId": "PRO-06",
+      "domain": "Business systems",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Records of how vulnerabilities were treated or mitigated can contribute evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 4, page 12"
+      }
+    },
+    {
+      "id": "T4-14",
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "actionId": "IT.PRO-06.3",
+      "principleId": "PRO-06",
+      "domain": "User devices",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Records of how vulnerabilities were treated or mitigated can contribute evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 4, page 12"
+      }
+    },
+    {
+      "id": "T4-15",
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "actionId": "IT.IDE-01.1",
+      "principleId": "IDE-01",
+      "domain": "Visibility and response",
+      "contributingLevel": 1,
+      "contribution": "full",
+      "strengthenNote": "Existing automated asset discovery remains relevant.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 4, page 12"
+      }
+    },
+    {
+      "id": "T4-16",
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "actionId": "IT.IDE-01.2",
+      "principleId": "IDE-01",
+      "domain": "Boundary services",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Operating system and application inventories are a starting point but may not cover every asset type required (identities, credentials and data as well).",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 4, page 12"
+      }
+    },
+    {
+      "id": "T4-17",
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "actionId": "IT.IDE-01.2",
+      "principleId": "IDE-01",
+      "domain": "Identity services",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Operating system and application inventories are a starting point but may not cover every asset type required (identities, credentials and data as well).",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 4, page 12"
+      }
+    },
+    {
+      "id": "T4-18",
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "actionId": "IT.IDE-01.2",
+      "principleId": "IDE-01",
+      "domain": "Critical processes and services",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Operating system and application inventories are a starting point but may not cover every asset type required (identities, credentials and data as well).",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 4, page 12"
+      }
+    },
+    {
+      "id": "T4-19",
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "actionId": "IT.IDE-01.2",
+      "principleId": "IDE-01",
+      "domain": "Privileged environments",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Operating system and application inventories are a starting point but may not cover every asset type required (identities, credentials and data as well).",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 4, page 12"
+      }
+    },
+    {
+      "id": "T4-20",
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "actionId": "IT.IDE-01.2",
+      "principleId": "IDE-01",
+      "domain": "Business systems",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Operating system and application inventories are a starting point but may not cover every asset type required (identities, credentials and data as well).",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 4, page 12"
+      }
+    },
+    {
+      "id": "T4-21",
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "actionId": "IT.IDE-01.2",
+      "principleId": "IDE-01",
+      "domain": "User devices",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Operating system and application inventories are a starting point but may not cover every asset type required (identities, credentials and data as well).",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 4, page 12"
+      }
+    },
+    {
+      "id": "T5-01",
+      "strategies": ["Multi-factor authentication"],
+      "actionId": "IT.PRO-13.4",
+      "principleId": "PRO-13",
+      "domain": "Boundary services",
+      "contributingLevel": 1,
+      "contribution": "full",
+      "strengthenNote": "MFA configurations, sign-in policies and coverage reports can be strong evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 5, page 13"
+      }
+    },
+    {
+      "id": "T5-02",
+      "strategies": ["Multi-factor authentication"],
+      "actionId": "IT.PRO-13.4",
+      "principleId": "PRO-13",
+      "domain": "Critical processes and services",
+      "contributingLevel": 1,
+      "contribution": "full",
+      "strengthenNote": "MFA configurations, sign-in policies and coverage reports can be strong evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 5, page 13"
+      }
+    },
+    {
+      "id": "T5-03",
+      "strategies": ["Multi-factor authentication"],
+      "actionId": "IT.PRO-13.4",
+      "principleId": "PRO-13",
+      "domain": "Privileged environments",
+      "contributingLevel": 2,
+      "contribution": "full",
+      "strengthenNote": "MFA configurations, sign-in policies and coverage reports can be strong evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 5, page 13"
+      }
+    },
+    {
+      "id": "T5-04",
+      "strategies": ["Multi-factor authentication"],
+      "actionId": "IT.PRO-13.4",
+      "principleId": "PRO-13",
+      "domain": "Business systems",
+      "contributingLevel": 2,
+      "contribution": "full",
+      "strengthenNote": "MFA configurations, sign-in policies and coverage reports can be strong evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 5, page 13"
+      }
+    },
+    {
+      "id": "T5-05",
+      "strategies": ["Multi-factor authentication"],
+      "actionId": "IT.PRO-13.4",
+      "principleId": "PRO-13",
+      "domain": "Identity services",
+      "contributingLevel": 2,
+      "contribution": "partial",
+      "strengthenNote": "MFA configurations, sign-in policies and coverage reports can be strong evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 5, page 13"
+      }
+    },
+    {
+      "id": "T5-06",
+      "strategies": ["Multi-factor authentication"],
+      "actionId": "IT.PRO-13.4",
+      "principleId": "PRO-13",
+      "domain": "User devices",
+      "contributingLevel": 2,
+      "contribution": "partial",
+      "strengthenNote": "MFA configurations, sign-in policies and coverage reports can be strong evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 5, page 13"
+      }
+    },
+    {
+      "id": "T6-01",
+      "strategies": ["Restrict administrative privileges"],
+      "actionId": "IT.PRO-05.1",
+      "principleId": "PRO-05",
+      "domain": "Privileged environments",
+      "contributingLevel": 1,
+      "contribution": "full",
+      "strengthenNote": "Privileged access workstations, restricted admin environments and jump servers can be strong evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 6, page 14"
+      }
+    },
+    {
+      "id": "T6-02",
+      "strategies": ["Restrict administrative privileges"],
+      "actionId": "IT.PRO-05.1",
+      "principleId": "PRO-05",
+      "domain": "Boundary services",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Privileged access workstations, restricted admin environments and jump servers can be strong evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 6, page 14"
+      }
+    },
+    {
+      "id": "T6-03",
+      "strategies": ["Restrict administrative privileges"],
+      "actionId": "IT.PRO-05.1",
+      "principleId": "PRO-05",
+      "domain": "Identity services",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Privileged access workstations, restricted admin environments and jump servers can be strong evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 6, page 14"
+      }
+    },
+    {
+      "id": "T6-04",
+      "strategies": ["Restrict administrative privileges"],
+      "actionId": "IT.PRO-05.1",
+      "principleId": "PRO-05",
+      "domain": "Critical processes and services",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Privileged access workstations, restricted admin environments and jump servers can be strong evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 6, page 14"
+      }
+    },
+    {
+      "id": "T6-05",
+      "strategies": ["Restrict administrative privileges"],
+      "actionId": "IT.PRO-05.2",
+      "principleId": "PRO-05",
+      "domain": "Privileged environments",
+      "contributingLevel": 2,
+      "contribution": "partial",
+      "strengthenNote": "Existing session controls may help, but time-limited privilege is likely to need extra work.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 6, page 14"
+      }
+    },
+    {
+      "id": "T6-06",
+      "strategies": ["Restrict administrative privileges"],
+      "actionId": "IT.PRO-05.3",
+      "principleId": "PRO-05",
+      "domain": "Privileged environments",
+      "contributingLevel": 2,
+      "contribution": "partial",
+      "strengthenNote": "Privileged access and account management logs can contribute evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 6, page 15"
+      }
+    },
+    {
+      "id": "T6-07",
+      "strategies": ["Restrict administrative privileges"],
+      "actionId": "IT.PRO-05.3",
+      "principleId": "PRO-05",
+      "domain": "Identity services",
+      "contributingLevel": 2,
+      "contribution": "partial",
+      "strengthenNote": "Privileged access and account management logs can contribute evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 6, page 15"
+      }
+    },
+    {
+      "id": "T6-08",
+      "strategies": ["Restrict administrative privileges"],
+      "actionId": "IT.PRO-12.1",
+      "principleId": "PRO-12",
+      "domain": "Privileged environments",
+      "contributingLevel": 2,
+      "contribution": "full",
+      "strengthenNote": "Privileged access reviews and revalidation processes remain relevant.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 6, page 15"
+      }
+    },
+    {
+      "id": "T6-09",
+      "strategies": ["Restrict administrative privileges"],
+      "actionId": "IT.PRO-12.1",
+      "principleId": "PRO-12",
+      "domain": "Identity services",
+      "contributingLevel": 2,
+      "contribution": "partial",
+      "strengthenNote": "Privileged access reviews and revalidation processes remain relevant.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 6, page 15"
+      }
+    },
+    {
+      "id": "T6-10",
+      "strategies": ["Restrict administrative privileges"],
+      "actionId": "IT.PRO-12.2",
+      "principleId": "PRO-12",
+      "domain": "Privileged environments",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Privileged access approval processes can contribute.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 6, page 15"
+      }
+    },
+    {
+      "id": "T6-11",
+      "strategies": ["Restrict administrative privileges"],
+      "actionId": "IT.PRO-12.3",
+      "principleId": "PRO-12",
+      "domain": "Privileged environments",
+      "contributingLevel": 1,
+      "contribution": "full",
+      "strengthenNote": "Account provisioning and privileged account controls are a strong starting point.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 6, page 15"
+      }
+    },
+    {
+      "id": "T6-12",
+      "strategies": ["Restrict administrative privileges"],
+      "actionId": "IT.PRO-12.3",
+      "principleId": "PRO-12",
+      "domain": "Identity services",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Account provisioning and privileged account controls are a strong starting point.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 6, page 15"
+      }
+    },
+    {
+      "id": "T6-13",
+      "strategies": ["Restrict administrative privileges"],
+      "actionId": "IT.PRO-13.1",
+      "principleId": "PRO-13",
+      "domain": "Privileged environments",
+      "contributingLevel": 2,
+      "contribution": "partial",
+      "strengthenNote": "Inactivity and account management processes may partly meet this.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 6, page 15"
+      }
+    },
+    {
+      "id": "T6-14",
+      "strategies": ["Restrict administrative privileges"],
+      "actionId": "IT.PRO-13.1",
+      "principleId": "PRO-13",
+      "domain": "Identity services",
+      "contributingLevel": 2,
+      "contribution": "partial",
+      "strengthenNote": "Inactivity and account management processes may partly meet this.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 6, page 15"
+      }
+    },
+    {
+      "id": "T6-15",
+      "strategies": ["Restrict administrative privileges"],
+      "actionId": "IT.PRO-13.2",
+      "principleId": "PRO-13",
+      "domain": "Privileged environments",
+      "contributingLevel": 2,
+      "contribution": "partial",
+      "strengthenNote": "Management of privileged credentials may contribute.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 6, page 15"
+      }
+    },
+    {
+      "id": "T6-16",
+      "strategies": ["Restrict administrative privileges"],
+      "actionId": "IT.PRO-13.6",
+      "principleId": "PRO-13",
+      "domain": "Privileged environments",
+      "contributingLevel": 2,
+      "contribution": "partial",
+      "strengthenNote": "Controls over administrator, service and break glass credentials may contribute.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 6, page 15"
+      }
+    },
+    {
+      "id": "T6-17",
+      "strategies": ["Restrict administrative privileges"],
+      "actionId": "IT.PRO-13.6",
+      "principleId": "PRO-13",
+      "domain": "Identity services",
+      "contributingLevel": 2,
+      "contribution": "partial",
+      "strengthenNote": "Controls over administrator, service and break glass credentials may contribute.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 6, page 15"
+      }
+    },
+    {
+      "id": "T6-18",
+      "strategies": ["Restrict administrative privileges"],
+      "actionId": "IT.PRO-18.2",
+      "principleId": "PRO-18",
+      "domain": "Privileged environments",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Separation of privileged environments may give partial evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 6, page 15"
+      }
+    },
+    {
+      "id": "T7-01",
+      "strategies": ["Restrict Microsoft Office macros"],
+      "actionId": "IT.PRO-04.1",
+      "principleId": "PRO-04",
+      "domain": "User devices",
+      "contributingLevel": 1,
+      "contribution": "full",
+      "strengthenNote": "Macro policies and security settings can contribute directly to user device baselines.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 7, page 16"
+      }
+    },
+    {
+      "id": "T7-02",
+      "strategies": ["Restrict Microsoft Office macros"],
+      "actionId": "IT.PRO-04.2",
+      "principleId": "PRO-04",
+      "domain": "User devices",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Enforced macro settings can show that baselines have been deployed.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 7, page 17"
+      }
+    },
+    {
+      "id": "T7-03",
+      "strategies": ["Restrict Microsoft Office macros"],
+      "actionId": "IT.PRO-07.1",
+      "principleId": "PRO-07",
+      "domain": "User devices",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Macro restrictions, trusted publisher arrangements and other execution controls can provide evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 7, page 17"
+      }
+    },
+    {
+      "id": "T7-04",
+      "strategies": ["Restrict Microsoft Office macros"],
+      "actionId": "IT.PRO-07.1",
+      "principleId": "PRO-07",
+      "domain": "User devices",
+      "contributingLevel": 3,
+      "contribution": "full",
+      "strengthenNote": "Macro restrictions, trusted publisher arrangements and other execution controls can provide evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 7, page 17"
+      }
+    },
+    {
+      "id": "T8-01",
+      "strategies": ["User application hardening"],
+      "actionId": "IT.PRO-04.1",
+      "principleId": "PRO-04",
+      "domain": "User devices",
+      "contributingLevel": 1,
+      "contribution": "full",
+      "strengthenNote": "Browser, office productivity and PDF hardening can be strong evidence for user devices.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 8, page 18"
+      }
+    },
+    {
+      "id": "T8-02",
+      "strategies": ["User application hardening"],
+      "actionId": "IT.PRO-04.2",
+      "principleId": "PRO-04",
+      "domain": "User devices",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Enforced security settings can show that baselines have been deployed.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 8, page 18"
+      }
+    },
+    {
+      "id": "T8-03",
+      "strategies": ["User application hardening"],
+      "actionId": "IT.PRO-09.2",
+      "principleId": "PRO-09",
+      "domain": "User devices",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Browser and application controls may give partial evidence but do not necessarily cover all outbound connections.",
+      "excluded": true,
+      "excludedReason": "Excluded: ASD Essentials for enterprise IT (Matrix 3, page 17), the Assessment Workbook and the Assessment evidence guide (page 46) say this action applies only to Boundary services and Critical processes and services, not User devices.",
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 8, page 18"
+      }
+    },
+    {
+      "id": "T9-01",
+      "strategies": ["Regular backups"],
+      "actionId": "IT.PRO-10.1",
+      "principleId": "PRO-10",
+      "domain": "Critical processes and services",
+      "contributingLevel": 1,
+      "contribution": "full",
+      "strengthenNote": "Backup schedules, retention arrangements and access controls are a strong starting point.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 9, page 19"
+      }
+    },
+    {
+      "id": "T9-02",
+      "strategies": ["Regular backups"],
+      "actionId": "IT.PRO-10.1",
+      "principleId": "PRO-10",
+      "domain": "Business systems",
+      "contributingLevel": 1,
+      "contribution": "full",
+      "strengthenNote": "Backup schedules, retention arrangements and access controls are a strong starting point.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 9, page 19"
+      }
+    },
+    {
+      "id": "T9-03",
+      "strategies": ["Regular backups"],
+      "actionId": "IT.PRO-10.1",
+      "principleId": "PRO-10",
+      "domain": "Boundary services",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Backup schedules, retention arrangements and access controls are a strong starting point.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 9, page 19"
+      }
+    },
+    {
+      "id": "T9-04",
+      "strategies": ["Regular backups"],
+      "actionId": "IT.PRO-10.1",
+      "principleId": "PRO-10",
+      "domain": "Identity services",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Backup schedules, retention arrangements and access controls are a strong starting point.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 9, page 19"
+      }
+    },
+    {
+      "id": "T9-05",
+      "strategies": ["Regular backups"],
+      "actionId": "IT.PRO-10.1",
+      "principleId": "PRO-10",
+      "domain": "Privileged environments",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Backup schedules, retention arrangements and access controls are a strong starting point.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 9, page 19"
+      }
+    },
+    {
+      "id": "T9-06",
+      "strategies": ["Regular backups"],
+      "actionId": "IT.PRO-10.2",
+      "principleId": "PRO-10",
+      "domain": "Critical processes and services",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Restrictions on backup access may give partial or direct evidence, depending on the architecture.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 9, page 19"
+      }
+    },
+    {
+      "id": "T9-07",
+      "strategies": ["Regular backups"],
+      "actionId": "IT.PRO-10.2",
+      "principleId": "PRO-10",
+      "domain": "Business systems",
+      "contributingLevel": 1,
+      "contribution": "partial",
+      "strengthenNote": "Restrictions on backup access may give partial or direct evidence, depending on the architecture.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 9, page 19"
+      }
+    },
+    {
+      "id": "T9-08",
+      "strategies": ["Regular backups"],
+      "actionId": "IT.PRO-10.2",
+      "principleId": "PRO-10",
+      "domain": "Privileged environments",
+      "contributingLevel": 2,
+      "contribution": "partial",
+      "strengthenNote": "Restrictions on backup access may give partial or direct evidence, depending on the architecture.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 9, page 19"
+      }
+    },
+    {
+      "id": "T9-09",
+      "strategies": ["Regular backups"],
+      "actionId": "IT.PRO-10.3",
+      "principleId": "PRO-10",
+      "domain": "Boundary services",
+      "contributingLevel": 1,
+      "contribution": "full",
+      "strengthenNote": "Current restore test results and disaster recovery exercises can be strong evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 9, page 19"
+      }
+    },
+    {
+      "id": "T9-10",
+      "strategies": ["Regular backups"],
+      "actionId": "IT.PRO-10.3",
+      "principleId": "PRO-10",
+      "domain": "Identity services",
+      "contributingLevel": 1,
+      "contribution": "full",
+      "strengthenNote": "Current restore test results and disaster recovery exercises can be strong evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 9, page 19"
+      }
+    },
+    {
+      "id": "T9-11",
+      "strategies": ["Regular backups"],
+      "actionId": "IT.PRO-10.3",
+      "principleId": "PRO-10",
+      "domain": "Critical processes and services",
+      "contributingLevel": 1,
+      "contribution": "full",
+      "strengthenNote": "Current restore test results and disaster recovery exercises can be strong evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 9, page 19"
+      }
+    },
+    {
+      "id": "T9-12",
+      "strategies": ["Regular backups"],
+      "actionId": "IT.PRO-10.3",
+      "principleId": "PRO-10",
+      "domain": "Privileged environments",
+      "contributingLevel": 1,
+      "contribution": "full",
+      "strengthenNote": "Current restore test results and disaster recovery exercises can be strong evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 9, page 19"
+      }
+    },
+    {
+      "id": "T9-13",
+      "strategies": ["Regular backups"],
+      "actionId": "IT.PRO-10.3",
+      "principleId": "PRO-10",
+      "domain": "Business systems",
+      "contributingLevel": 1,
+      "contribution": "full",
+      "strengthenNote": "Current restore test results and disaster recovery exercises can be strong evidence.",
+      "excluded": false,
+      "excludedReason": null,
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "Table 9, page 19"
+      }
+    }
+  ],
+  "strengthen": [
+    {
+      "strategies": ["Application control"],
+      "points": [
+        {
+          "topic": "Broader software requirements",
+          "text": "Application control is only part of the Trustworthy software outcome. Software also needs to be supported, verified and approved by the organisation."
+        },
+        {
+          "topic": "Administrative tooling",
+          "text": "Admin and management tools need to be limited to approved sets and run only from authorised locations."
+        },
+        {
+          "topic": "Exception management",
+          "text": "Exceptions need to be minimised, formally risk-accepted, time-limited, monitored and reviewed regularly."
+        },
+        {
+          "topic": "Domain coverage",
+          "text": "Trustworthy software applies across all technical domains, so check that existing controls cover each relevant domain."
+        }
+      ],
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "\"Where investment(s) may need to be strengthened\", page 12"
+      }
+    },
+    {
+      "strategies": ["Patch applications", "Patch operating systems"],
+      "points": [
+        {
+          "topic": "Asset coverage",
+          "text": "Asset records need to cover infrastructure, operating systems, applications, identities, credentials and data as separate assets, so existing inventories may need to grow."
+        },
+        {
+          "topic": "Risk-based treatment",
+          "text": "Patching should take into account how exploitable, exposed and critical a vulnerability is, its impact and any compensating controls. ISM, regulatory and other mandatory timeframes still apply."
+        },
+        {
+          "topic": "Domain context",
+          "text": "The right treatment timeframe may differ between domains because their assets and risks differ."
+        },
+        {
+          "topic": "Legacy systems",
+          "text": "Where legacy systems can't be removed or replaced straight away, their risk needs to be identified and managed until they are."
+        }
+      ],
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "\"Where investment(s) may need to be strengthened\", page 13"
+      }
+    },
+    {
+      "strategies": ["Multi-factor authentication"],
+      "points": [
+        {
+          "topic": "Broader identity requirements",
+          "text": "MFA is only one part of Identity, credential and access management. Also needed: removing default and unused accounts, storing keys and secrets securely, scanning for exposed credentials, turning off legacy authentication protocols, and unique credentials per account."
+        },
+        {
+          "topic": "Domain coverage",
+          "text": "Check MFA coverage in each relevant domain, not just for external or remote access."
+        }
+      ],
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "\"Where investment(s) may need to be strengthened\", page 14"
+      }
+    },
+    {
+      "strategies": ["Restrict administrative privileges"],
+      "points": [
+        {
+          "topic": "Privileged environments",
+          "text": "Identify which assets and functions make up the Privileged environments domain, including management platforms and privileged access services."
+        },
+        {
+          "topic": "Time-bound privilege",
+          "text": "Privileged actions need explicit session controls, including time-limited grants. Organisations with standing admin access should check whether they meet this."
+        },
+        {
+          "topic": "Administrative recording",
+          "text": "Logs need to capture admin actions that change systems, configurations or controls, including who, when and what."
+        },
+        {
+          "topic": "Non-person accounts",
+          "text": "Least privilege applies to service and other non-person accounts as well as user accounts."
+        },
+        {
+          "topic": "Network segmentation",
+          "text": "Lateral movement needs to be limited to explicitly approved pathways and services, based on business need and trust level."
+        }
+      ],
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "\"Where investment(s) may need to be strengthened\", page 16"
+      }
+    },
+    {
+      "strategies": ["Restrict Microsoft Office macros"],
+      "points": [
+        {
+          "topic": "Beyond macros",
+          "text": "Macro controls are part of a broader need to control software execution. Consider equivalent controls for other ways code can run."
+        },
+        {
+          "topic": "Configuration baselines",
+          "text": "Macro settings should be part of approved configuration baselines that are deployed, maintained and reviewed."
+        },
+        {
+          "topic": "Configuration drift",
+          "text": "Processes are needed to detect and fix configuration drift, using scheduled checks and, where possible, automated monitoring."
+        }
+      ],
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "\"Where investment(s) may need to be strengthened\", page 17"
+      }
+    },
+    {
+      "strategies": ["User application hardening"],
+      "points": [
+        {
+          "topic": "Approved and tailored baselines",
+          "text": "Configuration baselines should suit the environment and be formally approved and maintained."
+        },
+        {
+          "topic": "Configuration drift",
+          "text": "Deviations from approved baselines need to be detected and fixed."
+        },
+        {
+          "topic": "Coverage",
+          "text": "Baselines should cover the relevant assets in each applicable domain."
+        },
+        {
+          "topic": "Beyond user devices",
+          "text": "Secure configuration management applies across all technical domains, not only endpoints."
+        },
+        {
+          "topic": "Broader content filtering",
+          "text": "Blocking ads and browser content may help with Content filtering, but outbound connections across all relevant applications and services need to be considered."
+        }
+      ],
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "\"Where investment(s) may need to be strengthened\", page 18"
+      }
+    },
+    {
+      "strategies": ["Regular backups"],
+      "points": [
+        {
+          "topic": "Storage protection",
+          "text": "Backup storage needs to be secure and resilient, for example encrypted and immutable, offline, logically isolated or similar."
+        },
+        {
+          "topic": "Repository isolation",
+          "text": "Backup repositories need to be separated from primary systems, user environments and production workloads, so an attacker can't damage both."
+        },
+        {
+          "topic": "Recovery objectives",
+          "text": "Restore testing should show that recovery time and recovery point objectives can be met."
+        },
+        {
+          "topic": "Domain scope",
+          "text": "Check that backups cover the important data, applications and settings for each applicable domain."
+        }
+      ],
+      "source": {
+        "document": "Transitioning from the Essential Eight",
+        "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+        "location": "\"Where investment(s) may need to be strengthened\", page 20"
+      }
+    }
+  ],
+  "eventLoggingDetectionAndResponse": {
+    "principles": ["DET-01", "DET-04", "DET-02", "DET-03", "DET-05", "RES-05", "RES-03", "RES-04"],
+    "strengthen": [
+      {
+        "topic": "Visibility and response across all phases",
+        "text": "Visibility and response applies in every priority phase and grows as more domains are implemented."
+      },
+      {
+        "topic": "Log management",
+        "text": "High-value security logs and configuration changes need to be forwarded to central logging, and logs need to support correlation across systems."
+      },
+      {
+        "topic": "Detection",
+        "text": "Detection should cover unauthorised changes, unusual sign-in activity, suspicious software execution and other behaviour relevant to the domains in scope."
+      },
+      {
+        "topic": "Detection efficacy",
+        "text": "Detection coverage should be reviewed to find gaps from new assets, services, threats or architecture changes."
+      },
+      {
+        "topic": "Incident response",
+        "text": "Incident response procedures need to be documented, tested and approved."
+      },
+      {
+        "topic": "Post-incident learning",
+        "text": "Reviews should identify the gaps that enabled an incident and whether monitoring and response need to change."
+      }
+    ],
+    "source": {
+      "document": "Transitioning from the Essential Eight",
+      "url": "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight",
+      "location": "Event logging, detection and response, pages 20-21"
+    }
+  }
+}

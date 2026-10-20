@@ -1,0 +1,2330 @@
+{
+  "domains": [
+    {
+      "name": "Governance and culture",
+      "kind": "capability",
+      "priorityPhase": "all",
+      "description": "Policies, risk management, roles and security culture that the cyber security program rests on.",
+      "applicablePrincipleCount": 7,
+      "applicableActionCount": 9,
+      "source": {
+        "document": "ASD Essentials for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Table 1 (Domains and risk context), pages 5-6; Priority phases, pages 6-7"
+      }
+    },
+    {
+      "name": "Visibility and response",
+      "kind": "capability",
+      "priorityPhase": "all",
+      "description": "How the organisation detects, analyses and responds to cyber security events and incidents.",
+      "applicablePrincipleCount": 10,
+      "applicableActionCount": 12,
+      "source": {
+        "document": "ASD Essentials for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Table 1 (Domains and risk context), pages 5-6; Priority phases, pages 6-7"
+      }
+    },
+    {
+      "name": "Boundary services",
+      "kind": "technical",
+      "priorityPhase": 1,
+      "description": "Systems at the edge of the network that connect zones of different trust, such as internet-facing services and edge devices.",
+      "applicablePrincipleCount": 16,
+      "applicableActionCount": 37,
+      "source": {
+        "document": "ASD Essentials for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Table 1 (Domains and risk context), pages 5-6; Priority phases, pages 6-7"
+      }
+    },
+    {
+      "name": "Identity services",
+      "kind": "technical",
+      "priorityPhase": 1,
+      "description": "Organisation-wide identity, credential and access services, such as directories, sign-in and authorisation services, and credential stores.",
+      "applicablePrincipleCount": 16,
+      "applicableActionCount": 35,
+      "source": {
+        "document": "ASD Essentials for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Table 1 (Domains and risk context), pages 5-6; Priority phases, pages 6-7"
+      }
+    },
+    {
+      "name": "Critical processes and services",
+      "kind": "technical",
+      "priorityPhase": 2,
+      "description": "The core processes and services the organisation needs to deliver its main outcomes.",
+      "applicablePrincipleCount": 16,
+      "applicableActionCount": 37,
+      "source": {
+        "document": "ASD Essentials for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Table 1 (Domains and risk context), pages 5-6; Priority phases, pages 6-7"
+      }
+    },
+    {
+      "name": "Privileged environments",
+      "kind": "technical",
+      "priorityPhase": 2,
+      "description": "Systems that support administrator activity, management services and other high-impact administrative functions.",
+      "applicablePrincipleCount": 16,
+      "applicableActionCount": 35,
+      "source": {
+        "document": "ASD Essentials for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Table 1 (Domains and risk context), pages 5-6; Priority phases, pages 6-7"
+      }
+    },
+    {
+      "name": "Business systems",
+      "kind": "technical",
+      "priorityPhase": 3,
+      "description": "The supporting systems that keep day-to-day operations running.",
+      "applicablePrincipleCount": 13,
+      "applicableActionCount": 27,
+      "source": {
+        "document": "ASD Essentials for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Table 1 (Domains and risk context), pages 5-6; Priority phases, pages 6-7"
+      }
+    },
+    {
+      "name": "User devices",
+      "kind": "technical",
+      "priorityPhase": 3,
+      "description": "Desktops, laptops and other devices issued to staff.",
+      "applicablePrincipleCount": 10,
+      "applicableActionCount": 20,
+      "source": {
+        "document": "ASD Essentials for enterprise IT",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Table 1 (Domains and risk context), pages 5-6; Priority phases, pages 6-7"
+      }
+    }
+  ],
+  "principles": [
+    {
+      "id": "GOV-01",
+      "title": "Executive cyber security accountability",
+      "domains": ["Governance and culture"],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "GOV-08",
+      "title": "Executive artificial intelligence accountability",
+      "domains": ["Governance and culture"],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "GOV-04",
+      "title": "Cyber security resourcing",
+      "domains": ["Governance and culture"],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "GOV-03",
+      "title": "Security risk management assurance",
+      "domains": ["Governance and culture"],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "GOV-11",
+      "title": "Supplier cyber security assurance",
+      "domains": ["Governance and culture"],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "GOV-14",
+      "title": "Legacy system management",
+      "domains": ["Governance and culture"],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "PRO-14",
+      "title": "Cyber security awareness training",
+      "domains": [
+        "Governance and culture",
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments"
+      ],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "IDE-01",
+      "title": "Asset identification",
+      "domains": [
+        "Visibility and response",
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "IDE-04",
+      "title": "Security risk identification",
+      "domains": ["Visibility and response"],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "PRO-13",
+      "title": "Identity, credential and access management",
+      "domains": [
+        "Visibility and response",
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "DET-01",
+      "title": "Centralised event logging",
+      "domains": [
+        "Visibility and response",
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "DET-02",
+      "title": "Cyber security event detection",
+      "domains": [
+        "Visibility and response",
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "DET-03",
+      "title": "Cyber security incident identification",
+      "domains": ["Visibility and response"],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "DET-05",
+      "title": "Detection capability efficacy",
+      "domains": ["Visibility and response"],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "RES-05",
+      "title": "Cyber security incident coordination",
+      "domains": ["Visibility and response"],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "RES-03",
+      "title": "Cyber security incident response",
+      "domains": ["Visibility and response"],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "RES-04",
+      "title": "Cyber security incident insights",
+      "domains": ["Visibility and response"],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "PRO-01",
+      "title": "Secure system lifecycle",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "PRO-16",
+      "title": "Cyber supply chain security",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "PRO-12",
+      "title": "Least privilege access",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "PRO-05",
+      "title": "Secure administration",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments"
+      ],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "PRO-04",
+      "title": "Secure configuration management",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "PRO-06",
+      "title": "Vulnerability management",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "PRO-07",
+      "title": "Trustworthy software",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "PRO-10",
+      "title": "Regular and proven backups",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems"
+      ],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "PRO-18",
+      "title": "Network segmentation and segregation",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems"
+      ],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "PRO-09",
+      "title": "Content filtering",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems"
+      ],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    },
+    {
+      "id": "DET-04",
+      "title": "Baselined high-risk access activities",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments"
+      ],
+      "source": {
+        "document": "Essentials for enterprise IT Assessment Workbook",
+        "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+        "location": "Domain worksheets, principle headings"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "IT.GOV-01.1",
+      "principleId": "GOV-01",
+      "summary": "The board and executives have clearly defined, regularly reviewed accountability for cyber security, including setting and monitoring how much risk the organisation will accept.",
+      "domains": ["Governance and culture"],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 1, page 9"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.GOV-01.1, Potential evidence sources, page 5"
+        }
+      }
+    },
+    {
+      "id": "IT.GOV-08.1",
+      "principleId": "GOV-08",
+      "summary": "A named executive is accountable for how the organisation uses, governs and manages the risks of artificial intelligence.",
+      "domains": ["Governance and culture"],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 1, page 9"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.GOV-08.1, Potential evidence sources, page 6"
+        }
+      }
+    },
+    {
+      "id": "IT.GOV-04.1",
+      "principleId": "GOV-04",
+      "summary": "Enough skilled people and resources are assigned to run and maintain security controls, and security duties are written into role descriptions.",
+      "domains": ["Governance and culture"],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 1, page 9"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.GOV-04.1, Potential evidence sources, page 7"
+        }
+      }
+    },
+    {
+      "id": "IT.GOV-04.2",
+      "principleId": "GOV-04",
+      "summary": "Cyber security resourcing is reviewed regularly against threat trends, incident lessons and organisational change.",
+      "domains": ["Governance and culture"],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 1, page 9"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.GOV-04.2, Potential evidence sources, page 8"
+        }
+      }
+    },
+    {
+      "id": "IT.GOV-03.1",
+      "principleId": "GOV-03",
+      "summary": "An approved method and plan for assessing and treating cyber security risks is in place and used.",
+      "domains": ["Governance and culture"],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 1, page 9"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.GOV-03.1, Potential evidence sources, page 9"
+        }
+      }
+    },
+    {
+      "id": "IT.GOV-11.1",
+      "principleId": "GOV-11",
+      "summary": "Suppliers of software, hardware and services are chosen based on a cyber supply chain risk assessment, with evidence kept to support the decision.",
+      "domains": ["Governance and culture"],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 1, page 9"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.GOV-11.1, Potential evidence sources, page 10"
+        }
+      }
+    },
+    {
+      "id": "IT.GOV-11.2",
+      "principleId": "GOV-11",
+      "summary": "Suppliers' ongoing security commitments are checked, and the organisation acts when assurance lapses or a supplier's risk changes.",
+      "domains": ["Governance and culture"],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 1, page 9"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.GOV-11.2, Potential evidence sources, page 11"
+        }
+      }
+    },
+    {
+      "id": "IT.GOV-14.1",
+      "principleId": "GOV-14",
+      "summary": "Risks from legacy and unsupported technology are identified and managed through compensating controls, extra monitoring and assurance until the systems are replaced.",
+      "domains": ["Governance and culture"],
+      "e8Controls": ["ISM-1501"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 1, page 9"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.GOV-14.1, Potential evidence sources, page 12"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-14.1",
+      "principleId": "PRO-14",
+      "summary": "All staff receive security awareness training tailored to their role before they get access to systems and data.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments"
+      ],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 18"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-14.1, Potential evidence sources, page 48"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-14.2",
+      "principleId": "PRO-14",
+      "summary": "Cyber security awareness training is updated and delivered regularly to reflect current threats.",
+      "domains": ["Governance and culture"],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 1, page 9"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-14.2, Potential evidence sources, page 49"
+        }
+      }
+    },
+    {
+      "id": "IT.IDE-01.1",
+      "principleId": "IDE-01",
+      "summary": "An approved asset inventory with automated discovery picks up new and changed assets, both physical and non-physical.",
+      "domains": ["Visibility and response"],
+      "e8Controls": ["ISM-1807"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 2, page 10"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.IDE-01.1, Potential evidence sources, page 13"
+        }
+      }
+    },
+    {
+      "id": "IT.IDE-01.2",
+      "principleId": "IDE-01",
+      "summary": "Up-to-date records are kept of infrastructure, operating systems, applications, identities, credentials and data.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 11"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.IDE-01.2, Potential evidence sources, page 14"
+        }
+      }
+    },
+    {
+      "id": "IT.IDE-04.1",
+      "principleId": "IDE-04",
+      "summary": "Risk assessments consider relevant weaknesses, attacker techniques and threat behaviour, and these inputs are reviewed continuously.",
+      "domains": ["Visibility and response"],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 2, page 10"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.IDE-04.1, Potential evidence sources, page 15"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-13.1",
+      "principleId": "PRO-13",
+      "summary": "Default and unused accounts are regularly found and disabled or removed; any exception must be documented, justified, hardened and monitored.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "e8Controls": ["ISM-1647", "ISM-1648"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 12"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-13.1, Potential evidence sources, page 20"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-13.2",
+      "principleId": "PRO-13",
+      "summary": "Authentication keys, secrets and tokens are stored in approved secure repositories with access controls, including MFA.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems"
+      ],
+      "e8Controls": ["ISM-1505", "ISM-1894"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 12"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-13.2, Potential evidence sources, page 21"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-13.3",
+      "principleId": "PRO-13",
+      "summary": "Codebases, configuration files, file shares and collaboration platforms are scanned regularly for exposed keys, secrets and credentials, which are then fixed.",
+      "domains": ["Visibility and response"],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 2, page 10"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-13.3, Potential evidence sources, page 22"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-13.4",
+      "principleId": "PRO-13",
+      "summary": "Users sign in with phishing-resistant MFA, including from untrusted, external or high-risk locations.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "e8Controls": [
+        "ISM-0974",
+        "ISM-1173",
+        "ISM-1401",
+        "ISM-1504",
+        "ISM-1505",
+        "ISM-1679",
+        "ISM-1680",
+        "ISM-1681",
+        "ISM-1682",
+        "ISM-1872",
+        "ISM-1873",
+        "ISM-1874",
+        "ISM-1892",
+        "ISM-1893",
+        "ISM-1894"
+      ],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 12"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-13.4, Potential evidence sources, page 23"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-13.5",
+      "principleId": "PRO-13",
+      "summary": "Legacy authentication protocols are turned off, or where that isn't possible, restricted, monitored, compensated for and scheduled for removal.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 12"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-13.5, Potential evidence sources, page 24"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-13.6",
+      "principleId": "PRO-13",
+      "summary": "Credentials for user, machine, system and service accounts are unique to each system or account, especially where privileges are high.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "e8Controls": ["ISM-1685"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 12"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-13.6, Potential evidence sources, page 25"
+        }
+      }
+    },
+    {
+      "id": "IT.DET-01.1",
+      "principleId": "DET-01",
+      "summary": "Event logs are protected from unauthorised access, change or deletion, including encryption in transit and at rest and securing the systems and accounts that manage them.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "e8Controls": ["ISM-1815"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 18"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.DET-01.1, Potential evidence sources, page 50"
+        }
+      }
+    },
+    {
+      "id": "IT.DET-01.2",
+      "principleId": "DET-01",
+      "summary": "High-value security logs and configuration changes from infrastructure, operating systems and applications are forwarded to central log storage.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "e8Controls": ["ISM-1509", "ISM-1623", "ISM-1650", "ISM-1660", "ISM-1683", "ISM-1889"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 18"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.DET-01.2, Potential evidence sources, page 51"
+        }
+      }
+    },
+    {
+      "id": "IT.DET-01.3",
+      "principleId": "DET-01",
+      "summary": "A central log store is in place that protects logs from unauthorised access or change.",
+      "domains": ["Visibility and response"],
+      "e8Controls": ["ISM-1815"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 2, page 10"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.DET-01.3, Potential evidence sources, page 52"
+        }
+      }
+    },
+    {
+      "id": "IT.DET-02.1",
+      "principleId": "DET-02",
+      "summary": "Event logs are normalised, time-synchronised and enriched so events can be correlated across systems and environments.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 18"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.DET-02.1, Potential evidence sources, page 54"
+        }
+      }
+    },
+    {
+      "id": "IT.DET-02.2",
+      "principleId": "DET-02",
+      "summary": "Detection rules pick up unauthorised changes, unusual sign-in activity and suspicious software execution.",
+      "domains": ["Visibility and response"],
+      "e8Controls": ["ISM-0109", "ISM-1660", "ISM-1683"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 2, page 10"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.DET-02.2, Potential evidence sources, page 55"
+        }
+      }
+    },
+    {
+      "id": "IT.DET-03.1",
+      "principleId": "DET-03",
+      "summary": "Alerts and events are triaged promptly to decide whether they amount to a cyber security incident.",
+      "domains": ["Visibility and response"],
+      "e8Controls": ["ISM-0109", "ISM-1228", "ISM-1906", "ISM-1907"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 2, page 10"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.DET-03.1, Potential evidence sources, page 56"
+        }
+      }
+    },
+    {
+      "id": "IT.DET-03.2",
+      "principleId": "DET-03",
+      "summary": "Incidents are identified using signals from across identities, applications, data and infrastructure, not single isolated alerts.",
+      "domains": ["Visibility and response"],
+      "e8Controls": ["ISM-1228"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 2, page 10"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.DET-03.2, Potential evidence sources, page 57"
+        }
+      }
+    },
+    {
+      "id": "IT.DET-05.1",
+      "principleId": "DET-05",
+      "summary": "Detection coverage is reviewed regularly to find gaps caused by new assets, services or architecture changes.",
+      "domains": ["Visibility and response"],
+      "e8Controls": ["ISM-1807"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 2, page 10"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.DET-05.1, Potential evidence sources, page 58"
+        }
+      }
+    },
+    {
+      "id": "IT.RES-05.1",
+      "principleId": "RES-05",
+      "summary": "Any external coordination obligations (for example, reporting to regulators or partners) are built into incident response.",
+      "domains": ["Visibility and response"],
+      "e8Controls": ["ISM-0140"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 2, page 10"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.RES-05.1, Potential evidence sources, page 59"
+        }
+      }
+    },
+    {
+      "id": "IT.RES-03.1",
+      "principleId": "RES-03",
+      "summary": "Documented, tested and approved incident response procedures are used when responding to incidents.",
+      "domains": ["Visibility and response"],
+      "e8Controls": ["ISM-1819"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 2, page 10"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.RES-03.1, Potential evidence sources, page 60"
+        }
+      }
+    },
+    {
+      "id": "IT.RES-04.1",
+      "principleId": "RES-04",
+      "summary": "After an incident, a review identifies the security gaps that allowed each stage of it.",
+      "domains": ["Visibility and response"],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 2, page 10"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.RES-04.1, Potential evidence sources, page 61"
+        }
+      }
+    },
+    {
+      "id": "IT.RES-04.2",
+      "principleId": "RES-04",
+      "summary": "After an incident, monitoring coverage and response procedures are evaluated and improved.",
+      "domains": ["Visibility and response"],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 2, page 10"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.RES-04.2, Potential evidence sources, page 62"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-01.1",
+      "principleId": "PRO-01",
+      "summary": "Systems are designed securely: visible to monitoring, enforcing authorised access, protecting data, minimising privileges, limiting exposed services and removing what isn't needed.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "e8Controls": ["ISM-1508"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 11"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-01.1, Potential evidence sources, page 16"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-01.2",
+      "principleId": "PRO-01",
+      "summary": "Build and deployment processes are secured so controls are applied consistently across systems.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 11"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-01.2, Potential evidence sources, page 17"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-16.1",
+      "principleId": "PRO-16",
+      "summary": "Software, components and updates are checked for integrity and authenticity before use, and their origin is verified where suppliers provide evidence.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 11"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-16.1, Potential evidence sources, page 18"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-16.2",
+      "principleId": "PRO-16",
+      "summary": "Vendor advisories and threat intelligence are used to track supplier and product exposure to compromise, and the organisation acts in time for the risk.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments"
+      ],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 11"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-16.2, Potential evidence sources, page 19"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-12.1",
+      "principleId": "PRO-12",
+      "summary": "Access privileges are reviewed and updated regularly to match current roles, duties and business needs.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "e8Controls": ["ISM-1507", "ISM-1508", "ISM-1647"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 13"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-12.1, Potential evidence sources, page 26"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-12.2",
+      "principleId": "PRO-12",
+      "summary": "Only authorised administrative roles can create, change or delete accounts and roles, or use privileged functions or applications.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments"
+      ],
+      "e8Controls": ["ISM-1175", "ISM-1507", "ISM-1508"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 13"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-12.2, Potential evidence sources, page 27"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-12.3",
+      "principleId": "PRO-12",
+      "summary": "User, administrator and non-person accounts get only the minimum access and privileges they need.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments"
+      ],
+      "e8Controls": ["ISM-0445", "ISM-1175", "ISM-1508", "ISM-1883"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 13"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-12.3, Potential evidence sources, page 28"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-05.1",
+      "principleId": "PRO-05",
+      "summary": "Administrative work can only be done from dedicated, hardened environments kept separate from ordinary user activity.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments"
+      ],
+      "e8Controls": ["ISM-1380", "ISM-1387", "ISM-1688", "ISM-1689", "ISM-1898"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 13"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-05.1, Potential evidence sources, page 28"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-05.2",
+      "principleId": "PRO-05",
+      "summary": "Privileged actions require an explicit session to be set up first, including time-limited privilege grants.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments"
+      ],
+      "e8Controls": ["ISM-1649"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 13"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-05.2, Potential evidence sources, page 30"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-05.3",
+      "principleId": "PRO-05",
+      "summary": "Every administrative or management action that changes systems, configurations or controls is recorded with who did it, when, and to what.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments"
+      ],
+      "e8Controls": ["ISM-1509", "ISM-1650"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 13"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-05.3, Potential evidence sources, page 30"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-04.1",
+      "principleId": "PRO-04",
+      "summary": "Approved configuration baselines, based on vendor and industry hardening guidance, turn off or remove unneeded services, insecure settings and weak or unsupported protocols.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "e8Controls": [
+        "ISM-1412",
+        "ISM-1485",
+        "ISM-1486",
+        "ISM-1488",
+        "ISM-1542",
+        "ISM-1585",
+        "ISM-1621",
+        "ISM-1622",
+        "ISM-1654",
+        "ISM-1655",
+        "ISM-1667",
+        "ISM-1668",
+        "ISM-1669",
+        "ISM-1670",
+        "ISM-1671",
+        "ISM-1673",
+        "ISM-1675",
+        "ISM-1823",
+        "ISM-1824",
+        "ISM-1859",
+        "ISM-1860",
+        "ISM-1891"
+      ],
+      "unmatchedE8References": ["ISM-0304", "ISM-1686", "ISM-1861", "ISM-1896", "ISM-1897"],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 14"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-04.1, Potential evidence sources, page 32"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-04.2",
+      "principleId": "PRO-04",
+      "summary": "Approved configuration baselines are deployed on infrastructure, operating systems and applications.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "e8Controls": ["ISM-1412", "ISM-1489", "ISM-1622", "ISM-1672", "ISM-1859", "ISM-1860"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 14"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-04.2, Potential evidence sources, page 33"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-04.3",
+      "principleId": "PRO-04",
+      "summary": "Configuration drift is detected and fixed using scheduled checks and, where possible, automated monitoring, based on how critical a system is and how often it changes.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "e8Controls": ["ISM-1582"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 14"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-04.3, Potential evidence sources, page 34"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-06.1",
+      "principleId": "PRO-06",
+      "summary": "Known software and configuration weaknesses are found through continuous, repeatable assessment, including vulnerability scanning.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "e8Controls": [
+        "ISM-1698",
+        "ISM-1699",
+        "ISM-1700",
+        "ISM-1701",
+        "ISM-1702",
+        "ISM-1703",
+        "ISM-1807",
+        "ISM-1808",
+        "ISM-1900"
+      ],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 14"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-06.1, Potential evidence sources, page 35"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-06.2",
+      "principleId": "PRO-06",
+      "summary": "Security patches and updates are applied within defined, risk-based timeframes, or automatically where the operational impact is low.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "e8Controls": [
+        "ISM-1690",
+        "ISM-1691",
+        "ISM-1692",
+        "ISM-1693",
+        "ISM-1694",
+        "ISM-1695",
+        "ISM-1696",
+        "ISM-1697",
+        "ISM-1876",
+        "ISM-1877",
+        "ISM-1879",
+        "ISM-1901",
+        "ISM-1902",
+        "ISM-1903",
+        "ISM-1904"
+      ],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 15"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-06.2, Potential evidence sources, page 36"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-06.3",
+      "principleId": "PRO-06",
+      "summary": "Vulnerabilities above defined risk thresholds are fixed or mitigated within set timeframes based on exploitation, exposure, criticality, impact and compensating controls, and the fix is checked.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "e8Controls": [
+        "ISM-1690",
+        "ISM-1691",
+        "ISM-1692",
+        "ISM-1693",
+        "ISM-1694",
+        "ISM-1695",
+        "ISM-1696",
+        "ISM-1697",
+        "ISM-1876",
+        "ISM-1877",
+        "ISM-1879",
+        "ISM-1901",
+        "ISM-1902",
+        "ISM-1903",
+        "ISM-1904"
+      ],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 15"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-06.3, Potential evidence sources, page 37"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-07.1",
+      "principleId": "PRO-07",
+      "summary": "Only supported, verified and organisation-approved software can run; exceptions are kept to a minimum, risk-accepted, time-limited, monitored and reviewed.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "e8Controls": [
+        "ISM-0843",
+        "ISM-1487",
+        "ISM-1488",
+        "ISM-1490",
+        "ISM-1544",
+        "ISM-1582",
+        "ISM-1656",
+        "ISM-1657",
+        "ISM-1658",
+        "ISM-1659",
+        "ISM-1672",
+        "ISM-1673",
+        "ISM-1674",
+        "ISM-1675",
+        "ISM-1870",
+        "ISM-1871",
+        "ISM-1890",
+        "ISM-1891"
+      ],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 15"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-07.1, Potential evidence sources, page 38"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-07.2",
+      "principleId": "PRO-07",
+      "summary": "Administrative and management tools are limited to approved sets and can only run from authorised, known locations.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems",
+        "User devices"
+      ],
+      "e8Controls": ["ISM-1657", "ISM-1898"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 16"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-07.2, Potential evidence sources, page 39"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-10.1",
+      "principleId": "PRO-10",
+      "summary": "Important data, applications and settings are backed up on a set schedule to secure, resilient storage that is encrypted and immutable, offline, logically isolated or similar.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems"
+      ],
+      "e8Controls": ["ISM-1511", "ISM-1810", "ISM-1811"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 16"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-10.1, Potential evidence sources, page 39"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-10.2",
+      "principleId": "PRO-10",
+      "summary": "Backup repositories are kept separate from user environments, production workloads and primary systems, to prevent unauthorised access, change or deletion.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems"
+      ],
+      "e8Controls": ["ISM-1706", "ISM-1708", "ISM-1811", "ISM-1812", "ISM-1813", "ISM-1814"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 16"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-10.2, Potential evidence sources, page 41"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-10.3",
+      "principleId": "PRO-10",
+      "summary": "Backup and restore procedures are tested regularly to confirm backups are reliable and can meet recovery time and recovery point objectives.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems"
+      ],
+      "e8Controls": ["ISM-1511", "ISM-1515"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 16"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-10.3, Potential evidence sources, page 42"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-18.1",
+      "principleId": "PRO-18",
+      "summary": "Systems are placed in network zones by business criticality and trust level, with inbound and outbound access limited to approved, monitored pathways.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems"
+      ],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 17"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-18.1, Potential evidence sources, page 43"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-18.2",
+      "principleId": "PRO-18",
+      "summary": "Movement between and within network segments is limited to approved pathways and services, based on business need and trust level.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems"
+      ],
+      "e8Controls": ["ISM-1380"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 17"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-18.2, Potential evidence sources, page 44"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-09.1",
+      "principleId": "PRO-09",
+      "summary": "Outbound content is inspected to detect unauthorised transfer of sensitive or high-value data.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments",
+        "Business systems"
+      ],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 17"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-09.1, Potential evidence sources, page 45"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-09.2",
+      "principleId": "PRO-09",
+      "summary": "Outbound network connections to known malicious or untrusted destinations are blocked.",
+      "domains": ["Boundary services", "Critical processes and services"],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 17"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-09.2, Potential evidence sources, page 46"
+        }
+      }
+    },
+    {
+      "id": "IT.PRO-09.3",
+      "principleId": "PRO-09",
+      "summary": "Inbound content from external or untrusted sources is inspected to stop malicious or unsafe content being delivered.",
+      "domains": ["Boundary services", "Critical processes and services"],
+      "e8Controls": [],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": false,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 17"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.PRO-09.3, Potential evidence sources, page 47"
+        }
+      }
+    },
+    {
+      "id": "IT.DET-04.1",
+      "principleId": "DET-04",
+      "summary": "Software execution is monitored and analysed continuously to spot legitimate tools being used for malicious purposes.",
+      "domains": [
+        "Boundary services",
+        "Identity services",
+        "Critical processes and services",
+        "Privileged environments"
+      ],
+      "e8Controls": ["ISM-1228", "ISM-1623", "ISM-1660", "ISM-1907"],
+      "unmatchedE8References": [],
+      "hasE8Equivalent": true,
+      "source": {
+        "action": {
+          "document": "ASD Essentials for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Matrix 3, page 18"
+        },
+        "applicability": {
+          "document": "Essentials for enterprise IT Assessment Workbook",
+          "url": "https://www.cyber.gov.au/publication/essentials-for-enterprise-it",
+          "location": "Data sheet (Actions table) and domain worksheets"
+        },
+        "e8References": {
+          "document": "Assessment evidence guide for enterprise IT",
+          "url": "https://www.cyber.gov.au/publication/assessment-evidence-guide-for-enterprise-it",
+          "location": "IT.DET-04.1, Potential evidence sources, page 53"
+        }
+      }
+    }
+  ]
+}
