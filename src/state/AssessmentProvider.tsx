@@ -5,7 +5,7 @@
  * and turning it off (or clearing data) removes what was saved.
  */
 import { useCallback, useEffect, useMemo, useReducer, useState, type ReactNode } from 'react';
-import { e8Requirements } from '../data/index.ts';
+import { catalogue } from '../data/index.ts';
 import {
   EMPTY_STATE,
   assessmentReducer,
@@ -17,7 +17,7 @@ import { AssessmentContext, type SaveStatus } from './assessmentContext.ts';
 
 export function AssessmentProvider({ children }: { children: ReactNode }) {
   // Load saved data once, when the app starts. Saved data exists only if saving was turned on.
-  const [initial] = useState(() => loadState(e8Requirements));
+  const [initial] = useState(() => loadState(catalogue));
   const [state, dispatch] = useReducer(assessmentReducer, initial ?? EMPTY_STATE);
   const [savingEnabled, setSavingEnabled] = useState(initial !== null);
   const [saveFailed, setSaveFailed] = useState(false);

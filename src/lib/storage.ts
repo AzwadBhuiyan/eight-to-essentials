@@ -5,9 +5,8 @@
  * because storage can be unavailable (private browsing, blocked by settings, or full).
  * Saved data is validated like an imported file before it is used.
  */
-import type { E8Requirement } from '../data/types.ts';
 import type { AssessmentState } from './assessment.ts';
-import { buildExport, parseImport } from './importExport.ts';
+import { buildExport, parseImport, type Catalogue } from './importExport.ts';
 
 export const STORAGE_KEY = 'eight-to-essentials:assessment';
 
@@ -40,13 +39,13 @@ export function saveState(
 
 /** Returns the saved state, or null if nothing is saved, storage is unavailable or the data is invalid. */
 export function loadState(
-  requirements: E8Requirement[],
+  catalogue: Catalogue,
   store: KeyValueStore | null = browserStore(),
 ): AssessmentState | null {
   try {
     const text = store?.getItem(STORAGE_KEY);
     if (!text) return null;
-    const result = parseImport(text, text.length, requirements);
+    const result = parseImport(text, text.length, catalogue);
     return result.ok ? result.state : null;
   } catch {
     return null;

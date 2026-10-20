@@ -1,6 +1,10 @@
 import { useId } from 'react';
 import { usePageFocus } from '../components/usePageFocus.ts';
-import { CLOUD_CHAPTER_NOTICE } from '../lib/text.ts';
+import { ProductGroupsField } from '../components/ProductGroupsField.tsx';
+import { e8Requirements } from '../data/index.ts';
+import type { MaturityLevel } from '../data/types.ts';
+import { inScope } from '../lib/effective.ts';
+import { CLOUD_CHAPTER_NOTICE, LEVEL_NAMES, TARGET_HINT, TARGET_HINT_SOURCE } from '../lib/text.ts';
 import type { E8ReportingRequired, SystemsLocation } from '../lib/types.ts';
 import { href } from '../router.ts';
 import { useAssessment } from '../state/assessmentContext.ts';
@@ -10,6 +14,12 @@ const REPORTING_OPTIONS: { value: E8ReportingRequired; label: string }[] = [
   { value: 'no', label: 'No' },
   { value: 'not-sure', label: 'Not sure' },
 ];
+
+// Question counts come from the data, so they always match what the wizard asks.
+const TARGET_OPTIONS = ([1, 2, 3] as MaturityLevel[]).map((value) => ({
+  value,
+  questions: inScope(e8Requirements, value).length,
+}));
 
 const SYSTEMS_OPTIONS: { value: SystemsLocation; label: string }[] = [
   { value: 'own-hybrid-iaas', label: 'Our own servers, a hybrid environment, or IaaS' },
@@ -30,7 +40,10 @@ export function ContextPage() {
       <h1 ref={headingRef} tabIndex={-1}>
         About your organisation
       </h1>
-      <p>Three quick questions before the assessment. They change how your results are framed.</p>
+      <p>
+        A few quick questions before the assessment. They set what you are asked and how your
+        results are framed.
+      </p>
 
       <div className="form-field">
         <label htmlFor={`${id}-org`}>Organisation name (optional)</label>
@@ -94,6 +107,34 @@ export function ContextPage() {
           </p>
         )}
       </div>
+
+      <fieldset className="form-field" aria-describedby={`${id}-target-hint`}>
+        <legend>Which maturity level are you aiming for?</legend>
+        <p id={`${id}-target-hint`} className="muted">
+          You are only asked about requirements up to this level, and results never go above it.{' '}
+          {TARGET_HINT} (
+          <a href={TARGET_HINT_SOURCE.url} rel="noopener noreferrer" target="_blank">
+            {TARGET_HINT_SOURCE.text}
+          </a>
+          )
+        </p>
+        {TARGET_OPTIONS.map((o) => (
+          <label key={o.value} className="option">
+            <input
+              type="radio"
+              name="target-level"
+              value={o.value}
+              checked={context.targetLevel === o.value}
+              onChange={() => update({ targetLevel: o.value })}
+            />
+            <span>
+              {LEVEL_NAMES[o.value]} ({o.questions} questions at most)
+            </span>
+          </label>
+        ))}
+      </fieldset>
+
+      <ProductGroupsField target={context.targetLevel} />
 
       <p>
         <a className="button" href={href('/assessment/1')}>

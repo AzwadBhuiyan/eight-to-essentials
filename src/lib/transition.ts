@@ -32,6 +32,7 @@ import type {
 const STATUS_RANK: Record<ContributionStatus, number> = {
   gap: 0,
   unknown: 1,
+  'above-target': 1, // not assessed, like unknown: neither a gap nor a contribution
   'may-partly-contribute': 2,
   'may-contribute': 3,
 };
@@ -43,13 +44,20 @@ const FINDING_RANK: Record<RankedFinding, number> = {
   'already-effectively-addressed': 3,
 };
 
-/** Compares one mapping row with the organisation's level for one strategy. */
+/**
+ * Compares one mapping row with the organisation's level for one strategy.
+ * Levels are never above the target. If the strategy reached the target and the row needs a
+ * higher level, that level was not assessed, so the row is 'above-target', not a gap
+ * (methodology D33). If the strategy is below the target, a failed requirement capped it, so it
+ * cannot reach the row's level: that is a gap.
+ */
 export function rowStatus(
   row: Pick<ActionMapping, 'contributingLevel' | 'contribution'>,
   level: 0 | MaturityLevel | null,
+  target: MaturityLevel = 3,
 ): ContributionStatus {
   if (level === null) return 'unknown';
-  if (level < row.contributingLevel) return 'gap';
+  if (level < row.contributingLevel) return level >= target ? 'above-target' : 'gap';
   // A partial row stays partial however high the level is (methodology D20).
   return row.contribution === 'full' ? 'may-contribute' : 'may-partly-contribute';
 }
@@ -70,17 +78,18 @@ function cautionsFor(row: ActionMapping): Caution[] {
 function bestRowForStrategy(
   rows: ActionMapping[],
   level: 0 | MaturityLevel | null,
+  target: MaturityLevel,
 ): { row: ActionMapping; status: ContributionStatus } {
   let best: { row: ActionMapping; status: ContributionStatus } | undefined;
   for (const row of rows) {
-    const status = rowStatus(row, level);
+    const status = rowStatus(row, level, target);
     if (!best) {
       best = { row, status };
       continue;
     }
     const diff = STATUS_RANK[status] - STATUS_RANK[best.status];
     const tieBreak =
-      status === 'gap'
+      status === 'gap' || status === 'above-target'
         ? row.contributingLevel < best.row.contributingLevel
         : row.contributingLevel > best.row.contributingLevel;
     if (diff > 0 || (diff === 0 && tieBreak)) best = { row, status };
@@ -93,6 +102,7 @@ const FINDING_FOR: Record<ContributionStatus, RankedFinding> = {
   'may-partly-contribute': 'partially-addressed',
   gap: 'not-addressed',
   unknown: 'unknown',
+  'above-target': 'unknown',
 };
 
 /** True when ASD's transition tables map the action in this domain (it has a status from a row). */
@@ -161,6 +171,7 @@ export function buildTransition(
         const { row, status } = bestRowForStrategy(
           domainRows.filter((r) => r.strategies.includes(strategy)),
           levelOf.get(strategy) ?? null,
+          e8.target,
         );
         return {
           strategy,

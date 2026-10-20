@@ -16,6 +16,7 @@ const errors = validateData({
   essentialsStructure: read('essentials-structure.json'),
   e8ToEssentialsMap: read('e8-to-essentials-map.json'),
   meta: read('meta.json'),
+  productGroups: read('product-groups.json'),
 });
 
 if (errors.length > 0) {

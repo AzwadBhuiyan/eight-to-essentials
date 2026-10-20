@@ -299,3 +299,35 @@ describe('grouping by priority phase', () => {
     expect(counts).toEqual([16, 16, 7, 10, 16, 16, 13, 10]);
   });
 });
+
+describe('rows above the target (D33)', () => {
+  it('shows "above your target" when the strategy reached the target', () => {
+    // PRO-13.4 in Privileged environments needs MFA at ML2 (Table 5). Target ML1, MFA at ML1.
+    const result = buildTransition(frameworkData, resultWithLevels({}, 1), allYes());
+    expect(actionIn(result, 'IT.PRO-13.4', 'Privileged environments').status).toBe('above-target');
+    // An ML1 row is compared as normal.
+    expect(actionIn(result, 'IT.PRO-13.4', 'Boundary services').status).toBe('may-contribute');
+  });
+
+  it('shows a gap when the strategy is below the target', () => {
+    const result = buildTransition(
+      frameworkData,
+      resultWithLevels({ 'Multi-factor authentication': 0 }, 1),
+      allYes(),
+    );
+    expect(actionIn(result, 'IT.PRO-13.4', 'Privileged environments').status).toBe('gap');
+  });
+
+  it('never lets a principle read as fully addressed because of a row above the target', () => {
+    const result = buildTransition(frameworkData, resultWithLevels({}, 1), allYes());
+    for (const group of result.domains) {
+      for (const p of group.principles) {
+        if (p.actions.some((a) => a.status === 'above-target')) {
+          expect(p.finding, `${p.principleId} in ${p.domain}`).not.toBe(
+            'already-effectively-addressed',
+          );
+        }
+      }
+    }
+  });
+});

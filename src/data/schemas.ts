@@ -10,6 +10,7 @@ import {
   type E8ToEssentialsMap,
   type EssentialsStructure,
   type Meta,
+  type ProductGroup,
 } from './types.ts';
 
 const text = z.string().trim().min(1);
@@ -37,6 +38,10 @@ export const e8RequirementSchema = z.strictObject({
   exposure: z.enum(['boundary', 'identity', 'other']),
   naAllowed: z.boolean(),
   naGuidance: text.nullable(),
+  naGroup: z
+    .string()
+    .regex(/^[a-z-]+$/)
+    .nullable(),
   essentialsActions: z.array(actionId),
   source: z.strictObject({
     document: text,
@@ -127,6 +132,16 @@ export const e8ToEssentialsMapSchema = z.strictObject({
   }),
 });
 
+export const productGroupsSchema = z.array(
+  z.strictObject({
+    id: z.string().regex(/^[a-z-]+$/),
+    label: text,
+    description: text,
+    helpText: text.nullable(),
+    source: sourceRef,
+  }),
+);
+
 export const metaSchema = z.strictObject({
   dataCheckedOn: isoDate,
   frameworks: z.array(
@@ -153,5 +168,6 @@ const schemasMatchTypes: [
   Same<z.infer<typeof essentialsStructureSchema>, EssentialsStructure>,
   Same<z.infer<typeof e8ToEssentialsMapSchema>, E8ToEssentialsMap>,
   Same<z.infer<typeof metaSchema>, Meta>,
-] = [true, true, true, true];
+  Same<z.infer<typeof productGroupsSchema>, ProductGroup[]>,
+] = [true, true, true, true, true];
 void schemasMatchTypes;

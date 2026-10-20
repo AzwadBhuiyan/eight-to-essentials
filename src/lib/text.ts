@@ -64,3 +64,50 @@ export const LEVEL_NAMES = {
 /** ASD Essentials publication date, cited from the ASD news release of 15 October 2026 (methodology D16). */
 export const LAUNCH_NOTICE =
   'ASD published ASD Essentials on 15 October 2026. Many organisations still need to show Essential Eight progress while planning the move.';
+
+/**
+ * Hint under the target level question (methodology D29). Transitioning from the Essential Eight,
+ * page 9: Maturity Level Two was the required baseline for Commonwealth entities.
+ */
+export const TARGET_HINT = 'Government entities and many contracts ask for Maturity Level Two.';
+
+export const TARGET_HINT_SOURCE = {
+  text: 'Transitioning from the Essential Eight, page 9',
+  url: 'https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight',
+};
+
+/** Methodology D30. */
+export const NOT_NEEDED_NOTE =
+  'Not needed for your current level: a requirement at this level or below is not met in this strategy, so this one cannot change the result. Answering it still helps your action list.';
+
+/** Methodology D31. */
+export const MET_ONLY_THROUGH_NA_LABEL = "all requirements marked 'Does not apply'";
+
+/** Methodology D33. */
+export const ABOVE_TARGET_LABEL = 'Not assessed (above your target)';
+
+/** Methodology D32: the headline when some strategies are still incomplete. */
+export function provisionalHeadline(
+  completeCount: number,
+  total: number,
+  lowestCompleteLevel: 0 | 1 | 2 | 3,
+): string {
+  return `Not final: ${completeCount} of ${total} strategies complete. Based on incomplete answers, the lowest completed strategy is ${LEVEL_NAMES[lowestCompleteLevel]}.`;
+}
+
+/** Methodology D32: an upper bound for an incomplete strategy, never a claimed level. */
+export function cannotExceedText(level: 0 | 1 | 2 | 3): string {
+  return `Cannot be higher than ${LEVEL_NAMES[level]} so far (a ${LEVEL_NAMES[(level + 1) as 1 | 2 | 3]} requirement is not met).`;
+}
+
+/** Methodology D30 and D32: shown above the action list when some questions were not answered. */
+export function actionListCoverageNote(notNeeded: number, skipped: number): string | null {
+  const parts: string[] = [];
+  if (notNeeded > 0)
+    parts.push(
+      `${notNeeded} question${notNeeded === 1 ? ' was' : 's were'} not needed for your current level`,
+    );
+  if (skipped > 0) parts.push(`${skipped} question${skipped === 1 ? ' was' : 's were'} skipped`);
+  if (parts.length === 0) return null;
+  return `${parts.join(' and ')}, so this list may not show all the work for the next level.`;
+}

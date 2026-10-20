@@ -1,0 +1,68 @@
+[
+  {
+    "id": "microsoft-office",
+    "label": "We don't use Microsoft Office",
+    "description": "Answers every Microsoft Office macro and Microsoft Office hardening requirement as \"Does not apply\".",
+    "helpText": null,
+    "source": {
+      "document": "Author's grouping of Essential Eight requirements that name Microsoft Office",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "location": "Restrict Microsoft Office macros and User application hardening requirements (methodology D31)"
+    }
+  },
+  {
+    "id": "windows",
+    "label": "We have no Windows devices or servers",
+    "description": "Answers every requirement about Windows-only security features, Microsoft's blocklists and PowerShell as \"Does not apply\".",
+    "helpText": null,
+    "source": {
+      "document": "Author's grouping of Essential Eight requirements that name Windows features",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "location": "Restrict administrative privileges, Application control and User application hardening requirements (methodology D31)"
+    }
+  },
+  {
+    "id": "online-customer-services",
+    "label": "We don't offer or use online customer services that hold sensitive customer data",
+    "description": "Answers every requirement about multi-factor authentication for online customer services as \"Does not apply\".",
+    "helpText": null,
+    "source": {
+      "document": "Author's grouping of Essential Eight requirements that name online customer services",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "location": "Multi-factor authentication requirements (methodology D31)"
+    }
+  },
+  {
+    "id": "own-online-services",
+    "label": "We don't run any internet-facing online services of our own",
+    "description": "Answers every requirement about patching, scanning and MFA for your own online services as \"Does not apply\". Third-party services such as Microsoft 365 are still asked about separately.",
+    "helpText": null,
+    "source": {
+      "document": "Author's grouping of Essential Eight requirements that name the organisation's own online services",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "location": "Patch applications and Multi-factor authentication requirements (methodology D31)"
+    }
+  },
+  {
+    "id": "internet-facing-servers",
+    "label": "We have no internet-facing servers or internet-facing network devices",
+    "description": "Answers every requirement about internet-facing servers and network devices as \"Does not apply\".",
+    "helpText": "Your office router or firewall usually counts as an internet-facing network device.",
+    "source": {
+      "document": "Author's grouping of Essential Eight requirements that name internet-facing servers or network devices",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "location": "Patch operating systems, Application control and shared event log requirements (methodology D31)"
+    }
+  },
+  {
+    "id": "internal-servers",
+    "label": "We have no internal (non-internet-facing) servers",
+    "description": "Answers every requirement about internal servers as \"Does not apply\".",
+    "helpText": null,
+    "source": {
+      "document": "Author's grouping of Essential Eight requirements that name internal servers",
+      "url": "https://www.cyber.gov.au/publication/essential-eight-maturity-model",
+      "location": "Application control and shared event log requirements (methodology D31)"
+    }
+  }
+]

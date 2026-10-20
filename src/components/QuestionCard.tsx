@@ -1,15 +1,23 @@
 import { useId } from 'react';
-import type { E8Requirement, Strategy } from '../data/types.ts';
+import type { E8Requirement, ProductGroup, Strategy } from '../data/types.ts';
 import { answerProblems } from '../lib/answers.ts';
-import { ANSWER_LABELS, LEVEL_NAMES } from '../lib/text.ts';
+import { ANSWER_LABELS, LEVEL_NAMES, NOT_NEEDED_NOTE } from '../lib/text.ts';
 import type { Answer, AnswerValue } from '../lib/types.ts';
 
 interface Props {
   requirement: E8Requirement;
+  /** The answer that counts: the user's own, or one from a product group. */
   answer: Answer | undefined;
+  /** Set when the answer came from a product group rather than the user. */
+  fromGroup: ProductGroup | null;
   /** The strategy whose step this question is shown in. Other strategies are listed as shared. */
   strategy: Strategy;
+  skipped: boolean;
+  /** True when no strategy needs this question for its current level (methodology D30). */
+  notNeeded: boolean;
   onChange: (answer: Answer) => void;
+  onSkip: () => void;
+  onUnskip: () => void;
 }
 
 const SIMPLE_VALUES = ['yes', 'partly', 'no', 'not-sure'] as const;
@@ -30,7 +38,17 @@ function levelsText(levels: E8Requirement['levels']): string {
   return levels.map((l) => LEVEL_NAMES[l].replace('Maturity Level ', '')).join(', ');
 }
 
-export function QuestionCard({ requirement: r, answer, strategy, onChange }: Props) {
+export function QuestionCard({
+  requirement: r,
+  answer,
+  fromGroup,
+  strategy,
+  skipped,
+  notNeeded,
+  onChange,
+  onSkip,
+  onUnskip,
+}: Props) {
   const id = useId();
   const name = `answer-${r.id}`;
   const otherStrategies = r.strategies.filter((s) => s !== strategy);
@@ -39,10 +57,18 @@ export function QuestionCard({ requirement: r, answer, strategy, onChange }: Pro
     ...(r.naAllowed ? (['not-applicable'] as const) : []),
     'exception',
   ];
-  const problems = answer ? answerProblems(r, answer) : [];
+  // A group answer has no own reason box, so its problems are shown on the group instead.
+  const problems = answer && !fromGroup ? answerProblems(r, answer) : [];
+  const classes = [
+    'question',
+    notNeeded && !answer ? 'question--optional' : '',
+    skipped ? 'question--skipped' : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
 
   return (
-    <fieldset className="question" aria-describedby={`${id}-meta`}>
+    <fieldset className={classes} aria-describedby={`${id}-meta`}>
       <legend className="question__text">{r.plainText}</legend>
       {r.conditions.length > 0 && (
         <ul className="question__conditions">
@@ -63,6 +89,19 @@ export function QuestionCard({ requirement: r, answer, strategy, onChange }: Pro
         , {r.source.locations[0]}.
       </p>
 
+      {notNeeded && !answer && <p className="question__note">{NOT_NEEDED_NOTE}</p>}
+      {skipped && !answer && (
+        <p className="question__note">
+          <strong>Skipped for now.</strong> This question counts as unanswered.
+        </p>
+      )}
+      {fromGroup && (
+        <p className="question__note">
+          Answered &quot;Does not apply&quot; by your answer &quot;{fromGroup.label}&quot;. Choose
+          another option to override it for this question only.
+        </p>
+      )}
+
       <div className="question__options">
         {options.map((value) => (
           <label key={value} className="option">
@@ -71,14 +110,20 @@ export function QuestionCard({ requirement: r, answer, strategy, onChange }: Pro
               name={name}
               value={value}
               checked={answer?.value === value}
-              onChange={() => onChange(startAnswer(value, answer))}
+              onChange={() => onChange(startAnswer(value, fromGroup ? undefined : answer))}
             />
             <span>{ANSWER_LABELS[value]}</span>
           </label>
         ))}
       </div>
 
-      {answer?.value === 'not-applicable' && (
+      {!answer && (
+        <button type="button" className="button button--link" onClick={skipped ? onUnskip : onSkip}>
+          {skipped ? 'Undo skip' : 'Skip for now'}
+        </button>
+      )}
+
+      {answer?.value === 'not-applicable' && !fromGroup && (
         <div className="question__details">
           {r.naGuidance && <p className="muted">Use this only when: {r.naGuidance}</p>}
           <label htmlFor={`${id}-na-reason`}>Why does this not apply? (required)</label>

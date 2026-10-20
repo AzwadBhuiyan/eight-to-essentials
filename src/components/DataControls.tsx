@@ -1,5 +1,5 @@
 import { useId, useState, type ChangeEvent } from 'react';
-import { e8Requirements } from '../data/index.ts';
+import { catalogue, e8Requirements } from '../data/index.ts';
 import { MAX_IMPORT_BYTES, answersToCsv, buildExport, parseImport } from '../lib/importExport.ts';
 import { useAssessment } from '../state/assessmentContext.ts';
 import { downloadText, localDateStamp } from './download.ts';
@@ -44,7 +44,7 @@ export function DataControls() {
       setMessage({ kind: 'error', text: 'Import failed: the file is larger than 1 MB.' });
       return;
     }
-    const result = parseImport(await file.text(), file.size, e8Requirements);
+    const result = parseImport(await file.text(), file.size, catalogue);
     if (!result.ok) {
       setMessage({
         kind: 'error',

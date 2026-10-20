@@ -3,10 +3,17 @@ import e8Requirements from './e8-requirements.json';
 import essentialsStructure from './essentials-structure.json';
 import e8ToEssentialsMap from './e8-to-essentials-map.json';
 import meta from './meta.json';
+import productGroups from './product-groups.json';
 import { EXPECTED_PRINCIPLES_PER_DOMAIN, validateData, type DataFiles } from './validate.ts';
 import type { E8ToEssentialsMap, EssentialsStructure } from './types.ts';
 
-const realData: DataFiles = { e8Requirements, essentialsStructure, e8ToEssentialsMap, meta };
+const realData: DataFiles = {
+  e8Requirements,
+  essentialsStructure,
+  e8ToEssentialsMap,
+  meta,
+  productGroups,
+};
 const structure = essentialsStructure as EssentialsStructure;
 const map = e8ToEssentialsMap as E8ToEssentialsMap;
 
@@ -17,6 +24,7 @@ function copy() {
     essentialsStructure: Record<string, Record<string, unknown>[]>;
     e8ToEssentialsMap: Record<string, Record<string, unknown>[]>;
     meta: Record<string, unknown>;
+    productGroups: Record<string, unknown>[];
   };
 }
 
@@ -124,6 +132,20 @@ describe('validateData catches broken data', () => {
     expect(validateData(data)).toContain(
       'ISM-0843: links to IT.PRO-01.1, but IT.PRO-01.1 does not list ISM-0843',
     );
+  });
+
+  it('reports a product group member that does not allow "Does not apply"', () => {
+    const data = copy();
+    data.e8Requirements.find((r) => r.id === 'ISM-0843')!.naGroup = 'microsoft-office';
+    expect(validateData(data)).toContain(
+      'ISM-0843: in product group microsoft-office but naAllowed is false',
+    );
+  });
+
+  it('reports an unknown product group', () => {
+    const data = copy();
+    data.e8Requirements.find((r) => r.id === 'ISM-1671')!.naGroup = 'no-such-group';
+    expect(validateData(data)).toContain('ISM-1671: unknown product group no-such-group');
   });
 
   it('reports principle counts that no longer match the workbook', () => {

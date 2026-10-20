@@ -1,8 +1,19 @@
 import { describe, expect, it } from 'vitest';
-import { frameworkData } from '../data/index.ts';
-import { buildActionList } from './prioritise.ts';
+import { e8Requirements, frameworkData } from '../data/index.ts';
+import { buildActionList as build } from './prioritise.ts';
+import { scoreAll } from './scoring.ts';
+import type { Answers, AssessmentContext } from './types.ts';
 import { ACTION_LIST_TITLE, SUPERSEDED_TARGET_ADVICE } from './text.ts';
 import { allYes, no, notSure, partly } from './test-helpers.ts';
+
+/** Builds the action list at target Maturity Level Three, so every question is in scope. */
+function buildActionList(
+  data: typeof frameworkData,
+  answers: Answers,
+  context: Pick<AssessmentContext, 'e8ReportingRequired'>,
+) {
+  return build(data, answers, context, scoreAll(e8Requirements, answers, 3));
+}
 
 // Requirements chosen for their level, exposure and effort tags:
 //   ISM-1807  ML1  other     moderate
@@ -88,5 +99,29 @@ describe('action list framing (context question 2)', () => {
     expect(ids(lift)).toEqual(['E8MM-2023-01', 'ISM-1622']);
     expect(ids(risk)).toEqual(['ISM-1622', 'E8MM-2023-01']);
     expect(risk.items.map((i) => i.linkedToPhase1)).toEqual([true, false]);
+  });
+});
+
+describe('target, adaptive skipping and skipped questions (D29, D30, D32)', () => {
+  it('only lists requirements up to the target', () => {
+    // ISM-1173 is ML2, ISM-1504 is ML1.
+    const answers = allYes({ 'ISM-1504': no, 'ISM-1173': no });
+    const list = build(
+      frameworkData,
+      answers,
+      { e8ReportingRequired: 'yes' },
+      scoreAll(e8Requirements, answers, 1),
+    );
+    expect(ids(list)).toEqual(['ISM-1504']);
+  });
+
+  it('counts questions that were not needed or were skipped', () => {
+    // Application control fails at ML1 with nothing else answered, so its other questions are not needed.
+    // Regular backups has one required question skipped.
+    const answers: Answers = { 'ISM-0843': no };
+    const e8 = scoreAll(e8Requirements, answers, 1);
+    const list = build(frameworkData, answers, { e8ReportingRequired: 'yes' }, e8, ['ISM-1511']);
+    expect(list.notNeededCount).toBe(2); // ISM-1870 and ISM-1657
+    expect(list.skippedCount).toBe(1);
   });
 });

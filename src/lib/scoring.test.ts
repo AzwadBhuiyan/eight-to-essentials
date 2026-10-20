@@ -8,7 +8,8 @@ import type { Answers, E8Result } from './types.ts';
 const levelOf = (result: E8Result, strategy: Strategy) =>
   result.strategies.find((s) => s.strategy === strategy)!.level;
 
-const score = (answers: Answers) => scoreAll(e8Requirements, answers);
+// These tests check the base rules with every question asked (target Maturity Level Three).
+const score = (answers: Answers) => scoreAll(e8Requirements, answers, 3);
 
 describe('strategy levels', () => {
   it('gives Maturity Level Three to every strategy when everything is met', () => {
@@ -96,7 +97,7 @@ describe('incomplete strategies', () => {
     const appControl = result.strategies.find((s) => s.strategy === 'Application control')!;
     expect(appControl.status).toBe('incomplete');
     expect(appControl.level).toBeNull();
-    expect(appControl.unansweredIds).toEqual(['ISM-0843']);
+    expect(appControl.requiredRemainingIds).toEqual(['ISM-0843']);
     expect(result.headlineLevel).toBeNull();
   });
 

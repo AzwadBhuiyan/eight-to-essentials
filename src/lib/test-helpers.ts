@@ -13,21 +13,29 @@ export function allYes(overrides: Record<string, Answer> = {}): Answers {
   return { ...answers, ...overrides };
 }
 
-/** An E8 result with the given strategy levels. Unlisted strategies are at Maturity Level Three. */
+/**
+ * An E8 result with the given strategy levels and target. Unlisted strategies are at the target.
+ */
 export function resultWithLevels(
   levels: Partial<Record<Strategy, 0 | MaturityLevel | null>>,
+  target: MaturityLevel = 3,
 ): E8Result {
   const strategies = STRATEGIES.map((strategy) => {
-    const level = strategy in levels ? (levels[strategy] ?? null) : 3;
+    const level = strategy in levels ? (levels[strategy] ?? null) : target;
     return {
       strategy,
       status: level === null ? ('incomplete' as const) : ('complete' as const),
       level,
-      unansweredIds: [],
+      target,
+      requiredIds: [],
+      requiredRemainingIds: [],
+      notNeededIds: [],
       unmetIdsByLevel: { 1: [], 2: [], 3: [] },
+      cannotExceed: null,
+      metOnlyThroughNotApplicable: false,
     };
   });
-  return { strategies, headlineLevel: null };
+  return { strategies, target, headlineLevel: null, provisional: null };
 }
 
 export const no: Answer = { value: 'no' };

@@ -67,14 +67,14 @@ describe('assessment wizard', () => {
   it('asks a shared control once and shows the answer under the other strategies', async () => {
     const user = userEvent.setup();
     render(<App />);
-    await go('/assessment/3'); // Multi-factor authentication asks ISM-1815.
-    const question = screen.getByRole('group', { name: /Event logs are protected/ });
+    await go('/assessment/1'); // Patch applications asks ISM-1807 (shared with Patch operating systems).
+    const question = screen.getByRole('group', { name: /An automated tool discovers/ });
     await user.click(within(question).getByRole('radio', { name: 'No' }));
 
-    await go('/assessment/4'); // Restrict administrative privileges shows a note instead.
-    expect(screen.queryByRole('group', { name: /Event logs are protected/ })).toBeNull();
-    const note = screen.getByText(/Event logs are protected/).closest('div')!;
-    expect(note).toHaveTextContent('Shared requirement, asked under Multi-factor authentication');
+    await go('/assessment/2'); // Patch operating systems shows a note instead.
+    expect(screen.queryByRole('group', { name: /An automated tool discovers/ })).toBeNull();
+    const note = screen.getByText(/An automated tool discovers/).closest('div')!;
+    expect(note).toHaveTextContent('Shared requirement, asked under Patch applications');
     expect(note).toHaveTextContent('Your answer: No');
   });
 
@@ -82,14 +82,14 @@ describe('assessment wizard', () => {
     const user = userEvent.setup();
     render(<App />);
     await go('/assessment/5'); // Application control
-    expect(screen.getByText(/0 of 126 questions answered overall/)).toBeInTheDocument();
+    expect(screen.getByText(/0 of 46 questions answered/)).toBeInTheDocument();
     const question = screen.getByRole('group', {
       name: /Application control is in place on workstations/,
     });
     await user.click(
       within(question).getByRole('radio', { name: 'Yes, and we can show evidence' }),
     );
-    expect(screen.getByText(/1 of 126 questions answered overall/)).toBeInTheDocument();
+    expect(screen.getByText(/1 of 46 questions answered/)).toBeInTheDocument();
   });
 });
 
@@ -187,5 +187,131 @@ describe('saving, clearing and importing', () => {
     const big = new File(['x'.repeat(1024 * 1024 + 1)], 'big.json', { type: 'application/json' });
     await user.upload(screen.getByLabelText('Import answers (JSON)'), big);
     expect(await screen.findByRole('alert')).toHaveTextContent('larger than 1 MB');
+  });
+});
+
+describe('target level and product groups (D29, D31)', () => {
+  it('asks for a target, with the hint, its source and the question counts', async () => {
+    render(<App />);
+    await go('/context');
+    const target = screen.getByRole('group', { name: 'Which maturity level are you aiming for?' });
+    expect(target).toHaveTextContent(
+      'Government entities and many contracts ask for Maturity Level Two.',
+    );
+    expect(
+      within(target).getByRole('link', { name: /Transitioning from the Essential Eight, page 9/ }),
+    ).toBeInTheDocument();
+    expect(
+      within(target).getByRole('radio', { name: 'Maturity Level One (46 questions at most)' }),
+    ).toBeChecked();
+    expect(
+      within(target).getByRole('radio', { name: 'Maturity Level Two (87 questions at most)' }),
+    ).toBeInTheDocument();
+    expect(
+      within(target).getByRole('radio', { name: 'Maturity Level Three (126 questions at most)' }),
+    ).toBeInTheDocument();
+  });
+
+  it('shows the router and firewall check on the internet-facing servers group', async () => {
+    render(<App />);
+    await go('/context');
+    const checkbox = screen.getByRole('checkbox', {
+      name: 'We have no internet-facing servers or internet-facing network devices',
+    });
+    expect(checkbox).toHaveAccessibleDescription(
+      /Your office router or firewall usually counts as an internet-facing network device/,
+    );
+  });
+
+  it('answers Microsoft Office questions from one group answer, with a reason', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await go('/context');
+    await user.click(screen.getByRole('checkbox', { name: "We don't use Microsoft Office" }));
+    expect(
+      screen.getByText('Give a reason. Until you do, these questions are not answered.'),
+    ).toBeInTheDocument();
+    await user.type(
+      screen.getByLabelText('Why is this true for your organisation? (required)'),
+      'We use Google Workspace',
+    );
+
+    await go('/assessment/6'); // Restrict Microsoft Office macros
+    const question = screen.getByRole('group', { name: /macros are turned off for users/ });
+    expect(within(question).getByRole('radio', { name: 'Does not apply' })).toBeChecked();
+    expect(question).toHaveTextContent(`by your answer "We don't use Microsoft Office"`);
+    // Overriding one question keeps the group for the others.
+    await user.click(within(question).getByRole('radio', { name: 'No' }));
+    expect(within(question).getByRole('radio', { name: 'No' })).toBeChecked();
+    expect(screen.getByRole('group', { name: /from the internet are blocked/ })).toHaveTextContent(
+      'by your answer',
+    );
+  });
+});
+
+describe('skipping and partial results (D30, D32)', () => {
+  it('lets a question be skipped and the skip undone', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await go('/assessment/5');
+    const question = screen.getByRole('group', {
+      name: /Application control is in place on workstations/,
+    });
+    await user.click(within(question).getByRole('button', { name: 'Skip for now' }));
+    expect(question).toHaveTextContent('Skipped for now.');
+    expect(screen.getByText(/1 skipped/)).toBeInTheDocument();
+    await user.click(within(question).getByRole('button', { name: 'Undo skip' }));
+    expect(question).not.toHaveTextContent('Skipped for now.');
+  });
+
+  it('marks other questions "not needed" once a requirement fails', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await go('/assessment/5');
+    const first = screen.getByRole('group', {
+      name: /Application control is in place on workstations/,
+    });
+    await user.click(within(first).getByRole('radio', { name: 'No' }));
+    expect(screen.getByText(/This strategy is complete: Maturity Level Zero/)).toBeInTheDocument();
+    expect(screen.getAllByText(/Not needed for your current level/).length).toBeGreaterThan(0);
+  });
+
+  it('offers results at any time and labels an incomplete headline', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await go('/assessment/5');
+    expect(screen.getByRole('link', { name: 'See results so far' })).toHaveAttribute(
+      'href',
+      '#/results',
+    );
+    const first = screen.getByRole('group', {
+      name: /Application control is in place on workstations/,
+    });
+    await user.click(within(first).getByRole('radio', { name: 'No' }));
+
+    await go('/results');
+    expect(screen.getByText(/Not final: 1 of 8 strategies complete/)).toBeInTheDocument();
+    const row = screen.getByRole('row', { name: /Patch applications/ });
+    expect(row).toHaveTextContent(/Incomplete: 9 required questions left/);
+    expect(screen.getByRole('row', { name: /Application control/ })).toHaveTextContent(
+      'Maturity Level Zero',
+    );
+  });
+
+  it('shows an upper bound for an incomplete strategy with a failure, never a level', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await go('/context');
+    await user.click(screen.getByRole('radio', { name: /Maturity Level Two/ }));
+    await go('/assessment/5');
+    const ml2 = screen.getByRole('group', {
+      name: /Application control is in place on internet-facing servers/,
+    });
+    await user.click(within(ml2).getByRole('radio', { name: 'No' }));
+
+    await go('/results');
+    const row = screen.getByRole('row', { name: /Application control/ });
+    expect(row).toHaveTextContent('Incomplete');
+    expect(row).toHaveTextContent('Cannot be higher than Maturity Level One so far');
   });
 });

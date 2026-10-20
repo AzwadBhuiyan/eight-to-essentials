@@ -8,6 +8,7 @@ import {
   e8ToEssentialsMapSchema,
   essentialsStructureSchema,
   metaSchema,
+  productGroupsSchema,
 } from './schemas.ts';
 import { DOMAINS, STRATEGIES, type Domain } from './types.ts';
 
@@ -16,6 +17,7 @@ export interface DataFiles {
   essentialsStructure: unknown;
   e8ToEssentialsMap: unknown;
   meta: unknown;
+  productGroups: unknown;
 }
 
 /**
@@ -52,15 +54,23 @@ export function validateData(files: DataFiles): string[] {
   const structResult = essentialsStructureSchema.safeParse(files.essentialsStructure);
   const mapResult = e8ToEssentialsMapSchema.safeParse(files.e8ToEssentialsMap);
   const metaResult = metaSchema.safeParse(files.meta);
+  const groupsResult = productGroupsSchema.safeParse(files.productGroups);
 
   const errors = [
     ...schemaErrors('e8-requirements.json', reqResult),
     ...schemaErrors('essentials-structure.json', structResult),
     ...schemaErrors('e8-to-essentials-map.json', mapResult),
     ...schemaErrors('meta.json', metaResult),
+    ...schemaErrors('product-groups.json', groupsResult),
   ];
   // Cross-reference checks need well-formed data, so stop here if any shape is wrong.
-  if (!reqResult.success || !structResult.success || !mapResult.success || !metaResult.success) {
+  if (
+    !reqResult.success ||
+    !structResult.success ||
+    !mapResult.success ||
+    !metaResult.success ||
+    !groupsResult.success
+  ) {
     return errors;
   }
 
@@ -77,6 +87,7 @@ export function validateData(files: DataFiles): string[] {
     ['action ID', actions.map((a) => a.id)],
     ['mapping row ID', map.mappings.map((m) => m.id)],
     ['strategy entry', map.strategies.map((s) => s.strategy)],
+    ['product group ID', groupsResult.data.map((g) => g.id)],
   ];
   for (const [label, values] of dupeChecks) {
     for (const d of duplicates(values)) err(`Duplicate ${label}: ${d}`);
@@ -145,6 +156,17 @@ export function validateData(files: DataFiles): string[] {
     );
     if (fromActions.size !== p.domains.length || p.domains.some((d) => !fromActions.has(d)))
       err(`${p.id}: domains do not match its actions`);
+  }
+
+  // ---- product-groups.json: every group has members, and only "Does not apply" requirements join one.
+  const groupIds = new Set(groupsResult.data.map((g) => g.id));
+  for (const r of reqs) {
+    if (r.naGroup === null) continue;
+    if (!r.naAllowed) err(`${r.id}: in product group ${r.naGroup} but naAllowed is false`);
+    if (!groupIds.has(r.naGroup)) err(`${r.id}: unknown product group ${r.naGroup}`);
+  }
+  for (const g of groupsResult.data) {
+    if (!reqs.some((r) => r.naGroup === g.id)) err(`Product group ${g.id} has no requirements`);
   }
 
   // ---- e8-to-essentials-map.json

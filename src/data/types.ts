@@ -77,6 +77,8 @@ export interface E8Requirement {
   naAllowed: boolean;
   /** Explains when "Does not apply" is appropriate. Null when naAllowed is false. */
   naGuidance: string | null;
+  /** Product group whose single answer can cover this requirement (methodology D31). Null if none. */
+  naGroup: string | null;
   /** ASD Essentials action IDs that cite this control as potential evidence. */
   essentialsActions: string[];
   source: {
@@ -187,6 +189,18 @@ export interface E8ToEssentialsMap {
     strengthen: StrengthenPoint[];
     source: SourceRef;
   };
+}
+
+// ---------------------------------------------------------------- product-groups.json
+
+/** A "we don't use X" answer that covers every requirement naming that product (methodology D31). */
+export interface ProductGroup {
+  id: string;
+  label: string;
+  description: string;
+  /** Shown under the checkbox to prevent wrong ticks. Null if not needed. */
+  helpText: string | null;
+  source: SourceRef;
 }
 
 // ---------------------------------------------------------------- meta.json

@@ -8,10 +8,15 @@
  * 3. Effort: quick wins, then moderate, then projects.
  * When the organisation is not required to report Essential Eight maturity, items linked to an
  * Essentials action in a priority phase 1 technical domain come first, before the three keys above.
+ *
+ * Only answered, unmet requirements up to the target level are actions. Questions that were not
+ * needed for the current level, or were skipped, are counted so the page can say the list may not
+ * show all the work (methodology D30, D32).
  */
 import type { FrameworkData } from '../data/index.ts';
 import type { E8Requirement, Effort, Exposure } from '../data/types.ts';
 import { isMet, validAnswerFor } from './answers.ts';
+import { inScope } from './effective.ts';
 import { lowestLevel } from './scoring.ts';
 import { ACTION_LIST_TITLE, SUPERSEDED_TARGET_ADVICE } from './text.ts';
 import type {
@@ -20,6 +25,7 @@ import type {
   Answer,
   Answers,
   AssessmentContext,
+  E8Result,
   RelatedPrinciple,
 } from './types.ts';
 
@@ -47,8 +53,11 @@ export function buildActionList(
   data: FrameworkData,
   answers: Answers,
   context: Pick<AssessmentContext, 'e8ReportingRequired'>,
+  e8: E8Result,
+  skippedIds: string[] = [],
 ): ActionList {
-  const { requirements, structure } = data;
+  const { structure } = data;
+  const requirements = inScope(data.requirements, e8.target);
   const actionById = new Map(structure.actions.map((a) => [a.id, a]));
   const titleById = new Map(structure.principles.map((p) => [p.id, p.title]));
   const phase1Domains = new Set(
@@ -91,10 +100,20 @@ export function buildActionList(
     );
   });
 
+  // A shared question can be required by one strategy and not needed by another; it only
+  // counts as "not needed" when no strategy requires it.
+  const requiredRemaining = new Set(e8.strategies.flatMap((s) => s.requiredRemainingIds));
+  const notNeeded = new Set(
+    e8.strategies.flatMap((s) => s.notNeededIds).filter((id) => !requiredRemaining.has(id)),
+  );
+  const skippedCount = skippedIds.filter((id) => requiredRemaining.has(id)).length;
+
   return {
     framing,
     title: ACTION_LIST_TITLE[framing],
     advice: framing === 'risk-reduction' ? SUPERSEDED_TARGET_ADVICE : null,
     items,
+    notNeededCount: notNeeded.size,
+    skippedCount,
   };
 }

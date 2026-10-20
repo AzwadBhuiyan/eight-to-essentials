@@ -22,11 +22,12 @@ The cyber.gov.au publications are © Commonwealth of Australia and are used unde
 
 ### Essential Eight self-check
 
-- Each requirement is answered once. **Yes** counts as met. **Partly**, **No** and **Not sure** never count as met; **Not sure** also adds an item to the evidence request list.
-- **Does not apply** (only where allowed, with a reason) and **Exception with compensating control** (reason, compensating control, approver and review date) count as met, and are listed under "Exceptions to review" (D6, D21, D22).
-- A strategy is at Maturity Level L when every requirement at levels 1 to L is met. If any Maturity Level One requirement is not met, it is at Maturity Level Zero. If any of its questions is unanswered, it shows as incomplete instead of a level.
+- Users choose a target level (D29). Only requirements up to the target are asked, and no result is ever above it.
+- Each requirement is answered once. **Yes** counts as met. **Partly**, **No** and **Not sure** never count as met; **Not sure** also adds an item to the evidence request list. **Skip for now** leaves a question unanswered (D32).
+- **Does not apply** (only where allowed, with a reason, individually or through a product group) and **Exception with compensating control** (reason, compensating control, approver and review date) count as met, and are listed under "Exceptions to review" (D6, D21, D22, D31).
+- A strategy is at Maturity Level L when every requirement at levels 1 to L is met. Once a requirement fails, questions above it are not needed for the current level (D30). A strategy shows as incomplete, with no level, until every required question is answered.
 - A shared control's answer counts for every strategy it belongs to (D5).
-- The headline is the lowest strategy level, because ASD recommends reaching each maturity level across all eight strategies before moving to the next. It is not an official "overall maturity".
+- The headline is the lowest strategy level, because ASD recommends reaching each maturity level across all eight strategies before moving to the next. It is final only when all eight strategies are complete, and it is not an official "overall maturity".
 
 ### Prioritised action list
 
@@ -207,6 +208,44 @@ Two scoring questions are deferred until the phase 1 check is built: how a princ
 - **Imported files and saved data are untrusted.** They are checked against a strict schema before use: files over 1 MB are rejected before they are read; unknown fields, wrong types, unknown requirement IDs and over-long text are rejected.
 - **Work in progress is allowed.** An imported answer that is well-formed but incomplete (for example an exception without an approver) is accepted, because it may be unfinished. The wizard shows what is still needed, and the answer does not count until it is complete (D21).
 - **CSV export** protects against spreadsheet formula injection: any cell starting with `=`, `+`, `-` or `@` (and, following OWASP guidance, a tab or carriage return) is prefixed with a single quote, and every cell is quoted.
+
+### D29. Target level
+
+- **Decision:** Before the questions, users choose a target: Maturity Level One (default), Two or Three. Only requirements whose lowest level is at or below the target are asked: 46 questions for Maturity Level One, 87 for Two and 126 for Three. A strategy's level, and the headline, are never reported above the target. Results always state the target.
+- **Hint:** "Government entities and many contracts ask for Maturity Level Two." Source: Transitioning from the Essential Eight, page 9, which says Maturity Level Two was the required baseline for Commonwealth entities and many Australian critical infrastructure operators. **Note:** the source supports the part about government (Commonwealth) entities; it does not mention contracts. The wording was chosen by the author and can be narrowed to match the source.
+- **Changing the target:** answers above the target are kept but not used. Raising the target makes strategies incomplete again until the new questions are answered.
+- **Older files:** answer files from before this change (version 1) are imported with target Maturity Level Three, because every question was asked when they were made.
+- **Demo company:** its target is Maturity Level Two, so that Patch operating systems can show Maturity Level Two.
+
+### D30. Adaptive skipping
+
+- **Rule (per strategy):** let F be the lowest level of any in-scope requirement answered "Partly", "No" or "Not sure". The strategy cannot reach level F, so:
+  - **required:** every in-scope requirement below F (everything in scope if nothing has failed)
+  - **not needed:** everything else, including other unanswered requirements at level F itself, shown as "Not needed for your current level" and optional
+- **Complete** as soon as every required question has a valid answer. The level is then F − 1, or the target if nothing failed. Every requirement at or below that level has a valid answer that is met, so no level is ever claimed without the required answers.
+- **Shared questions** are needed if any of their strategies needs them.
+- **Action list:** still lists only answered, unmet requirements. A note says how many questions were not needed (and skipped), so the list may not show all the work for the next level.
+- **Transition view:** unchanged. A strategy capped at F − 1 cannot reach F, so rows that need F or higher are gaps whether or not the higher questions were answered.
+- **Tested:** besides fixed examples, a randomised test (400 assessments, fixed seed, including product-group answers with and without reasons, and skipped questions) checks that a level is never above the target, that every requirement at or below a claimed level has a valid met answer, that a level below the target is explained by an unmet requirement at the next level, and that whenever every question is validly answered the result is exactly the same as the original algorithm.
+
+### D31. Product-group answers (author's grouping)
+
+- **Decision:** six "we don't use X" answers each cover every "Does not apply" requirement naming that product or service, with one shared reason: Microsoft Office (15 requirements), Windows devices or servers (8), online customer services (5), the organisation's own internet-facing online services (5, including ISM-1504), internet-facing servers or network devices (5) and internal servers (2). ISM-1679, ISM-1680 and ISM-1872 (third-party online services) stay as single questions, because almost every organisation uses such services.
+- **Rules:** the user's own answer always wins over a group answer. A group answer counts only with a reason, like any "Does not apply". Groups can only cover requirements that allow "Does not apply" (checked by `npm run validate-data`). Each covered requirement is listed under "Exceptions to review", tagged with its group.
+- **Label:** a strategy that reaches its level only through "Does not apply" answers (for example, macros when Microsoft Office is not used) is shown as "(all requirements marked 'Does not apply')", so it is not mistaken for implemented controls.
+- **Helper text:** the internet-facing servers group shows "Your office router or firewall usually counts as an internet-facing network device." under its checkbox, so people do not tick it wrongly.
+
+### D32. Skip for now, and results at any time
+
+- **Skip for now:** any question can be skipped. A skipped question counts as unanswered. It is never counted as "not met" (that is what "Not sure" is for).
+- **See results so far:** available on every wizard step. Complete strategies show their level. Incomplete strategies show how many required questions are left and, if a requirement has failed, an upper bound ("Cannot be higher than Maturity Level One so far"), which is never a claimed level.
+- **Headline:** final only when all eight strategies are complete. Otherwise it says "Not final", how many strategies are complete, and that it is based on incomplete answers.
+
+### D33. Essential Eight first; the transition view is optional
+
+- **Decision:** The home page and results lead with the Essential Eight self-check. The ASD Essentials transition view is an optional next step ("See how this carries into ASD Essentials"), never required.
+- **Rows above the target:** if a strategy reached the target and a mapping row needs a higher Essential Eight level, the row shows "Not assessed (above your target)", not a gap, because those questions were not asked. In the roll-up (D25) it ranks like "unknown": it neither makes a principle "not addressed" nor lets it read as fully addressed. If the strategy is below the target, the row is a gap as before.
+- **Later (version 1.1):** the ASD Essentials phase 1 check can be offered as a separate "ASD Essentials only" path from the home page. It uses only the Essentials structure data, with its own state and results, and never takes Essential Eight answers as input, so it cannot convert levels into ratings. It needs paraphrased Indicators of Good Practice for each action and answers to the questions deferred in D19 first. Version 1.0 mentions it only on the roadmap.
 
 ## Differences between the E8 sources
 

@@ -13,7 +13,17 @@ const byId = (id: string) => e8Requirements.find((r) => r.id === id)!;
 function Harness({ id, strategy }: { id: string; strategy: Strategy }) {
   const [answer, setAnswer] = useState<Answer | undefined>();
   return (
-    <QuestionCard requirement={byId(id)} answer={answer} strategy={strategy} onChange={setAnswer} />
+    <QuestionCard
+      requirement={byId(id)}
+      answer={answer}
+      fromGroup={null}
+      strategy={strategy}
+      skipped={false}
+      notNeeded={false}
+      onChange={setAnswer}
+      onSkip={() => {}}
+      onUnskip={() => {}}
+    />
   );
 }
 

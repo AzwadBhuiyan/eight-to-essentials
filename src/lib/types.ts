@@ -38,26 +38,49 @@ export interface AssessmentContext {
   e8ReportingRequired: E8ReportingRequired;
   /** "Where do your systems mainly run?" SaaS and PaaS shows the cloud chapter notice. */
   systemsLocation: SystemsLocation;
+  /** The maturity level aimed for. Only requirements up to this level are asked (methodology D29). */
+  targetLevel: MaturityLevel;
 }
 
 // ---------------------------------------------------------------- E8 scoring results
 
 export interface StrategyResult {
   strategy: Strategy;
-  /** 'incomplete' when any of the strategy's questions is unanswered (or has an invalid answer). */
+  /**
+   * 'complete' once every required question has a valid answer (methodology D30).
+   * Questions that are not needed for the current level never make a strategy incomplete.
+   */
   status: 'complete' | 'incomplete';
-  /** Maturity level 0 to 3, or null when incomplete. */
+  /** Maturity level 0 to 3, never above the target. Null when incomplete. */
   level: 0 | MaturityLevel | null;
-  /** Requirements of this strategy with no valid answer. */
-  unansweredIds: string[];
+  target: MaturityLevel;
+  /** Questions that must be answered (and met) for the level to be known. */
+  requiredIds: string[];
+  /** Required questions with no valid answer yet. */
+  requiredRemainingIds: string[];
+  /** In-scope questions with no answer that are not needed for the current level. */
+  notNeededIds: string[];
   /** Answered requirements that are not met, grouped by their lowest level. */
   unmetIdsByLevel: Record<MaturityLevel, string[]>;
+  /**
+   * When a requirement is not met, the highest level the strategy could still reach.
+   * An upper bound shown for incomplete strategies, never a claimed level. Null if nothing failed.
+   */
+  cannotExceed: 0 | MaturityLevel | null;
+  /** True when the level was reached only through "Does not apply" answers (methodology D31). */
+  metOnlyThroughNotApplicable: boolean;
 }
 
 export interface E8Result {
   strategies: StrategyResult[];
-  /** Lowest strategy level. Null if any strategy is incomplete. Not an official "overall maturity". */
+  target: MaturityLevel;
+  /** Lowest strategy level. Null unless every strategy is complete. Not an official "overall maturity". */
   headlineLevel: 0 | MaturityLevel | null;
+  /**
+   * When some strategies are incomplete: the lowest level among the complete ones, clearly
+   * labelled as based on incomplete answers. Null when all are complete or none are.
+   */
+  provisional: { lowestCompleteLevel: 0 | MaturityLevel; completeCount: number } | null;
 }
 
 // ---------------------------------------------------------------- Evidence requests and exceptions
@@ -71,6 +94,8 @@ export interface ExceptionItem {
   answer: Extract<Answer, { value: 'not-applicable' | 'exception' }>;
   /** True when an exception's review date is before today. Does not change scoring. */
   reviewOverdue: boolean;
+  /** The product group that gave this answer, if it came from a group (methodology D31). */
+  groupId: string | null;
 }
 
 // ---------------------------------------------------------------- Prioritised action list
@@ -97,15 +122,22 @@ export interface ActionList {
   /** ASD's advice about superseded targets. Shown only for 'risk-reduction'. */
   advice: string | null;
   items: ActionItem[];
+  /** Unanswered questions not needed for the current level, so the list may not show all work. */
+  notNeededCount: number;
+  /** Required questions the user skipped. */
+  skippedCount: number;
 }
 
 // ---------------------------------------------------------------- Transition view
 
 /**
  * Indicative status of one mapping row for one strategy, compared with the organisation's level.
- * 'unknown' means the strategy is incomplete, so no comparison is possible.
+ * - 'unknown': the strategy is incomplete, so no comparison is possible.
+ * - 'above-target': the strategy reached the organisation's target, and the row needs a higher
+ *   level that was not assessed (methodology D33).
  */
-export type ContributionStatus = 'may-contribute' | 'may-partly-contribute' | 'gap' | 'unknown';
+export type ContributionStatus =
+  'may-contribute' | 'may-partly-contribute' | 'gap' | 'unknown' | 'above-target';
 
 /**
  * Status of one action in one domain:

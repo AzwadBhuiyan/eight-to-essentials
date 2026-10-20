@@ -32,7 +32,7 @@ export function HomePage() {
       <Disclaimer />
       <p>
         <a className="button" href={href('/context')}>
-          Start assessment
+          Check your Essential Eight
         </a>
       </p>
     </>

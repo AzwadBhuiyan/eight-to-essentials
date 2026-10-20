@@ -450,3 +450,52 @@ td {
     font-size: 2.1rem;
   }
 }
+
+/* ---------------------------------------------------------------- Phase 4b additions */
+
+.step-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+}
+
+.step-header p {
+  margin: 0;
+}
+
+.question__note {
+  margin: 0 0 0.75rem;
+  padding: 0.4rem 0.6rem;
+  border-left: 3px solid var(--notice-border);
+  background: var(--notice-bg);
+  font-size: 0.95rem;
+}
+
+/* Not needed or skipped: still visible and usable, but clearly secondary. */
+.question--optional,
+.question--skipped {
+  border-style: dashed;
+}
+
+.button--link {
+  min-height: auto;
+  padding: 0.25rem 0;
+  border: 0;
+  background: none;
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.group-option {
+  margin: 0.75rem 0;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.35rem;
+}
+
+.group-option__details p {
+  margin: 0.25rem 0 0.25rem 1.85rem;
+}

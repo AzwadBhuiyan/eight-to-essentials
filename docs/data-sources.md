@@ -59,6 +59,10 @@ How the rows were matched to action IDs: the transition tables quote the action 
 | IT.PRO-13.1 | "Identify and disable or remove default and unused accounts on a regular basis" (Table 6)                           | Adds "permitting exceptions only where the account is documented, justified, hardened and monitored"      |
 | IT.PRO-10.2 | "to prevent unauthorised modification or deletion" (Table 9)                                                        | "to prevent unauthorised access, modification or deletion"                                                |
 
+### `product-groups.json`
+
+Six "we don't use X" answers (methodology D31). The grouping is the author's: each group collects the requirements whose "Does not apply" guidance names the same product or service, plus ISM-1504 in the own online services group. Each requirement's `naGroup` field points to its group. `npm run validate-data` checks that every group has members and that only requirements allowing "Does not apply" belong to a group.
+
 ### `meta.json`
 
 Framework names, versions and publication dates, links to every document cited, the CC BY 4.0 attribution text, and `dataCheckedOn`: the date the data was last checked against the official documents (20 October 2026).
