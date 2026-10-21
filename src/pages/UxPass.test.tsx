@@ -34,9 +34,13 @@ describe('home page (D36)', () => {
     );
   });
 
-  it('has a clearly marked example preview placeholder', () => {
+  it('shows the demo company preview, clearly labelled as fictional', () => {
     render(<App />);
-    expect(screen.getByText('Example preview: coming soon')).toBeInTheDocument();
+    const preview = screen.getByText('Example result: Fictional demo company').closest('section')!;
+    expect(preview).toHaveTextContent('Swan River Analytics is a fictional company');
+    expect(
+      within(preview).getByRole('link', { name: 'See the full example result' }),
+    ).toHaveAttribute('href', '#/example');
   });
 
   it('shows the three how-it-works steps in order', () => {
@@ -115,16 +119,8 @@ describe('home page (D36)', () => {
   it('shows the disclaimer and no images that could look like government branding', () => {
     render(<App />);
     expect(screen.getByText(DISCLAIMER)).toBeInTheDocument();
+    // The only picture is the demo's radar chart; there are no logos, crests or other images.
     expect(document.querySelectorAll('img, svg')).toHaveLength(0);
-  });
-});
-
-describe('example page placeholder', () => {
-  it('says the example company is being added', async () => {
-    render(<App />);
-    await go('/example');
-    expect(screen.getByRole('heading', { level: 1, name: 'Example result' })).toBeInTheDocument();
-    expect(screen.getByText('The example company is being added.')).toBeInTheDocument();
   });
 });
 

@@ -24,11 +24,13 @@ const groupById = new Map(productGroups.map((g) => [g.id, g]));
 const homeStrategy = (r: E8Requirement) => r.strategies[0];
 
 export function AssessmentPage({ step }: { step: number }) {
-  const { state, dispatch } = useAssessment();
+  const { state, dispatch, isDemo, paths } = useAssessment();
   const derived = useDerived(state);
   const { target, effective, asked, answeredIds, notNeededIds, requiredLeft } = derived;
   const strategy = STRATEGIES[step - 1]!;
-  const headingRef = usePageFocus<HTMLHeadingElement>(`Step ${step}: ${strategy}`);
+  const headingRef = usePageFocus<HTMLHeadingElement>(
+    `${isDemo ? 'Demo: ' : ''}Step ${step}: ${strategy}`,
+  );
 
   const requirements = asked
     .filter((r) => r.strategies.includes(strategy))
@@ -44,7 +46,7 @@ export function AssessmentPage({ step }: { step: number }) {
         <p className="muted">
           Strategy {step} of {STRATEGIES.length} · Target: {LEVEL_NAMES[target]}
         </p>
-        <a className="button button--secondary" href={href('/results')}>
+        <a className="button button--secondary" href={href(paths.results)}>
           See results so far
         </a>
       </div>
@@ -95,12 +97,14 @@ export function AssessmentPage({ step }: { step: number }) {
                   onChange={(answer) => dispatch({ type: 'set-answer', id: r.id, answer })}
                   onSkip={() => dispatch({ type: 'skip', id: r.id })}
                   onUnskip={() => dispatch({ type: 'unskip', id: r.id })}
+                  readOnly={isDemo}
                 />
               ) : (
                 <SharedNote
                   key={r.id}
                   requirement={r}
                   answer={validAnswerFor(r, effective.answers)}
+                  homeHref={href(paths.assessment(STRATEGIES.indexOf(homeStrategy(r)!) + 1))}
                 />
               ),
             )}
@@ -111,16 +115,17 @@ export function AssessmentPage({ step }: { step: number }) {
       <nav className="step-nav" aria-label="Assessment steps">
         <a
           className="button button--secondary"
-          href={href(step === 1 ? '/context' : `/assessment/${step - 1}`)}
+          href={href(step === 1 ? paths.context : paths.assessment(step - 1))}
         >
           Back
         </a>
-        <a className="button" href={href(isLast ? '/results' : `/assessment/${step + 1}`)}>
+        <a className="button" href={href(isLast ? paths.results : paths.assessment(step + 1))}>
           {isLast ? 'See results' : `Next: ${STRATEGIES[step]}`}
         </a>
       </nav>
 
-      <DataControls />
+      {/* The demo is read-only and never saved, so it has no save, import or clear controls. */}
+      {!isDemo && <DataControls />}
     </>
   );
 }
@@ -129,18 +134,19 @@ export function AssessmentPage({ step }: { step: number }) {
 function SharedNote({
   requirement: r,
   answer,
+  homeHref,
 }: {
   requirement: E8Requirement;
   answer: Answer | undefined;
+  homeHref: string;
 }) {
   const home = homeStrategy(r)!;
-  const homeStep = STRATEGIES.indexOf(home) + 1;
   return (
     <div className="question question--shared">
       <p className="question__text">{r.plainText}</p>
       <p className="question__meta">
         <span className="badge">{r.id}</span> Shared requirement, asked under{' '}
-        <a href={href(`/assessment/${homeStep}`)}>{home}</a>. Your answer:{' '}
+        <a href={homeHref}>{home}</a>. Your answer:{' '}
         <strong>{answer ? ANSWER_LABELS[answer.value] : 'not answered yet'}</strong>.
       </p>
     </div>

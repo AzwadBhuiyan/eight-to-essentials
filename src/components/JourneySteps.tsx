@@ -1,5 +1,6 @@
 import { JOURNEY_STEPS } from '../lib/siteText.ts';
 import { href } from '../router.ts';
+import { useAssessment } from '../state/assessmentContext.ts';
 
 /**
  * "Step 1 of 3: Essential Eight questions" and the other steps (methodology D38).
@@ -7,6 +8,8 @@ import { href } from '../router.ts';
  */
 export function JourneySteps({ current }: { current: 1 | 2 | 3 }) {
   const here = JOURNEY_STEPS[current - 1]!;
+  const { paths } = useAssessment();
+  const pathFor = { 1: paths.context, 2: paths.results, 3: paths.transition } as const;
   return (
     <nav className="journey" aria-label="Your progress">
       <p className="journey__current">
@@ -20,7 +23,7 @@ export function JourneySteps({ current }: { current: 1 | 2 | 3 }) {
                 {s.step}. {s.label}
               </span>
             ) : (
-              <a href={href(s.path)}>
+              <a href={href(pathFor[s.step])}>
                 {s.step}. {s.label}
               </a>
             )}

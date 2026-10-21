@@ -22,9 +22,9 @@ import { useDerived } from '../state/useDerived.ts';
 const StrategyRadarChart = lazy(() => import('../components/StrategyRadarChart.tsx'));
 
 export function ResultsPage() {
-  const { state } = useAssessment();
+  const { state, isDemo, paths } = useAssessment();
   const { e8, target, effective, asked } = useDerived(state);
-  const headingRef = usePageFocus<HTMLHeadingElement>('Results');
+  const headingRef = usePageFocus<HTMLHeadingElement>(isDemo ? 'Demo: results' : 'Results');
   const today = localDateStamp(new Date());
 
   const { actionList, evidence, exceptions } = useMemo(
@@ -46,7 +46,7 @@ export function ResultsPage() {
 
   function exportCsv() {
     downloadText(
-      `eight-to-essentials-results-${today}.csv`,
+      `eight-to-essentials-${isDemo ? 'demo-' : ''}results-${today}.csv`,
       resultsToCsv({
         context: state.context,
         e8,
@@ -54,6 +54,7 @@ export function ResultsPage() {
         evidence,
         exceptions,
         productGroups,
+        fictionalDemo: isDemo,
       }),
       'text/csv;charset=utf-8',
     );
@@ -80,7 +81,7 @@ export function ResultsPage() {
       {!anyAnswered ? (
         <p>
           You have not answered any questions yet.{' '}
-          <a href={href('/context')}>Start the assessment</a>.
+          <a href={href(paths.context)}>Start the assessment</a>.
         </p>
       ) : (
         <>
@@ -131,7 +132,7 @@ export function ResultsPage() {
               Essential Eight work may carry into, what may need strengthening, and what is not
               covered by the Essential Eight at all. Indicative only.
             </p>
-            <a className="button" href={href('/transition')}>
+            <a className="button" href={href(paths.transition)}>
               See how this carries into ASD Essentials
             </a>
           </section>
@@ -139,8 +140,8 @@ export function ResultsPage() {
       )}
 
       <p>
-        <a className="button button--secondary" href={href('/assessment/1')}>
-          Back to the assessment
+        <a className="button button--secondary" href={href(paths.assessment(1))}>
+          {isDemo ? "See the demo company's answers" : 'Back to the assessment'}
         </a>
       </p>
     </>

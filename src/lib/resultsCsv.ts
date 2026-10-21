@@ -27,6 +27,8 @@ export interface ResultsForExport {
   evidence: EvidenceRequest[];
   exceptions: ExceptionItem[];
   productGroups: ProductGroup[];
+  /** True when exporting the fictional demo company, so the file says so in its first row. */
+  fictionalDemo?: boolean;
 }
 
 const EFFORT_LABEL = {
@@ -61,7 +63,7 @@ const level = (value: 0 | 1 | 2 | 3 | null) => (value === null ? '' : LEVEL_NAME
 const joinDetails = (parts: (string | null | false)[]) => parts.filter(Boolean).join(' | ');
 
 export function resultsToCsv(results: ResultsForExport): string {
-  const { context, e8, actionList, evidence, exceptions, productGroups } = results;
+  const { context, e8, actionList, evidence, exceptions, productGroups, fictionalDemo } = results;
   const groupLabel = new Map(productGroups.map((g) => [g.id, g.label]));
   const organisation = context.organisationName.trim();
   const target = `Target: ${LEVEL_NAMES[e8.target]}`;
@@ -72,7 +74,7 @@ export function resultsToCsv(results: ResultsForExport): string {
       'Note',
       '',
       '',
-      `Eight to Essentials results${organisation ? ` for ${organisation}` : ''}. ${DISCLAIMER}`,
+      `${fictionalDemo ? 'FICTIONAL DEMO COMPANY. ' : ''}Eight to Essentials results${organisation ? ` for ${organisation}` : ''}. ${DISCLAIMER}`,
       '',
       '',
       '',

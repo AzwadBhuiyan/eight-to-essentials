@@ -1,0 +1,289 @@
+{
+  "profile": {
+    "name": "Swan River Analytics",
+    "label": "Fictional demo company",
+    "summary": "A fictional Perth-based SaaS company with about 85 staff, working hybrid. It sells analytics dashboards to mining and logistics customers in Western Australia, runs on AWS (one production and one development account) with Microsoft 365, GitHub and Jira, and has 12 developers, 4 IT and operations staff and a part-time IT manager who owns security. It wants to win government and enterprise customers who ask for Essential Eight alignment.",
+    "source": "Fictional company created for this demo. It is not a real organisation and its answers are illustrative only."
+  },
+  "assessment": {
+    "format": "eight-to-essentials-answers",
+    "version": 2,
+    "exportedAt": "2026-10-21T00:00:00.000Z",
+    "context": {
+      "organisationName": "Swan River Analytics",
+      "e8ReportingRequired": "yes",
+      "systemsLocation": "own-hybrid-iaas",
+      "targetLevel": 2
+    },
+    "answers": {
+      "ISM-1807": {
+        "value": "yes"
+      },
+      "ISM-1808": {
+        "value": "yes"
+      },
+      "ISM-1698": {
+        "value": "yes"
+      },
+      "ISM-1699": {
+        "value": "yes"
+      },
+      "ISM-1876": {
+        "value": "yes"
+      },
+      "ISM-1690": {
+        "value": "yes"
+      },
+      "ISM-1691": {
+        "value": "yes"
+      },
+      "E8MM-2023-01": {
+        "value": "yes"
+      },
+      "E8MM-2023-02": {
+        "value": "yes"
+      },
+      "ISM-1700": {
+        "value": "no"
+      },
+      "ISM-1693": {
+        "value": "partly"
+      },
+      "ISM-1701": {
+        "value": "yes"
+      },
+      "ISM-1702": {
+        "value": "yes"
+      },
+      "ISM-1877": {
+        "value": "yes"
+      },
+      "ISM-1694": {
+        "value": "yes"
+      },
+      "ISM-1695": {
+        "value": "yes"
+      },
+      "ISM-1501": {
+        "value": "exception",
+        "reason": "Two field laptops run Windows 10 because a mining customer's sensor calibration tool does not yet support Windows 11.",
+        "compensatingControl": "The laptops are kept on an isolated network segment with no internet access except vendor updates, are used only for calibration, and are replaced when the tool is updated.",
+        "approvedBy": "Managing Director",
+        "reviewDate": "2027-03-31"
+      },
+      "ISM-1504": {
+        "value": "yes"
+      },
+      "ISM-1679": {
+        "value": "yes"
+      },
+      "ISM-1680": {
+        "value": "yes"
+      },
+      "ISM-1892": {
+        "value": "yes"
+      },
+      "ISM-1893": {
+        "value": "not-applicable",
+        "reason": "We do not use any third-party online customer services. Customers sign in to our own dashboard platform, which is covered by ISM-1892 and ISM-1681."
+      },
+      "ISM-1681": {
+        "value": "yes"
+      },
+      "ISM-1401": {
+        "value": "yes"
+      },
+      "ISM-1173": {
+        "value": "yes"
+      },
+      "ISM-0974": {
+        "value": "yes"
+      },
+      "ISM-1872": {
+        "value": "partly"
+      },
+      "ISM-1873": {
+        "value": "no"
+      },
+      "ISM-1682": {
+        "value": "partly"
+      },
+      "ISM-1683": {
+        "value": "not-sure"
+      },
+      "ISM-1815": {
+        "value": "yes"
+      },
+      "ISM-1906": {
+        "value": "partly"
+      },
+      "ISM-1228": {
+        "value": "not-sure"
+      },
+      "E8MM-2023-03": {
+        "value": "yes"
+      },
+      "ISM-0140": {
+        "value": "yes"
+      },
+      "ISM-1819": {
+        "value": "partly"
+      },
+      "ISM-1507": {
+        "value": "yes"
+      },
+      "ISM-0445": {
+        "value": "no"
+      },
+      "ISM-1175": {
+        "value": "partly"
+      },
+      "ISM-1883": {
+        "value": "yes"
+      },
+      "ISM-1380": {
+        "value": "no"
+      },
+      "ISM-1688": {
+        "value": "yes"
+      },
+      "ISM-1689": {
+        "value": "no"
+      },
+      "ISM-1647": {
+        "value": "no"
+      },
+      "ISM-1648": {
+        "value": "no"
+      },
+      "E8MM-2023-04": {
+        "value": "yes"
+      },
+      "ISM-1387": {
+        "value": "no"
+      },
+      "ISM-1685": {
+        "value": "partly"
+      },
+      "ISM-1509": {
+        "value": "yes"
+      },
+      "ISM-1650": {
+        "value": "yes"
+      },
+      "ISM-0843": {
+        "value": "no"
+      },
+      "ISM-1870": {
+        "value": "no"
+      },
+      "ISM-1657": {
+        "value": "no"
+      },
+      "ISM-1490": {
+        "value": "no"
+      },
+      "ISM-1871": {
+        "value": "no"
+      },
+      "ISM-1544": {
+        "value": "no"
+      },
+      "ISM-1582": {
+        "value": "no"
+      },
+      "ISM-1660": {
+        "value": "no"
+      },
+      "ISM-1671": {
+        "value": "yes"
+      },
+      "ISM-1488": {
+        "value": "yes"
+      },
+      "ISM-1672": {
+        "value": "yes"
+      },
+      "ISM-1489": {
+        "value": "yes"
+      },
+      "ISM-1673": {
+        "value": "no"
+      },
+      "ISM-1654": {
+        "value": "yes"
+      },
+      "ISM-1486": {
+        "value": "yes"
+      },
+      "ISM-1485": {
+        "value": "partly"
+      },
+      "ISM-1585": {
+        "value": "no"
+      },
+      "ISM-1412": {
+        "value": "partly"
+      },
+      "ISM-1667": {
+        "value": "no"
+      },
+      "ISM-1668": {
+        "value": "no"
+      },
+      "ISM-1669": {
+        "value": "no"
+      },
+      "ISM-1542": {
+        "value": "no"
+      },
+      "ISM-1859": {
+        "value": "partly"
+      },
+      "ISM-1823": {
+        "value": "no"
+      },
+      "ISM-1670": {
+        "value": "no"
+      },
+      "ISM-1860": {
+        "value": "no"
+      },
+      "ISM-1824": {
+        "value": "no"
+      },
+      "ISM-1623": {
+        "value": "no"
+      },
+      "ISM-1889": {
+        "value": "no"
+      },
+      "ISM-1511": {
+        "value": "yes"
+      },
+      "ISM-1810": {
+        "value": "yes"
+      },
+      "ISM-1811": {
+        "value": "yes"
+      },
+      "ISM-1515": {
+        "value": "yes"
+      },
+      "ISM-1812": {
+        "value": "yes"
+      },
+      "ISM-1814": {
+        "value": "yes"
+      },
+      "E8MM-2023-05": {
+        "value": "not-sure"
+      },
+      "E8MM-2023-06": {
+        "value": "no"
+      }
+    },
+    "productGroups": {},
+    "skipped": []
+  }
+}

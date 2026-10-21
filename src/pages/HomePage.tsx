@@ -1,3 +1,4 @@
+import { DemoPreview } from '../components/DemoPreview.tsx';
 import { Disclaimer } from '../components/Disclaimer.tsx';
 import { usePageFocus } from '../components/usePageFocus.ts';
 import { e8Requirements } from '../data/index.ts';
@@ -36,15 +37,7 @@ export function HomePage() {
         </a>
       </div>
 
-      {/* Phase 7 fills this with the fictional demo company's real result. */}
-      <section className="card card--placeholder" aria-labelledby="example-preview">
-        <p className="placeholder-label" id="example-preview">
-          Example preview: coming soon
-        </p>
-        <p className="muted">
-          A fictional example company&apos;s radar chart and headline result will appear here.
-        </p>
-      </section>
+      <DemoPreview />
 
       <section aria-labelledby="how-it-works">
         <h2 id="how-it-works">How it works</h2>

@@ -38,9 +38,11 @@ const requirementText = new Map(e8Requirements.map((r) => [r.id, r.plainText]));
  * mapping tables. It never converts Essential Eight levels into ASD Essentials ratings.
  */
 export function TransitionPage() {
-  const { state } = useAssessment();
+  const { state, isDemo, paths } = useAssessment();
   const { e8, effective, target } = useDerived(state);
-  const headingRef = usePageFocus<HTMLHeadingElement>(TRANSITION_TITLE);
+  const headingRef = usePageFocus<HTMLHeadingElement>(
+    isDemo ? `Demo: ${TRANSITION_TITLE}` : TRANSITION_TITLE,
+  );
   const transition = useMemo(
     () => buildTransition(frameworkData, e8, effective.answers),
     [e8, effective],
@@ -61,7 +63,13 @@ export function TransitionPage() {
       <PartsSummary current={2} />
       <p className="lead">How your Essential Eight results may carry into ASD Essentials.</p>
       <p className="view-label" role="note">
-        {TRANSITION_VIEW_LABEL} <a href={href('/results')}>See your Essential Eight result</a>.
+        {TRANSITION_VIEW_LABEL}{' '}
+        <a href={href(paths.results)}>
+          {isDemo
+            ? "See the demo company's Essential Eight result"
+            : 'See your Essential Eight result'}
+        </a>
+        .
       </p>
       <p className="notice">
         <strong>{TRANSITION_BANNER}</strong>
@@ -72,7 +80,7 @@ export function TransitionPage() {
       {!anyAnswered ? (
         <p>
           Answer the Essential Eight questions first.{' '}
-          <a href={href('/context')}>Start the assessment</a>.
+          <a href={href(paths.context)}>Start the assessment</a>.
         </p>
       ) : (
         <>
@@ -264,7 +272,7 @@ export function TransitionPage() {
       )}
 
       <p className="button-row">
-        <a className="button button--secondary" href={href('/results')}>
+        <a className="button button--secondary" href={href(paths.results)}>
           Back to Essential Eight results
         </a>
       </p>

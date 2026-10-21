@@ -63,6 +63,10 @@ How the rows were matched to action IDs: the transition tables quote the action 
 
 Six "we don't use X" answers (methodology D31). The grouping is the author's: each group collects the requirements whose "Does not apply" guidance names the same product or service, plus ISM-1504 in the own online services group. Each requirement's `naGroup` field points to its group. `npm run validate-data` checks that every group has members and that only requirements allowing "Does not apply" belong to a group.
 
+### `demo-swan-river.json`
+
+The fictional demo company, Swan River Analytics (methodology D40). It is not a real organisation; the profile and answers are illustrative only. The answers use the same file format as an exported assessment and are loaded through the same strict check as an imported file, so a mistake in the demo data stops the app from loading rather than showing wrong results. A test checks that the demo produces exactly the intended levels.
+
 ### `meta.json`
 
 Framework names, versions and publication dates, links to every document cited, the CC BY 4.0 attribution text, and `dataCheckedOn`: the date the data was last checked against the official documents (20 October 2026).

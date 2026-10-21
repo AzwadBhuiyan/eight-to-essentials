@@ -18,6 +18,8 @@ interface Props {
   onChange: (answer: Answer) => void;
   onSkip: () => void;
   onUnskip: () => void;
+  /** True for the fictional demo: answers are shown but cannot be changed. */
+  readOnly?: boolean;
 }
 
 const SIMPLE_VALUES = ['yes', 'partly', 'no', 'not-sure'] as const;
@@ -48,6 +50,7 @@ export function QuestionCard({
   onChange,
   onSkip,
   onUnskip,
+  readOnly = false,
 }: Props) {
   const id = useId();
   const name = `answer-${r.id}`;
@@ -110,6 +113,7 @@ export function QuestionCard({
               name={name}
               value={value}
               checked={answer?.value === value}
+              disabled={readOnly}
               onChange={() => onChange(startAnswer(value, fromGroup ? undefined : answer))}
             />
             <span>{ANSWER_LABELS[value]}</span>
@@ -117,7 +121,7 @@ export function QuestionCard({
         ))}
       </div>
 
-      {!answer && (
+      {!answer && !readOnly && (
         <button type="button" className="button button--link" onClick={skipped ? onUnskip : onSkip}>
           {skipped ? 'Undo skip' : 'Skip for now'}
         </button>
@@ -131,6 +135,7 @@ export function QuestionCard({
             id={`${id}-na-reason`}
             value={answer.reason}
             maxLength={2000}
+            readOnly={readOnly}
             onChange={(e) => onChange({ ...answer, reason: e.target.value })}
           />
         </div>
@@ -147,6 +152,7 @@ export function QuestionCard({
             id={`${id}-ex-reason`}
             value={answer.reason}
             maxLength={2000}
+            readOnly={readOnly}
             onChange={(e) => onChange({ ...answer, reason: e.target.value })}
           />
           <label htmlFor={`${id}-ex-control`}>Compensating control (required)</label>
@@ -154,6 +160,7 @@ export function QuestionCard({
             id={`${id}-ex-control`}
             value={answer.compensatingControl}
             maxLength={2000}
+            readOnly={readOnly}
             onChange={(e) => onChange({ ...answer, compensatingControl: e.target.value })}
           />
           <label htmlFor={`${id}-ex-approver`}>Approved by (required)</label>
@@ -162,6 +169,7 @@ export function QuestionCard({
             type="text"
             value={answer.approvedBy}
             maxLength={200}
+            readOnly={readOnly}
             onChange={(e) => onChange({ ...answer, approvedBy: e.target.value })}
           />
           <label htmlFor={`${id}-ex-date`}>Review date (required)</label>
@@ -169,6 +177,7 @@ export function QuestionCard({
             id={`${id}-ex-date`}
             type="date"
             value={answer.reviewDate}
+            readOnly={readOnly}
             onChange={(e) => onChange({ ...answer, reviewDate: e.target.value })}
           />
         </div>
