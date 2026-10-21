@@ -3,6 +3,7 @@ import { author, repositoryUrl } from '../config/author.ts';
 import { meta } from '../data/index.ts';
 import { NOT_AFFILIATED } from '../lib/siteText.ts';
 import { href } from '../router.ts';
+import { Logo } from './Logo.tsx';
 
 /** Page frame: skip link, header with navigation, main content and the author footer. */
 export function Layout({ children }: { children: ReactNode }) {
@@ -14,7 +15,8 @@ export function Layout({ children }: { children: ReactNode }) {
       <header className="site-header">
         <div className="container site-header__inner">
           <a className="site-name" href={href('/')}>
-            Eight to Essentials
+            <Logo />
+            <span>Eight to Essentials</span>
           </a>
           <nav aria-label="Main">
             <ul className="nav-list">

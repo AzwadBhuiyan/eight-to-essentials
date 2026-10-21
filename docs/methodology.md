@@ -347,6 +347,13 @@ Each wizard step opens with one short statement, written as a statement rather t
 - **Repository security:** CodeQL analysis (security-extended queries) on every push, pull request and weekly; Dependabot weekly for npm and GitHub Actions; `SECURITY.md` pointing to GitHub's private vulnerability reporting (no email).
 - **Accessibility, checked in Chrome on every page in light and dark mode:** no axe-core violations (including colour contrast), a visible focus ring on every element reached with the Tab key, and no sideways scrolling at 360 pixels wide. Two problems found and fixed: chart labels were cut off on phones (long strategy names now wrap), and question text sat on the card's border (now inside the card).
 
+### D44. Release files and branding
+
+- **Logo:** an "8 → E" mark (an 8, an arrow and an E in white on blue), drawn as a simple SVG. It is the favicon and appears, decorative and hidden from screen readers, next to the site name. No crest, government colour scheme, or ASD or ACSC logo is used.
+- **Social preview:** `public/og-image.png` (1200 × 630) with the name, tagline, author and "Not affiliated with ASD". Open Graph tags use absolute URLs because LinkedIn and other sites require them.
+- **Deployment:** GitHub Pages through GitHub Actions. The deploy workflow runs the same checks as CI before publishing. Hash-based routing means refreshing any page never shows a 404.
+- **README:** the "one of the first" comparison is left out until similar tools have been checked again.
+
 ## Differences between the E8 sources
 
 Results of comparing the maturity model (November 2023) with the workbook's "Existing E8 Controls" sheet (113 controls) and the E8 references in the Assessment evidence guide.

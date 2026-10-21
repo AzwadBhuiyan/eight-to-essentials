@@ -79,6 +79,26 @@ describe('source code', () => {
   });
 });
 
+describe('page metadata', () => {
+  const html = readFileSync('index.html', 'utf8');
+
+  it('has the favicon and a social preview card with absolute URLs', () => {
+    expect(html).toContain('<link rel="icon" type="image/svg+xml" href="/favicon.svg" />');
+    expect(html).toMatch(
+      /property="og:image"\s+content="https:\/\/azwadbhuiyan\.github\.io\/eight-to-essentials\/og-image\.png"/,
+    );
+    expect(html).toContain('name="twitter:card" content="summary_large_image"');
+    expect(html).toContain('<meta name="author" content="Azwad Bhuiyan" />');
+  });
+
+  it('ships the favicon and the 1200 × 630 preview image', () => {
+    const png = readFileSync(join('public', 'og-image.png'));
+    // A PNG stores its width and height as big-endian numbers at bytes 16 and 20.
+    expect([png.readUInt32BE(16), png.readUInt32BE(20)]).toEqual([1200, 630]);
+    expect(readFileSync(join('public', 'favicon.svg'), 'utf8')).toContain('<svg');
+  });
+});
+
 describe('GitHub workflows', () => {
   const workflowDir = join('.github', 'workflows');
   const workflows = readdirSync(workflowDir)

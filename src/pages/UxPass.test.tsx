@@ -119,8 +119,12 @@ describe('home page (D36)', () => {
   it('shows the disclaimer and no images that could look like government branding', () => {
     render(<App />);
     expect(screen.getByText(DISCLAIMER)).toBeInTheDocument();
-    // The only picture is the demo's radar chart; there are no logos, crests or other images.
-    expect(document.querySelectorAll('img, svg')).toHaveLength(0);
+    // The only images are the app's own "8 → E" logo (and, on screen, the demo's radar chart):
+    // no crests, government logos or other pictures.
+    const images = Array.from(document.querySelectorAll('img, svg'));
+    expect(images.length).toBe(1);
+    expect(images[0]!.hasAttribute('data-logo')).toBe(true);
+    expect(images[0]!.getAttribute('aria-hidden')).toBe('true');
   });
 });
 

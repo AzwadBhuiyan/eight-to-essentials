@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Eight to Essentials">
+  <title>Eight to Essentials</title>
+  <rect width="64" height="64" rx="12" fill="#0b5394"/>
+  <g fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 8 -->
+    <circle cx="15" cy="23.5" r="6.5"/>
+    <circle cx="15" cy="40.5" r="8.5"/>
+    <!-- arrow -->
+    <path d="M28 32h10M34 26.5 39.5 32 34 37.5"/>
+    <!-- E -->
+    <path d="M56 16H46v32h10M46 32h8"/>
+  </g>
+</svg>

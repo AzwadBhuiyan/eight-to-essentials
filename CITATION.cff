@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: 'If you use this software, please cite it as below.'
+title: 'Eight to Essentials'
+abstract: >-
+  A free, open-source, browser-only self-assessment and planning aid that checks Essential Eight
+  maturity and gives an indicative view of the move to ASD Essentials.
+type: software
+authors:
+  - family-names: Bhuiyan
+    given-names: Azwad
+version: 1.0.0
+date-released: 2026-10-22
+license: MIT
+repository-code: 'https://github.com/AzwadBhuiyan/eight-to-essentials'
+url: 'https://azwadbhuiyan.github.io/eight-to-essentials/'
+keywords:
+  - essential-eight
+  - asd-essentials
+  - cybersecurity
+  - grc
+  - risk-assessment
+  - australia
