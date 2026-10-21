@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { author, repositoryUrl } from '../config/author.ts';
+import { NOT_AFFILIATED } from '../lib/siteText.ts';
 import { href } from '../router.ts';
 
 /** Page frame: skip link, header with navigation, main content and the author footer. */
@@ -42,10 +43,7 @@ export function Layout({ children }: { children: ReactNode }) {
               Source on GitHub
             </a>
           </p>
-          <p className="muted">
-            Not affiliated with or endorsed by the Australian Signals Directorate (ASD) or the
-            Australian Cyber Security Centre (ACSC).
-          </p>
+          <p className="muted">{NOT_AFFILIATED}</p>
         </div>
       </footer>
     </>

@@ -1,28 +1,32 @@
 /*
- * Eight to Essentials styles.
- * Mobile-first (works from 360px wide), light and dark themes, visible keyboard focus.
- * Colour pairs are chosen to meet WCAG 2.2 AA contrast (4.5:1 for text, 3:1 for UI parts).
+ * Eight to Essentials styles (methodology D39).
+ * Simple and professional: one card style, one accent colour (blue), generous spacing,
+ * readable line lengths, mobile-first from 360px, light and dark themes.
+ * Green, amber and red appear only where they carry meaning (status labels, problems,
+ * destructive buttons), always alongside text.
+ * Colour pairs meet WCAG 2.2 AA (4.5:1 for text, 3:1 for UI parts); ratios are noted below.
  * No inline styles are used anywhere, so the Content Security Policy can stay strict.
  */
 
 :root {
   color-scheme: light dark;
   --bg: #ffffff;
-  --surface: #f4f6f8;
-  --text: #1b1f24;
-  --muted: #4a5360; /* 7.8:1 on --bg */
-  --border: #8a94a1; /* 3.1:1 on --bg, for form controls */
-  --rule: #d5dae0;
-  --primary: #0b5394; /* 7.8:1 on --bg */
-  --primary-text: #ffffff;
-  --focus: #b4580b;
+  --surface: #f5f7f9;
+  --text: #1b1f24; /* 16.6:1 on --bg, 15.4:1 on --surface */
+  --muted: #4a5360; /* 7.8:1 on --bg, 7.3:1 on --surface */
+  --border: #808a97; /* form control borders: 3.5:1 on --bg, 3.3:1 on --surface */
+  --rule: #d5dae0; /* decorative dividers only */
+  --primary: #0b5394; /* the accent: 7.8:1 on --bg, 7.3:1 on --surface */
+  --primary-text: #ffffff; /* 7.8:1 on --primary */
+  --accent-tint: #eaf2fb; /* text 14.7:1, --primary 6.9:1, --muted 6.9:1 on it */
+  --focus: #b4580b; /* 4.8:1 on --bg, 4.5:1 on --surface */
   --danger: #a3271b; /* 7.3:1 on --bg */
-  --notice-bg: #eaf2fb;
-  --notice-border: #0b5394;
   --warning-bg: #fff4e5;
   --warning-border: #8a4b00;
   --success-bg: #e8f5ec;
   --success-border: #1e6b3a;
+  --radius: 0.5rem;
+  --gap: 1rem;
 
   font-family:
     system-ui,
@@ -31,23 +35,22 @@
     Roboto,
     sans-serif;
   font-size: 100%;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #121417;
     --surface: #1c2026;
-    --text: #e8eaed;
-    --muted: #b3bac4; /* 9.4:1 on --bg */
-    --border: #7f8995;
+    --text: #e8eaed; /* 15.3:1 on --bg, 13.6:1 on --surface */
+    --muted: #b3bac4; /* 9.4:1 on --bg, 8.4:1 on --surface */
+    --border: #7f8995; /* 5.2:1 on --bg, 4.6:1 on --surface */
     --rule: #333a43;
-    --primary: #8ab4f8; /* 8.8:1 on --bg */
-    --primary-text: #0b1320;
-    --focus: #ffb26b;
-    --danger: #ff8a80;
-    --notice-bg: #172636;
-    --notice-border: #8ab4f8;
+    --primary: #8ab4f8; /* 8.8:1 on --bg, 7.8:1 on --surface */
+    --primary-text: #0b1320; /* 8.8:1 on --primary */
+    --accent-tint: #172636; /* text 12.8:1, --primary 7.3:1 on it */
+    --focus: #ffb26b; /* 10.4:1 on --bg, 9.2:1 on --surface */
+    --danger: #ff8a80; /* 8.1:1 on --bg */
     --warning-bg: #2e2416;
     --warning-border: #f0b35b;
     --success-bg: #15281c;
@@ -69,18 +72,25 @@ body {
 
 .container {
   width: 100%;
-  max-width: 48rem;
+  max-width: 50rem;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
 main {
   padding-top: 1.5rem;
-  padding-bottom: 3rem;
+  padding-bottom: 4rem;
 }
 
-main:focus {
+main:focus,
+h1:focus {
   outline: none;
+}
+
+/* Short, readable lines. */
+main p,
+main li {
+  max-width: 65ch;
 }
 
 h1,
@@ -94,12 +104,17 @@ h1 {
   margin: 0.5rem 0 1rem;
 }
 
-h1:focus {
-  outline: none;
-}
-
 h2 {
   font-size: 1.3rem;
+  margin: 2.5rem 0 0.75rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin: 1.75rem 0 0.5rem;
+}
+
+section {
   margin-top: 2rem;
 }
 
@@ -140,7 +155,6 @@ a {
 
 .site-header {
   border-bottom: 1px solid var(--rule);
-  background: var(--surface);
 }
 
 .site-header__inner {
@@ -170,8 +184,7 @@ a {
 
 .site-footer {
   border-top: 1px solid var(--rule);
-  background: var(--surface);
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   font-size: 0.95rem;
 }
 
@@ -194,28 +207,71 @@ a {
   font-variant-numeric: tabular-nums;
 }
 
-.notice,
+.warning-text {
+  color: var(--danger);
+}
+
+/* ---------------------------------------------------------------- cards
+ * One card style for every boxed element, so the app looks consistent.
+ */
+
+.card,
+.question,
+.item,
+.panel,
+.group-option,
+.trust,
 .disclaimer,
-.message {
-  padding: 0.75rem 1rem;
-  border-left: 4px solid var(--notice-border);
-  background: var(--notice-bg);
-  border-radius: 0.25rem;
+.notice,
+.view-label,
+.message,
+details.domain,
+details.principle {
+  margin: var(--gap) 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--surface);
 }
 
+.card > :first-child,
+.item > :first-child,
+.panel > :first-child,
+.trust > :first-child {
+  margin-top: 0;
+}
+
+/* Accent cards: information the user should notice. */
+.notice,
+.view-label {
+  border-color: var(--primary);
+  background: var(--accent-tint);
+}
+
+.view-label {
+  border-width: 2px;
+  font-weight: 600;
+}
+
+/* The disclaimer is a neutral card with a bold label (D39). */
 .disclaimer {
-  border-left-color: var(--warning-border);
-  background: var(--warning-bg);
+  border-left: 4px solid var(--border);
 }
 
-.message--success {
-  border-left-color: var(--success-border);
-  background: var(--success-bg);
+.card--placeholder {
+  border: 2px dashed var(--border);
+  background: var(--bg);
+  text-align: center;
 }
 
-.message--error {
-  border-left-color: var(--danger);
-  background: var(--warning-bg);
+.card--placeholder p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.placeholder-label {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
 }
 
 .message p,
@@ -223,8 +279,117 @@ a {
   margin: 0.25rem 0;
 }
 
-.benefits li {
+.message--success {
+  border-left: 4px solid var(--success-border);
+}
+
+.message--error {
+  border-left: 4px solid var(--danger);
+}
+
+/* ---------------------------------------------------------------- framework labels (D38) */
+
+.framework-tag {
+  display: inline-block;
+  margin: 0.25rem 0 0;
+  padding: 0.1rem 0.65rem;
+  border: 2px solid var(--primary);
+  border-radius: 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--primary);
+}
+
+/* Essential Eight is filled, ASD Essentials is outlined: an extra cue on top of the text. */
+.framework-tag--e8 {
+  background: var(--primary);
+  color: var(--primary-text);
+}
+
+/* ---------------------------------------------------------------- journey and parts */
+
+.journey {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.journey__current {
+  margin: 0 0 0.25rem;
+  font-weight: 700;
+}
+
+.journey__steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+}
+
+.journey__step--current {
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.parts ul {
+  margin: 0.5rem 0 1rem;
+  padding-left: 1.25rem;
+}
+
+/* ---------------------------------------------------------------- home page */
+
+.steps {
+  display: grid;
+  gap: var(--gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.steps__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.steps__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--primary-text);
+  font-weight: 700;
+}
+
+@media (min-width: 40rem) {
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.explainer li,
+.trust li {
   margin-bottom: 0.5rem;
+}
+
+.source-link {
+  font-size: 0.9rem;
+}
+
+.trust__title {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
 }
 
 /* ---------------------------------------------------------------- buttons */
@@ -254,17 +419,38 @@ a {
   color: var(--danger);
 }
 
+.button--link {
+  min-height: auto;
+  padding: 0.25rem 0;
+  border: 0;
+  background: none;
+  color: var(--primary);
+  text-decoration: underline;
+}
+
 .button-row,
 .step-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin: 1rem 0;
+  margin: 1.25rem 0;
 }
 
 .step-nav {
   justify-content: space-between;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
+}
+
+.step-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+}
+
+.step-header p {
+  margin: 0;
 }
 
 /* The file input is hidden; its label looks like a button. Show focus on the label instead. */
@@ -312,7 +498,7 @@ textarea {
 }
 
 .form-field {
-  margin: 1.5rem 0;
+  margin: 1.75rem 0;
 }
 
 .option {
@@ -331,15 +517,11 @@ textarea {
   accent-color: var(--primary);
 }
 
-/* ---------------------------------------------------------------- questions */
-
-.question {
-  margin: 1rem 0;
-  padding: 1rem;
-  border: 1px solid var(--rule);
-  border-radius: 0.5rem;
-  background: var(--surface);
+.group-option__details p {
+  margin: 0.25rem 0 0.25rem 1.85rem;
 }
+
+/* ---------------------------------------------------------------- questions */
 
 .question__text {
   font-size: 1.05rem;
@@ -372,6 +554,14 @@ textarea {
   border-left: 3px solid var(--rule);
 }
 
+.question__note {
+  margin: 0 0 0.75rem;
+  padding: 0.4rem 0.6rem;
+  border-left: 3px solid var(--primary);
+  background: var(--accent-tint);
+  font-size: 0.95rem;
+}
+
 .question__problems {
   margin: 0.75rem 0;
   padding: 0.5rem 0.75rem;
@@ -384,8 +574,12 @@ textarea {
   margin: 0.25rem 0;
 }
 
-.question--shared {
+/* Shared, not-needed and skipped questions: still usable, but clearly secondary. */
+.question--shared,
+.question--optional,
+.question--skipped {
   border-style: dashed;
+  background: var(--bg);
 }
 
 details {
@@ -412,13 +606,10 @@ progress {
 
 .panel {
   margin-top: 2.5rem;
-  padding: 1rem;
-  border: 1px solid var(--rule);
-  border-radius: 0.5rem;
 }
 
 .panel__title {
-  margin-top: 0;
+  margin-top: 0.25rem;
 }
 
 .save-status {
@@ -445,62 +636,7 @@ td {
   vertical-align: top;
 }
 
-@media (min-width: 40rem) {
-  h1 {
-    font-size: 2.1rem;
-  }
-}
-
-/* ---------------------------------------------------------------- Phase 4b additions */
-
-.step-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem 1rem;
-}
-
-.step-header p {
-  margin: 0;
-}
-
-.question__note {
-  margin: 0 0 0.75rem;
-  padding: 0.4rem 0.6rem;
-  border-left: 3px solid var(--notice-border);
-  background: var(--notice-bg);
-  font-size: 0.95rem;
-}
-
-/* Not needed or skipped: still visible and usable, but clearly secondary. */
-.question--optional,
-.question--skipped {
-  border-style: dashed;
-}
-
-.button--link {
-  min-height: auto;
-  padding: 0.25rem 0;
-  border: 0;
-  background: none;
-  color: var(--primary);
-  font-weight: 600;
-  text-decoration: underline;
-}
-
-.group-option {
-  margin: 0.75rem 0;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid var(--rule);
-  border-radius: 0.35rem;
-}
-
-.group-option__details p {
-  margin: 0.25rem 0 0.25rem 1.85rem;
-}
-
-/* ---------------------------------------------------------------- results (Phase 5) */
+/* ---------------------------------------------------------------- results */
 
 .chart {
   margin: 1rem 0;
@@ -520,14 +656,6 @@ td {
 
 .item-list {
   padding-left: 1.25rem;
-}
-
-.item {
-  margin: 0 0 1rem;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--rule);
-  border-radius: 0.5rem;
-  background: var(--surface);
 }
 
 .item p {
@@ -573,51 +701,20 @@ td {
   overflow-wrap: anywhere;
 }
 
-.warning-text {
-  color: var(--danger);
-}
-
-@media (max-width: 30rem) {
-  .details-list {
-    grid-template-columns: 1fr;
-  }
-
-  .details-list dd {
-    margin-bottom: 0.4rem;
-  }
-}
-
-/* ---------------------------------------------------------------- transition view (Phase 6) */
-
-.phase h3 {
-  margin-top: 1.75rem;
-}
-
-details.domain,
-details.principle {
-  margin: 0.75rem 0;
-  border: 1px solid var(--rule);
-  border-radius: 0.5rem;
-  background: var(--bg);
-}
+/* ---------------------------------------------------------------- transition view */
 
 details.domain {
-  padding: 0.5rem 1rem;
-}
-
-details.principle {
-  padding: 0.4rem 0.75rem;
-  background: var(--surface);
+  background: var(--bg);
 }
 
 details.domain > summary,
 details.principle > summary {
-  padding: 0.35rem 0;
+  padding: 0.25rem 0;
   color: var(--text);
 }
 
 .domain__name {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 .principle__note {
@@ -633,7 +730,7 @@ details.principle > summary {
   gap: 0.4rem 1rem;
 }
 
-/* Status labels always carry text; the border style and colour are extra cues. */
+/* Status labels always carry text; the border style and tint are extra cues. */
 .status {
   display: inline-block;
   padding: 0 0.45rem;
@@ -693,21 +790,35 @@ details.principle > summary {
   font-style: italic;
 }
 
-/* Framework labels, so ASD Essentials content is never mistaken for Essential Eight results. */
-.framework-tag {
-  display: inline-block;
-  margin: 0.5rem 0 0;
-  padding: 0.1rem 0.6rem;
-  border: 2px solid var(--primary);
-  border-radius: 1rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+/* ---------------------------------------------------------------- small screens */
+
+@media (max-width: 30rem) {
+  .card,
+  .question,
+  .item,
+  .panel,
+  .group-option,
+  .trust,
+  .disclaimer,
+  .notice,
+  .view-label,
+  .message,
+  details.domain,
+  details.principle {
+    padding: 0.85rem 1rem;
+  }
+
+  .details-list {
+    grid-template-columns: 1fr;
+  }
+
+  .details-list dd {
+    margin-bottom: 0.4rem;
+  }
 }
 
-.view-label {
-  padding: 0.75rem 1rem;
-  border: 2px solid var(--primary);
-  border-radius: 0.35rem;
-  font-weight: 600;
+@media (min-width: 40rem) {
+  h1 {
+    font-size: 2.1rem;
+  }
 }

@@ -1,5 +1,8 @@
 import { useMemo } from 'react';
 import { Disclaimer } from '../components/Disclaimer.tsx';
+import { FrameworkTag } from '../components/FrameworkTag.tsx';
+import { JourneySteps } from '../components/JourneySteps.tsx';
+import { PartsSummary } from '../components/PartsSummary.tsx';
 import { TransitionDomain } from '../components/TransitionDomain.tsx';
 import { usePageFocus } from '../components/usePageFocus.ts';
 import {
@@ -50,10 +53,12 @@ export function TransitionPage() {
 
   return (
     <>
-      <p className="framework-tag framework-tag--essentials">ASD Essentials</p>
+      <JourneySteps current={3} />
+      <FrameworkTag framework="essentials" />
       <h1 ref={headingRef} tabIndex={-1}>
         {TRANSITION_TITLE}
       </h1>
+      <PartsSummary current={2} />
       <p className="lead">How your Essential Eight results may carry into ASD Essentials.</p>
       <p className="view-label" role="note">
         {TRANSITION_VIEW_LABEL} <a href={href('/results')}>See your Essential Eight result</a>.

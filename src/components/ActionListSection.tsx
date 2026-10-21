@@ -1,4 +1,5 @@
 import { useId, useState } from 'react';
+import { FrameworkTag } from './FrameworkTag.tsx';
 import { ANSWER_LABELS, LEVEL_NAMES, actionListCoverageNote } from '../lib/text.ts';
 import type { ActionItem, ActionList } from '../lib/types.ts';
 
@@ -23,6 +24,7 @@ export function ActionListSection({ list }: { list: ActionList }) {
 
   return (
     <section aria-labelledby={`${id}-heading`}>
+      <FrameworkTag framework="e8" />
       <h2 id={`${id}-heading`}>{list.title}</h2>
       {list.advice && <p className="notice">{list.advice}</p>}
       <p className="muted">

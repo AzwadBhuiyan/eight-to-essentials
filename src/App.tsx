@@ -3,6 +3,7 @@ import { usePageFocus } from './components/usePageFocus.ts';
 import { STRATEGIES } from './data/types.ts';
 import { AssessmentPage } from './pages/AssessmentPage.tsx';
 import { ContextPage } from './pages/ContextPage.tsx';
+import { ExamplePage } from './pages/ExamplePage.tsx';
 import { HomePage } from './pages/HomePage.tsx';
 import { ResultsPage } from './pages/ResultsPage.tsx';
 import { TransitionPage } from './pages/TransitionPage.tsx';
@@ -12,6 +13,7 @@ import { AssessmentProvider } from './state/AssessmentProvider.tsx';
 function Page({ path }: { path: string }) {
   if (path === '/') return <HomePage />;
   if (path === '/context') return <ContextPage />;
+  if (path === '/example') return <ExamplePage />;
   if (path === '/results') return <ResultsPage />;
   if (path === '/transition') return <TransitionPage />;
   const step = /^\/assessment\/(\d+)$/.exec(path);

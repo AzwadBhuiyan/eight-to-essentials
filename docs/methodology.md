@@ -268,6 +268,48 @@ Two scoring questions are deferred until the phase 1 check is built: how a princ
 - **Statuses** are always shown as text. Colour and border style are extra cues only.
 - **Always labelled as ASD Essentials:** the page is titled "ASD Essentials transition view", carries an "ASD Essentials" tag, and opens with a box saying "You are looking at ASD Essentials for enterprise IT, not your Essential Eight result", with a link back to the Essential Eight results. Every section and phase heading names ASD Essentials, and so does every domain ("ASD Essentials domain: …"), principle and action. Wherever the page refers to the user's own answers it says "Essential Eight" ("From your Essential Eight strategy …", "Your Essential Eight answer"). Tests check every heading, domain, principle, action and contribution for these labels.
 
+### D36. Home page
+
+- **Headline:** "Find your Essential Eight level, and see what it means for ASD Essentials."
+- **Order:** headline and a one-line summary; "Start my assessment" and "See an example result" buttons; an example preview (a clearly marked placeholder until the fictional demo company is added); "How it works" in three steps; a short explainer; "What to expect"; the disclaimer; and the trust line.
+- **Explainer:** each factual sentence links to its source:
+  - "ASD describes the Essential Eight as the most effective of its strategies to mitigate cyber security incidents." (Essential Eight maturity model, page 1)
+  - "Maturity Level Two has been the required baseline for Commonwealth entities." (Transitioning from the Essential Eight, page 9)
+  - "ASD Essentials is its successor." (ASD Essentials FAQ, page 2: "Why is ASD replacing the Essential Eight?")
+  - "ASD published it on 15 October 2026 and describes it as an evolution of the Essential Eight. Both are maintained during the transition." (ASD news release, 15 October 2026)
+  - "This tool checks your Essential Eight level and helps you plan for ASD Essentials." (about the tool; no source needed)
+  - The phrase "Australia's current cyber baseline" was considered and not used, because no source document says it.
+- **What to expect:** the question count for the default target is read from the data (46 at Maturity Level One), "about 20 to 30 minutes (our estimate)" (the author's estimate, to be revised after user testing), saving and exporting, and "Nothing you enter leaves your browser."
+- **Trust line:** "Built on ASD's publicly available guidance", linking the Essential Eight maturity model, ASD Essentials for enterprise IT and Transitioning from the Essential Eight, with the CC BY 4.0 credit and always paired with "Not affiliated with or endorsed by ASD or the ACSC". No crest, logos or government styling.
+- **Example result:** "See an example result" goes to `#/example`, which says the example company is being added, until the demo is built.
+
+### D37. Strategy introductions (author's wording)
+
+Each wizard step opens with one short statement, written as a statement rather than a question so it cannot be mistaken for something to answer:
+
+| Strategy                           | Introduction                                                             |
+| ---------------------------------- | ------------------------------------------------------------------------ |
+| Patch applications                 | Known security flaws in your software are fixed quickly.                 |
+| Patch operating systems            | Servers, computers and network devices are kept up to date.              |
+| Multi-factor authentication        | A stolen password alone isn't enough to get in.                          |
+| Restrict administrative privileges | Powerful admin accounts are limited and kept separate from everyday use. |
+| Application control                | Only approved programs can run.                                          |
+| Restrict Microsoft Office macros   | Risky macros in documents are blocked.                                   |
+| User application hardening         | Web browsers, Office and PDF software are locked down.                   |
+| Regular backups                    | You can recover if ransomware hits.                                      |
+
+### D38. Journey and framework labels
+
+- **Journey indicator** on every journey page: "Step 1 of 3: Essential Eight questions" (context questions and wizard), "Step 2 of 3: Your Essential Eight result", "Step 3 of 3: ASD Essentials (optional)". Inside the wizard: "Strategy n of 8".
+- **Parts box** at the top of the results and transition pages: "Part 1: your Essential Eight result. Part 2 (optional): how this carries into ASD Essentials", with the current part marked "(you are here)".
+- **Framework tags:** every results section carries an "Essential Eight" tag (filled), and the transition page and the results page's next-step card carry an "ASD Essentials" tag (outlined). Results headings that did not already say so were renamed ("Essential Eight maturity by strategy", "Essential Eight: evidence to find", "Essential Eight: exceptions to review"); the two action list titles are unchanged. The transition page's own labelling is described in D35.
+
+### D39. Look and feel
+
+- One card style for every boxed element; more white space; paragraphs limited to about 65 characters wide; readable from 360px; light and dark themes.
+- One accent colour (blue) for buttons, links, tags, notes and focus. The disclaimer is a neutral card with a bold label. Green, amber and red are kept only where they carry meaning (status labels, "still needed" messages, the destructive "Clear my data" button), always alongside text.
+- Every colour pair meets WCAG 2.2 AA; ratios are recorded in the stylesheet. The light-theme border colour was darkened (to 3.3:1 on the card background) so form control borders still meet the 3:1 requirement on cards.
+
 ## Differences between the E8 sources
 
 Results of comparing the maturity model (November 2023) with the workbook's "Existing E8 Controls" sheet (113 controls) and the E8 references in the Assessment evidence guide.

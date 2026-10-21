@@ -1,6 +1,9 @@
 import { lazy, Suspense, useMemo } from 'react';
 import { ActionListSection } from '../components/ActionListSection.tsx';
 import { Disclaimer } from '../components/Disclaimer.tsx';
+import { FrameworkTag } from '../components/FrameworkTag.tsx';
+import { JourneySteps } from '../components/JourneySteps.tsx';
+import { PartsSummary } from '../components/PartsSummary.tsx';
 import { EvidenceSection } from '../components/EvidenceSection.tsx';
 import { ExceptionsSection } from '../components/ExceptionsSection.tsx';
 import { downloadText, localDateStamp } from '../components/download.ts';
@@ -58,9 +61,12 @@ export function ResultsPage() {
 
   return (
     <>
+      <JourneySteps current={2} />
+      <FrameworkTag framework="e8" />
       <h1 ref={headingRef} tabIndex={-1}>
         Essential Eight results
       </h1>
+      <PartsSummary current={1} />
       {state.context.organisationName.trim() && (
         <p className="muted">For {state.context.organisationName.trim()}</p>
       )}
@@ -79,7 +85,8 @@ export function ResultsPage() {
       ) : (
         <>
           <section aria-labelledby="levels-heading">
-            <h2 id="levels-heading">Maturity by strategy</h2>
+            <FrameworkTag framework="e8" />
+            <h2 id="levels-heading">Essential Eight maturity by strategy</h2>
             <Suspense fallback={<p className="muted">Loading chart…</p>}>
               <StrategyRadarChart e8={e8} />
             </Suspense>
@@ -115,6 +122,7 @@ export function ResultsPage() {
           </div>
 
           <section className="panel" aria-labelledby="next-step">
+            <FrameworkTag framework="essentials" />
             <h2 id="next-step" className="panel__title">
               Next step (optional)
             </h2>

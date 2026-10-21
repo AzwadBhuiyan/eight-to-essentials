@@ -1,4 +1,5 @@
 import { useId } from 'react';
+import { FrameworkTag } from './FrameworkTag.tsx';
 import type { EvidenceRequest } from '../lib/types.ts';
 
 /** Requirements answered "Not sure": what to look for to find out. */
@@ -6,7 +7,8 @@ export function EvidenceSection({ requests }: { requests: EvidenceRequest[] }) {
   const id = useId();
   return (
     <section aria-labelledby={`${id}-heading`}>
-      <h2 id={`${id}-heading`}>Evidence to find</h2>
+      <FrameworkTag framework="e8" />
+      <h2 id={`${id}-heading`}>Essential Eight: evidence to find</h2>
       {requests.length === 0 ? (
         <p>No evidence requests: you did not answer &quot;Not sure&quot; to any question.</p>
       ) : (

@@ -1,10 +1,13 @@
 import { DataControls } from '../components/DataControls.tsx';
+import { FrameworkTag } from '../components/FrameworkTag.tsx';
+import { JourneySteps } from '../components/JourneySteps.tsx';
 import { QuestionCard } from '../components/QuestionCard.tsx';
 import { usePageFocus } from '../components/usePageFocus.ts';
 import { productGroups } from '../data/index.ts';
 import { STRATEGIES, type E8Requirement, type MaturityLevel } from '../data/types.ts';
 import { validAnswerFor } from '../lib/answers.ts';
 import { lowestLevel } from '../lib/scoring.ts';
+import { STRATEGY_INTROS } from '../lib/siteText.ts';
 import { ANSWER_LABELS, LEVEL_NAMES } from '../lib/text.ts';
 import type { Answer } from '../lib/types.ts';
 import { href } from '../router.ts';
@@ -36,17 +39,20 @@ export function AssessmentPage({ step }: { step: number }) {
 
   return (
     <>
+      <JourneySteps current={1} />
       <div className="step-header">
         <p className="muted">
-          Step {step} of {STRATEGIES.length} · Target: {LEVEL_NAMES[target]}
+          Strategy {step} of {STRATEGIES.length} · Target: {LEVEL_NAMES[target]}
         </p>
         <a className="button button--secondary" href={href('/results')}>
           See results so far
         </a>
       </div>
+      <FrameworkTag framework="e8" />
       <h1 ref={headingRef} tabIndex={-1}>
         {strategy}
       </h1>
+      <p className="lead strategy-intro">{STRATEGY_INTROS[strategy]}</p>
       <div className="progress">
         <label htmlFor="overall-progress">
           {answeredIds.size} of {asked.length} questions answered. {requiredLeft} still needed

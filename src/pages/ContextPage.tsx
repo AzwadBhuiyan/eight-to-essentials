@@ -1,4 +1,5 @@
 import { useId } from 'react';
+import { JourneySteps } from '../components/JourneySteps.tsx';
 import { usePageFocus } from '../components/usePageFocus.ts';
 import { ProductGroupsField } from '../components/ProductGroupsField.tsx';
 import { e8Requirements } from '../data/index.ts';
@@ -37,6 +38,7 @@ export function ContextPage() {
 
   return (
     <>
+      <JourneySteps current={1} />
       <h1 ref={headingRef} tabIndex={-1}>
         About your organisation
       </h1>

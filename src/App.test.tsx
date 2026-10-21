@@ -17,11 +17,15 @@ async function go(path: string) {
 }
 
 describe('App shell', () => {
-  it('shows the home page with the app name and disclaimer', () => {
+  it('shows the home page with its headline and disclaimer', () => {
     render(<App />);
     expect(
-      screen.getByRole('heading', { level: 1, name: 'Eight to Essentials' }),
+      screen.getByRole('heading', {
+        level: 1,
+        name: 'Find your Essential Eight level, and see what it means for ASD Essentials.',
+      }),
     ).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Eight to Essentials' })).toHaveAttribute('href', '#/');
     expect(screen.getByText(DISCLAIMER)).toBeInTheDocument();
   });
 
@@ -341,8 +345,12 @@ describe('results page (Phase 5)', () => {
       screen.getByRole('table', { name: /Essential Eight maturity by strategy/ }),
     ).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'Risk-reduction actions' })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: 'Evidence to find' })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: 'Exceptions to review' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Essential Eight: evidence to find' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Essential Eight: exceptions to review' }),
+    ).toBeInTheDocument();
   });
 
   it('lists a "Not sure" answer as evidence to find', async () => {
@@ -350,7 +358,9 @@ describe('results page (Phase 5)', () => {
     render(<App />);
     await answerApplicationControl(user, 'Not sure');
     await go('/results');
-    const section = screen.getByRole('heading', { name: 'Evidence to find' }).closest('section')!;
+    const section = screen
+      .getByRole('heading', { name: 'Essential Eight: evidence to find' })
+      .closest('section')!;
     expect(section).toHaveTextContent('ISM-0843');
   });
 
@@ -358,7 +368,7 @@ describe('results page (Phase 5)', () => {
     render(<App />);
     await go('/results');
     expect(screen.getByText(/You have not answered any questions yet/)).toBeInTheDocument();
-    expect(screen.queryByRole('heading', { name: 'Evidence to find' })).toBeNull();
+    expect(screen.queryByRole('heading', { name: 'Essential Eight: evidence to find' })).toBeNull();
   });
 
   it('exports the results as CSV', async () => {

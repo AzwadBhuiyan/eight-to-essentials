@@ -1,4 +1,5 @@
 import { useId } from 'react';
+import { FrameworkTag } from './FrameworkTag.tsx';
 import type { ProductGroup } from '../data/types.ts';
 import type { ExceptionItem } from '../lib/types.ts';
 
@@ -22,7 +23,8 @@ export function ExceptionsSection({
 
   return (
     <section aria-labelledby={`${id}-heading`}>
-      <h2 id={`${id}-heading`}>Exceptions to review</h2>
+      <FrameworkTag framework="e8" />
+      <h2 id={`${id}-heading`}>Essential Eight: exceptions to review</h2>
       {items.length === 0 ? (
         <p>No exceptions or &quot;Does not apply&quot; answers.</p>
       ) : (
