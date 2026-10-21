@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { e8Requirements, frameworkData } from '../data/index.ts';
+import { e8Requirements } from '../data/index.ts';
+import { frameworkData } from '../data/framework.ts';
 import demoJson from '../data/demo-swan-river.json';
 import type { Strategy } from '../data/types.ts';
 import { validAnswerFor } from './answers.ts';

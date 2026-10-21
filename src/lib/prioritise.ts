@@ -13,7 +13,7 @@
  * needed for the current level, or were skipped, are counted so the page can say the list may not
  * show all the work (methodology D30, D32).
  */
-import type { FrameworkData } from '../data/index.ts';
+import type { FrameworkData } from '../data/framework.ts';
 import type { E8Requirement, Effort, Exposure } from '../data/types.ts';
 import { isMet, validAnswerFor } from './answers.ts';
 import { inScope } from './effective.ts';

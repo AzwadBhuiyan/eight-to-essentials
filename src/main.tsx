@@ -1,3 +1,5 @@
+// Must come first: configures Zod before any data is validated.
+import './lib/zodConfig.ts';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';

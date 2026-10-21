@@ -1,4 +1,4 @@
-import { essentialsStructure } from '../data/index.ts';
+import { essentialsStructure } from '../data/framework.ts';
 import { mappedActionsNote, ROLLUP_RULE_NOTE, TRANSITION_BANNER } from '../lib/text.ts';
 import { findingLabel, PRIORITY_PHASE_HEADINGS } from '../lib/transitionText.ts';
 import type { TransitionResult } from '../lib/types.ts';

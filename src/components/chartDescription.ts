@@ -8,3 +8,18 @@ export function chartDescription(e8: E8Result): string {
     .join('; ');
   return `Radar chart of Essential Eight maturity by strategy, against a target of ${LEVEL_NAMES[e8.target]}. ${summary}.`;
 }
+
+/**
+ * Splits a strategy name into short lines, so the chart's labels fit on a phone screen
+ * instead of being cut off (for example "Patch operating" / "systems").
+ */
+export function wrapLabel(text: string, maxLine = 12): string[] {
+  const lines: string[] = [];
+  for (const word of text.split(' ')) {
+    const last = lines[lines.length - 1];
+    if (last !== undefined && `${last} ${word}`.length <= maxLine)
+      lines[lines.length - 1] = `${last} ${word}`;
+    else lines.push(word);
+  }
+  return lines;
+}

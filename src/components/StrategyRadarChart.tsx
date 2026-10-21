@@ -18,7 +18,7 @@ import {
 import { Radar } from 'react-chartjs-2';
 import type { E8Result } from '../lib/types.ts';
 import { LEVEL_NAMES } from '../lib/text.ts';
-import { chartDescription } from './chartDescription.ts';
+import { chartDescription, wrapLabel } from './chartDescription.ts';
 
 // Register only the parts of Chart.js a radar chart needs, so the rest is left out of the bundle.
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
@@ -67,7 +67,8 @@ export default function StrategyRadarChart({
   const primary = forPrint ? PRINT_COLOURS.primary : token('--primary');
   const focus = forPrint ? PRINT_COLOURS.focus : token('--focus');
 
-  const labels = e8.strategies.map((s) => s.strategy);
+  // Long names are wrapped onto two lines so they are not cut off on narrow screens.
+  const labels = e8.strategies.map((s) => wrapLabel(s.strategy));
 
   return (
     <figure className="chart">
@@ -117,7 +118,7 @@ export default function StrategyRadarChart({
                 },
                 grid: { color: rule },
                 angleLines: { color: rule },
-                pointLabels: { color: text, font: { size: 12 } },
+                pointLabels: { color: text, font: { size: 11 } },
               },
             },
             plugins: {

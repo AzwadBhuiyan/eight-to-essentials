@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { e8Requirements, frameworkData, productGroups } from '../data/index.ts';
+import { e8Requirements, productGroups } from '../data/index.ts';
+import { frameworkData } from '../data/framework.ts';
 import { exceptionsToReview } from '../lib/evidence.ts';
 import { buildActionList } from '../lib/prioritise.ts';
 import { scoreAll } from '../lib/scoring.ts';
@@ -101,5 +102,22 @@ describe('chart text alternative', () => {
     expect(text).toContain('against a target of Maturity Level One');
     expect(text).toContain('Application control: Maturity Level Zero');
     expect(text).toContain('Patch applications: incomplete');
+  });
+});
+
+describe('chart labels', () => {
+  it('wraps long strategy names so they fit on a phone screen', async () => {
+    const { wrapLabel } = await import('./chartDescription.ts');
+    const { STRATEGIES } = await import('../data/types.ts');
+    expect(wrapLabel('Regular backups')).toEqual(['Regular', 'backups']);
+    expect(wrapLabel('Patch operating systems')).toEqual(['Patch', 'operating', 'systems']);
+    for (const strategy of STRATEGIES) {
+      const lines = wrapLabel(strategy);
+      expect(lines.join(' ')).toBe(strategy); // nothing is lost
+      for (const line of lines) {
+        // Each line is short, unless it is a single long word.
+        expect(line.length <= 12 || !line.includes(' '), line).toBe(true);
+      }
+    }
   });
 });

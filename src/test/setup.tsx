@@ -1,6 +1,6 @@
 // Adds DOM matchers such as toBeInTheDocument() to Vitest's expect.
 import '@testing-library/jest-dom/vitest';
-import { afterEach, vi } from 'vitest';
+import { afterEach, beforeAll, vi } from 'vitest';
 import { cleanup } from '@testing-library/react';
 
 // Vitest globals are off, so Testing Library cannot clean up automatically.
@@ -20,4 +20,10 @@ vi.mock('../components/StrategyRadarChart.tsx', async () => {
       <div role="img" aria-label={chartDescription(e8)} />
     ),
   };
+});
+
+// Load the lazily loaded pages once, so tests can check a page as soon as they navigate to it.
+beforeAll(async () => {
+  const { preloadPages } = await import('../pages/lazyPages.tsx');
+  await preloadPages();
 });

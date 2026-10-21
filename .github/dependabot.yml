@@ -1,0 +1,19 @@
+# Weekly dependency updates for npm packages and for the GitHub Actions used in workflows
+# (including the commit SHAs the actions are pinned to).
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 10
+    groups:
+      # Small updates to development tools arrive as one pull request instead of many.
+      dev-dependencies:
+        dependency-type: development
+        update-types: [minor, patch]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

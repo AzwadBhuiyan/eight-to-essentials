@@ -1,19 +1,25 @@
+import { Suspense } from 'react';
 import { Layout } from './components/Layout.tsx';
 import { usePageFocus } from './components/usePageFocus.ts';
 import { STRATEGIES } from './data/types.ts';
 import { AssessmentPage } from './pages/AssessmentPage.tsx';
 import { AboutPage } from './pages/AboutPage.tsx';
 import { ContextPage } from './pages/ContextPage.tsx';
-import { MethodPage } from './pages/MethodPage.tsx';
-import { ReportPage } from './pages/ReportPage.tsx';
 import { HomePage } from './pages/HomePage.tsx';
-import { ResultsPage } from './pages/ResultsPage.tsx';
-import { TransitionPage } from './pages/TransitionPage.tsx';
+import { lazyPages } from './pages/lazyPages.tsx';
 import { href, useRoute } from './router.ts';
 import { AssessmentProvider } from './state/AssessmentProvider.tsx';
 import { DemoProvider } from './state/DemoProvider.tsx';
 import { useAssessment } from './state/assessmentContext.ts';
 import { DemoBanner } from './components/DemoBanner.tsx';
+
+// The heavier pages are loaded only when visited, to keep the first download small.
+const {
+  Results: ResultsPage,
+  Transition: TransitionPage,
+  Report: ReportPage,
+  Method: MethodPage,
+} = lazyPages;
 
 function Page({ path }: { path: string }) {
   if (path === '/') return <HomePage />;
@@ -75,7 +81,15 @@ export default function App() {
   return (
     <AssessmentProvider>
       <Layout>
-        <Page path={path} />
+        <Suspense
+          fallback={
+            <p className="muted" role="status">
+              Loading…
+            </p>
+          }
+        >
+          <Page path={path} />
+        </Suspense>
       </Layout>
     </AssessmentProvider>
   );

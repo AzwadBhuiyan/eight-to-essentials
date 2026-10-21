@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { e8Requirements, frameworkData, productGroups } from '../data/index.ts';
+import { e8Requirements, productGroups } from '../data/index.ts';
+import { frameworkData } from '../data/framework.ts';
 import type { MaturityLevel } from '../data/types.ts';
 import { EMPTY_CONTEXT } from './assessment.ts';
 import { inScope } from './effective.ts';

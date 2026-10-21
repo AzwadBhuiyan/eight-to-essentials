@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { e8ToEssentialsMap, frameworkData } from '../data/index.ts';
+import { e8ToEssentialsMap, frameworkData } from '../data/framework.ts';
 import type { Domain, Strategy } from '../data/types.ts';
 import { buildTransition, rollUp, rowStatus } from './transition.ts';
 import { mappedActionsNote } from './text.ts';

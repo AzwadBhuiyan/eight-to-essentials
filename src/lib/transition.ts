@@ -10,7 +10,7 @@
  * - gap: the strategy is below the listed level
  * - unknown: the strategy is incomplete, so there is nothing to compare
  */
-import type { FrameworkData } from '../data/index.ts';
+import type { FrameworkData } from '../data/framework.ts';
 import { validAnswerFor } from './answers.ts';
 import type { ActionMapping, Domain, MaturityLevel, Strategy } from '../data/types.ts';
 import type {

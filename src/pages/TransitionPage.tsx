@@ -5,12 +5,8 @@ import { JourneySteps } from '../components/JourneySteps.tsx';
 import { PartsSummary } from '../components/PartsSummary.tsx';
 import { TransitionDomain } from '../components/TransitionDomain.tsx';
 import { usePageFocus } from '../components/usePageFocus.ts';
-import {
-  e8Requirements,
-  e8ToEssentialsMap,
-  essentialsStructure,
-  frameworkData,
-} from '../data/index.ts';
+import { e8Requirements } from '../data/index.ts';
+import { e8ToEssentialsMap, essentialsStructure, frameworkData } from '../data/framework.ts';
 import { strategyResultText } from '../lib/resultsText.ts';
 import { LEVEL_NAMES, ROLLUP_RULE_NOTE, TRANSITION_BANNER } from '../lib/text.ts';
 import { buildTransition } from '../lib/transition.ts';

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { frameworkData } from '../data/index.ts';
+import { frameworkData } from '../data/framework.ts';
 import { buildTransition } from './transition.ts';
 import { actionStatusLabel, contributionLabel, findingLabel } from './transitionText.ts';
 import { allYes, resultWithLevels } from './test-helpers.ts';
