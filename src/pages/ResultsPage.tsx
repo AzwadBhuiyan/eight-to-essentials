@@ -113,6 +113,20 @@ export function ResultsPage() {
               Export results (CSV)
             </button>
           </div>
+
+          <section className="panel" aria-labelledby="next-step">
+            <h2 id="next-step" className="panel__title">
+              Next step (optional)
+            </h2>
+            <p>
+              ASD published ASD Essentials on 15 October 2026. See which ASD Essentials actions your
+              Essential Eight work may carry into, what may need strengthening, and what is not
+              covered by the Essential Eight at all. Indicative only.
+            </p>
+            <a className="button" href={href('/transition')}>
+              See how this carries into ASD Essentials
+            </a>
+          </section>
         </>
       )}
 

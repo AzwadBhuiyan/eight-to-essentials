@@ -5,6 +5,7 @@ import { AssessmentPage } from './pages/AssessmentPage.tsx';
 import { ContextPage } from './pages/ContextPage.tsx';
 import { HomePage } from './pages/HomePage.tsx';
 import { ResultsPage } from './pages/ResultsPage.tsx';
+import { TransitionPage } from './pages/TransitionPage.tsx';
 import { href, useRoute } from './router.ts';
 import { AssessmentProvider } from './state/AssessmentProvider.tsx';
 
@@ -12,6 +13,7 @@ function Page({ path }: { path: string }) {
   if (path === '/') return <HomePage />;
   if (path === '/context') return <ContextPage />;
   if (path === '/results') return <ResultsPage />;
+  if (path === '/transition') return <TransitionPage />;
   const step = /^\/assessment\/(\d+)$/.exec(path);
   if (step) {
     const n = Number(step[1]);

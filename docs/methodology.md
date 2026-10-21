@@ -259,6 +259,14 @@ Two scoring questions are deferred until the phase 1 check is built: how a princ
   - **Strategy level** is filled only for the headline and strategy rows; **Requirement level** only for action and evidence rows.
   - The headline and strategy wording come from the same functions as the page, and every cell is protected against formula injection (D28).
 
+### D35. Transition page
+
+- **Optional:** reached from the "Next step (optional)" card on the results page, never forced (D33).
+- **Order:** the "Indicative only" banner and disclaimer, a short "How to read this" guide with the roll-up note, then domains grouped under "Priority phase 1", "All phases: capability domains", "Priority phase 2" and "Priority phase 3" (D26), then "Not covered by the Essential Eight", ASD's strengthening points for each strategy (with D13's "no action-level mapping" lines and the event logging section), and ASD's recommended next steps, paraphrased.
+- **Each principle:** ASD's gap term as the finding, worded with "may" ("May already be effectively addressed", "May be partially addressed", "Not addressed by your Essential Eight results"), plus "x of y actions mapped; assess the rest separately" where some actions are unmapped (D25). Priority phase 1 domains are open by default; the others are collapsed to keep the page manageable.
+- **Each strategy's contribution to an action:** the status label always comes first; then a sentence explaining it; then, for "May contribute", the reminder that evidence must be current, show effectiveness and cover the domain; then ASD's note, marked "paraphrased"; then any caution (D14) and the table and page it comes from. A partial row is always labelled "Partial coverage in [domain]" before the note (D20). Tests check this in the rendered page for every partial row, including the nine with "strong" notes.
+- **Statuses** are always shown as text. Colour and border style are extra cues only.
+
 ## Differences between the E8 sources
 
 Results of comparing the maturity model (November 2023) with the workbook's "Existing E8 Controls" sheet (113 controls) and the E8 references in the Assessment evidence guide.

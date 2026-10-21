@@ -586,3 +586,109 @@ td {
     margin-bottom: 0.4rem;
   }
 }
+
+/* ---------------------------------------------------------------- transition view (Phase 6) */
+
+.phase h3 {
+  margin-top: 1.75rem;
+}
+
+details.domain,
+details.principle {
+  margin: 0.75rem 0;
+  border: 1px solid var(--rule);
+  border-radius: 0.5rem;
+  background: var(--bg);
+}
+
+details.domain {
+  padding: 0.5rem 1rem;
+}
+
+details.principle {
+  padding: 0.4rem 0.75rem;
+  background: var(--surface);
+}
+
+details.domain > summary,
+details.principle > summary {
+  padding: 0.35rem 0;
+  color: var(--text);
+}
+
+.domain__name {
+  font-size: 1.1rem;
+}
+
+.principle__note {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.finding-counts {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+}
+
+/* Status labels always carry text; the border style and colour are extra cues. */
+.status {
+  display: inline-block;
+  padding: 0 0.45rem;
+  border: 2px solid var(--border);
+  border-radius: 0.3rem;
+  font-weight: 600;
+}
+
+.status--positive {
+  border-color: var(--success-border);
+  background: var(--success-bg);
+}
+
+.status--partial {
+  border-color: var(--warning-border);
+  border-style: dashed;
+  background: var(--warning-bg);
+}
+
+.status--gap {
+  border-color: var(--danger);
+  background: var(--warning-bg);
+}
+
+.status--neutral {
+  border-style: dotted;
+}
+
+.action-list,
+.contribution-list {
+  list-style: none;
+  padding: 0;
+}
+
+.action {
+  margin: 0.75rem 0;
+  padding: 0.6rem 0.75rem;
+  border-left: 3px solid var(--rule);
+}
+
+.action p,
+.contribution p {
+  margin: 0.3rem 0;
+}
+
+.action__title {
+  font-weight: 600;
+}
+
+.contribution {
+  margin: 0.5rem 0 0.75rem;
+  padding-left: 0.75rem;
+  border-left: 2px dashed var(--rule);
+}
+
+.contribution__note {
+  font-style: italic;
+}

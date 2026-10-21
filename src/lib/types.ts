@@ -174,6 +174,8 @@ export interface StrategyContribution {
   contribution: 'full' | 'partial';
   strengthenNote: string;
   cautions: Caution[];
+  /** Where the row comes from, for example "Table 5, page 13" of Transitioning from the Essential Eight. */
+  source: string;
 }
 
 export interface ActionDomainResult {

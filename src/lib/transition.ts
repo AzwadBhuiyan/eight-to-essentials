@@ -181,6 +181,7 @@ export function buildTransition(
           contribution: row.contribution,
           strengthenNote: row.strengthenNote,
           cautions: cautionsFor(row),
+          source: row.source.location,
         };
       });
       // Author's rule: across strategies, the weakest status sets the action's status.
