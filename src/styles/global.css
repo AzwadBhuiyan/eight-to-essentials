@@ -845,3 +845,131 @@ details.principle > summary {
 .demo-preview .placeholder-label {
   text-align: center;
 }
+
+/* ---------------------------------------------------------------- report, about and method (Phase 8) */
+
+.tag--own {
+  border-color: var(--primary);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.method-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.report__demo {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border: 2px dashed var(--primary);
+  border-radius: var(--radius);
+  font-weight: 700;
+}
+
+.report__status {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.report-table caption {
+  margin-top: 1rem;
+}
+
+/* The print footer only appears on paper. */
+.print-footer {
+  display: none;
+}
+
+/*
+ * Print stylesheet. Prints in the light palette whatever the screen theme, hides the site's
+ * navigation and screen-only controls, starts each part on a new page, and repeats the author
+ * footer at the bottom of every printed page (a fixed element repeats on each page).
+ */
+@media print {
+  :root {
+    color-scheme: light;
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --text: #000000;
+    --muted: #333333;
+    --border: #555555;
+    --rule: #bbbbbb;
+    --primary: #0b5394;
+    --primary-text: #ffffff;
+    --accent-tint: #ffffff;
+    --warning-bg: #ffffff;
+    --success-bg: #ffffff;
+  }
+
+  @page {
+    margin: 18mm 15mm 22mm;
+  }
+
+  body {
+    font-size: 11pt;
+  }
+
+  .site-header,
+  .site-footer,
+  .skip-link,
+  .no-print,
+  .demo-banner,
+  .journey,
+  .parts,
+  .button,
+  button {
+    display: none !important;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+
+  .report__part {
+    break-before: page;
+  }
+
+  .item,
+  tr,
+  .chart,
+  .notice,
+  .disclaimer {
+    break-inside: avoid;
+  }
+
+  h2,
+  h3,
+  caption {
+    break-after: avoid;
+  }
+
+  /* Show where printed links go, since they cannot be clicked on paper. */
+  .report a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 9pt;
+    overflow-wrap: anywhere;
+  }
+
+  .print-footer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding-top: 2mm;
+    border-top: 1px solid var(--rule);
+    font-size: 8.5pt;
+    text-align: center;
+    max-width: none;
+  }
+}

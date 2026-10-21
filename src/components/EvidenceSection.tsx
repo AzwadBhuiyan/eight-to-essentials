@@ -3,12 +3,19 @@ import { FrameworkTag } from './FrameworkTag.tsx';
 import type { EvidenceRequest } from '../lib/types.ts';
 
 /** Requirements answered "Not sure": what to look for to find out. */
-export function EvidenceSection({ requests }: { requests: EvidenceRequest[] }) {
+export function EvidenceSection({
+  requests,
+  headingLevel = 2,
+}: {
+  requests: EvidenceRequest[];
+  headingLevel?: 2 | 3;
+}) {
   const id = useId();
+  const Heading = headingLevel === 3 ? 'h3' : 'h2';
   return (
     <section aria-labelledby={`${id}-heading`}>
       <FrameworkTag framework="e8" />
-      <h2 id={`${id}-heading`}>Essential Eight: evidence to find</h2>
+      <Heading id={`${id}-heading`}>Essential Eight: evidence to find</Heading>
       {requests.length === 0 ? (
         <p>No evidence requests: you did not answer &quot;Not sure&quot; to any question.</p>
       ) : (

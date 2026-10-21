@@ -9,6 +9,7 @@ export interface AssessmentPaths {
   context: string;
   results: string;
   transition: string;
+  report: string;
   assessment: (step: number) => string;
 }
 
@@ -16,6 +17,7 @@ export const OWN_PATHS: AssessmentPaths = {
   context: '/context',
   results: '/results',
   transition: '/transition',
+  report: '/report',
   assessment: (step) => `/assessment/${step}`,
 };
 
@@ -23,6 +25,7 @@ export const DEMO_PATHS: AssessmentPaths = {
   context: '/example/assessment/1',
   results: '/example',
   transition: '/example/transition',
+  report: '/example/report',
   assessment: (step) => `/example/assessment/${step}`,
 };
 

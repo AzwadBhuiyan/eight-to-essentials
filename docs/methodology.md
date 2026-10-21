@@ -324,6 +324,19 @@ Each wizard step opens with one short statement, written as a statement rather t
 - **Decision:** with saving on, the app writes to storage only when the answers change, not when it opens.
 - **Reason:** opening the app used to rewrite unchanged saved data with a new timestamp. That was harmless but unnecessary, and it made it impossible to prove that visiting the demo leaves saved data untouched.
 
+### D42. Report, About, and Method and sources pages
+
+- **Report** (`#/report`, and `#/example/report` for the demo): printed from the browser (Print, or Save as PDF).
+  - **Cover:** organisation name, date, target, "Self-assessment, not an official assessment.", the disclaimer and the headline. The demo report's cover says "Fictional demo company".
+  - **Part 1: your Essential Eight result:** radar chart (in a fixed light palette, so it prints well in any theme), the levels table, every action (no "show all" button on paper), evidence to find and exceptions to review.
+  - **Part 2 (optional): how this carries into ASD Essentials:** each domain's principles with their indicative finding, and the actions not covered by the Essential Eight, all labelled ASD Essentials. A screen-only checkbox leaves Part 2 out.
+  - **Method and sources:** the scoring rules in brief, the data-checked date, every source document, framework versions, the CC BY 4.0 attribution and "Not affiliated with or endorsed by ASD or the ACSC".
+  - **Footer on every printed page:** "Created with Eight to Essentials by [author] · Self-assessment, not an official assessment", prefixed "Fictional demo company ·" on the demo report. The print stylesheet repeats it on each page, hides the site navigation and screen-only controls, prints in the light palette, starts each part on a new page, and prints the web address after each external link.
+  - **Same wording everywhere:** the report uses the same components and wording functions as the results page, the transition page and the CSV.
+- **About** (`#/about`): who built it and why, in the author's words; the skills involved (GRC, assessment design, risk-based prioritisation, secure web development); LinkedIn as the only contact. No email address or phone number.
+- **Method and sources** (`#/method`): plain-English scoring rules, every design decision in summary, each of the author's own rules marked "Our rule", how ASD's documents disagree (PRO-09.2, DET-04, Essential Eight versions) and how each case was handled, limitations, every source, the CC BY 4.0 attribution, non-affiliation, and a footer with framework versions and the data-checked date. It notes that ASD writes the Essentials series mainly for Commonwealth entities, critical infrastructure and large organisations (FAQ, page 3) and links to ASD's small business guidance on cyber.gov.au.
+- **Site footer:** now carries the CC BY 4.0 attribution on every page, alongside the author credit and non-affiliation. "Method" and "About" are added to the top navigation.
+
 ## Differences between the E8 sources
 
 Results of comparing the maturity model (November 2023) with the workbook's "Existing E8 Controls" sheet (113 controls) and the E8 references in the Assessment evidence guide.

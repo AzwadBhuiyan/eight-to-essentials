@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { author, repositoryUrl } from '../config/author.ts';
+import { meta } from '../data/index.ts';
 import { NOT_AFFILIATED } from '../lib/siteText.ts';
 import { href } from '../router.ts';
 
@@ -23,6 +24,12 @@ export function Layout({ children }: { children: ReactNode }) {
               <li>
                 <a href={href('/results')}>Results</a>
               </li>
+              <li>
+                <a href={href('/method')}>Method</a>
+              </li>
+              <li>
+                <a href={href('/about')}>About</a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -43,7 +50,9 @@ export function Layout({ children }: { children: ReactNode }) {
               Source on GitHub
             </a>
           </p>
-          <p className="muted">{NOT_AFFILIATED}</p>
+          <p className="muted">
+            {meta.licence.attribution} {NOT_AFFILIATED}
+          </p>
         </div>
       </footer>
     </>

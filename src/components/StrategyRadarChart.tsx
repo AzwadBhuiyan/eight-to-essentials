@@ -43,13 +43,29 @@ function token(name: string): string {
   return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || '#000000';
 }
 
-export default function StrategyRadarChart({ e8 }: { e8: E8Result }) {
+/** Light colours used when printing, so the chart reads well on white paper in any theme. */
+const PRINT_COLOURS = {
+  text: '#1b1f24',
+  muted: '#4a5360',
+  rule: '#d5dae0',
+  primary: '#0b5394',
+  focus: '#b4580b',
+};
+
+export default function StrategyRadarChart({
+  e8,
+  forPrint = false,
+}: {
+  e8: E8Result;
+  /** True in the printed report: uses the light palette whatever the screen theme. */
+  forPrint?: boolean;
+}) {
   const dark = useDarkMode();
-  const text = token('--text');
-  const muted = token('--muted');
-  const rule = token('--rule');
-  const primary = token('--primary');
-  const focus = token('--focus');
+  const text = forPrint ? PRINT_COLOURS.text : token('--text');
+  const muted = forPrint ? PRINT_COLOURS.muted : token('--muted');
+  const rule = forPrint ? PRINT_COLOURS.rule : token('--rule');
+  const primary = forPrint ? PRINT_COLOURS.primary : token('--primary');
+  const focus = forPrint ? PRINT_COLOURS.focus : token('--focus');
 
   const labels = e8.strategies.map((s) => s.strategy);
 
@@ -57,7 +73,7 @@ export default function StrategyRadarChart({ e8 }: { e8: E8Result }) {
     <figure className="chart">
       <div className="chart__canvas">
         <Radar
-          key={dark ? 'dark' : 'light'}
+          key={forPrint ? 'print' : dark ? 'dark' : 'light'}
           role="img"
           aria-label={chartDescription(e8)}
           data={{

@@ -92,3 +92,35 @@ export const PARTS = [
     path: '/transition',
   },
 ] as const;
+
+/**
+ * ASD's guidance for small businesses. The ASD Essentials FAQ (page 3) says ASD publishes it on
+ * cyber.gov.au; this is the Small business hub's address.
+ */
+export const SMALL_BUSINESS_URL =
+  'https://www.cyber.gov.au/business-government/small-business-cyber-security/small-business-hub';
+
+/** About page (in the author's words). */
+export const ABOUT_WHY =
+  'I built Eight to Essentials in the weeks after ASD published ASD Essentials, to help organisations see where they stand on the Essential Eight and where to start on the new framework.';
+
+export const ABOUT_SKILLS = [
+  'Governance, risk and compliance (GRC)',
+  'Assessment design',
+  'Risk-based prioritisation',
+  'Secure web development',
+] as const;
+
+/** Printed at the bottom of every page of the report. */
+export function printFooterText(authorName: string, fictionalDemo: boolean): string {
+  return `${fictionalDemo ? 'Fictional demo company · ' : ''}Created with Eight to Essentials by ${authorName} · Self-assessment, not an official assessment`;
+}
+
+/** The report date, written out in Australian style, for example "22 October 2026". */
+export function reportDate(now: Date): string {
+  return new Intl.DateTimeFormat('en-AU', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(now);
+}

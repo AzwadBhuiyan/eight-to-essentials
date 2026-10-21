@@ -120,6 +120,9 @@ export function ResultsPage() {
             <button type="button" className="button button--secondary" onClick={exportCsv}>
               Export results (CSV)
             </button>
+            <a className="button button--secondary" href={href(paths.report)}>
+              Printable report (PDF)
+            </a>
           </div>
 
           <section className="panel" aria-labelledby="next-step">

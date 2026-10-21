@@ -16,8 +16,20 @@ const EXPOSURE_LABEL = {
 } as const;
 
 /** The prioritised action list: the top five, with the rest one click away. */
-export function ActionListSection({ list }: { list: ActionList }) {
-  const [showAll, setShowAll] = useState(false);
+export function ActionListSection({
+  list,
+  headingLevel = 2,
+  alwaysShowAll = false,
+}: {
+  list: ActionList;
+  /** 3 when the section sits under a "Part 1" heading, as in the printed report. */
+  headingLevel?: 2 | 3;
+  /** True in the printed report, which lists every action and has no "show all" button. */
+  alwaysShowAll?: boolean;
+}) {
+  const [expanded, setShowAll] = useState(false);
+  const showAll = alwaysShowAll || expanded;
+  const Heading = headingLevel === 3 ? 'h3' : 'h2';
   const id = useId();
   const coverage = actionListCoverageNote(list.notNeededCount, list.skippedCount);
   const shown = showAll ? list.items : list.items.slice(0, TOP);
@@ -25,7 +37,7 @@ export function ActionListSection({ list }: { list: ActionList }) {
   return (
     <section aria-labelledby={`${id}-heading`}>
       <FrameworkTag framework="e8" />
-      <h2 id={`${id}-heading`}>{list.title}</h2>
+      <Heading id={`${id}-heading`}>{list.title}</Heading>
       {list.advice && <p className="notice">{list.advice}</p>}
       <p className="muted">
         Ordered by maturity level, then internet-facing and identity requirements, then effort.
@@ -42,7 +54,7 @@ export function ActionListSection({ list }: { list: ActionList }) {
               <ActionCard key={item.requirement.id} item={item} />
             ))}
           </ol>
-          {list.items.length > TOP && (
+          {list.items.length > TOP && !alwaysShowAll && (
             <button
               type="button"
               className="button button--secondary"

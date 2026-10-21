@@ -10,11 +10,14 @@ import type { ExceptionItem } from '../lib/types.ts';
 export function ExceptionsSection({
   items,
   productGroups,
+  headingLevel = 2,
 }: {
   items: ExceptionItem[];
   productGroups: ProductGroup[];
+  headingLevel?: 2 | 3;
 }) {
   const id = useId();
+  const Heading = headingLevel === 3 ? 'h3' : 'h2';
   const exceptions = items.filter((i) => i.answer.value === 'exception');
   const single = items.filter((i) => i.answer.value === 'not-applicable' && !i.groupId);
   const grouped = productGroups
@@ -24,7 +27,7 @@ export function ExceptionsSection({
   return (
     <section aria-labelledby={`${id}-heading`}>
       <FrameworkTag framework="e8" />
-      <h2 id={`${id}-heading`}>Essential Eight: exceptions to review</h2>
+      <Heading id={`${id}-heading`}>Essential Eight: exceptions to review</Heading>
       {items.length === 0 ? (
         <p>No exceptions or &quot;Does not apply&quot; answers.</p>
       ) : (

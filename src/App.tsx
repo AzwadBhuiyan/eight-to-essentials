@@ -2,7 +2,10 @@ import { Layout } from './components/Layout.tsx';
 import { usePageFocus } from './components/usePageFocus.ts';
 import { STRATEGIES } from './data/types.ts';
 import { AssessmentPage } from './pages/AssessmentPage.tsx';
+import { AboutPage } from './pages/AboutPage.tsx';
 import { ContextPage } from './pages/ContextPage.tsx';
+import { MethodPage } from './pages/MethodPage.tsx';
+import { ReportPage } from './pages/ReportPage.tsx';
 import { HomePage } from './pages/HomePage.tsx';
 import { ResultsPage } from './pages/ResultsPage.tsx';
 import { TransitionPage } from './pages/TransitionPage.tsx';
@@ -18,6 +21,9 @@ function Page({ path }: { path: string }) {
   if (path === '/example' || path.startsWith('/example/')) return <DemoRoute path={path} />;
   if (path === '/results') return <ResultsPage />;
   if (path === '/transition') return <TransitionPage />;
+  if (path === '/report') return <ReportPage />;
+  if (path === '/about') return <AboutPage />;
+  if (path === '/method') return <MethodPage />;
   const step = /^\/assessment\/(\d+)$/.exec(path);
   if (step) {
     const n = Number(step[1]);
@@ -38,6 +44,7 @@ function DemoRoute({ path }: { path: string }) {
   let page = <NotFound />;
   if (path === '/example') page = <ResultsPage />;
   else if (path === '/example/transition') page = <TransitionPage />;
+  else if (path === '/example/report') page = <ReportPage />;
   else if (step && Number(step[1]) >= 1 && Number(step[1]) <= STRATEGIES.length) {
     page = <AssessmentPage key={step[1]} step={Number(step[1])} />;
   }
