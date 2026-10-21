@@ -14,6 +14,8 @@ import { buildTransition } from '../lib/transition.ts';
 import {
   INCOMPLETE_TRANSITION_NOTE,
   PRIORITY_PHASE_HEADINGS,
+  TRANSITION_TITLE,
+  TRANSITION_VIEW_LABEL,
   noActionMappingText,
 } from '../lib/transitionText.ts';
 import { href } from '../router.ts';
@@ -35,7 +37,7 @@ const requirementText = new Map(e8Requirements.map((r) => [r.id, r.plainText]));
 export function TransitionPage() {
   const { state } = useAssessment();
   const { e8, effective, target } = useDerived(state);
-  const headingRef = usePageFocus<HTMLHeadingElement>('How this carries into ASD Essentials');
+  const headingRef = usePageFocus<HTMLHeadingElement>(TRANSITION_TITLE);
   const transition = useMemo(
     () => buildTransition(frameworkData, e8, effective.answers),
     [e8, effective],
@@ -48,9 +50,14 @@ export function TransitionPage() {
 
   return (
     <>
+      <p className="framework-tag framework-tag--essentials">ASD Essentials</p>
       <h1 ref={headingRef} tabIndex={-1}>
-        How this carries into ASD Essentials
+        {TRANSITION_TITLE}
       </h1>
+      <p className="lead">How your Essential Eight results may carry into ASD Essentials.</p>
+      <p className="view-label" role="note">
+        {TRANSITION_VIEW_LABEL} <a href={href('/results')}>See your Essential Eight result</a>.
+      </p>
       <p className="notice">
         <strong>{TRANSITION_BANNER}</strong>
       </p>
@@ -65,7 +72,7 @@ export function TransitionPage() {
       ) : (
         <>
           <section aria-labelledby="how-to-read">
-            <h2 id="how-to-read">How to read this</h2>
+            <h2 id="how-to-read">How to read this ASD Essentials view</h2>
             <p>
               For each ASD Essentials action, ASD&apos;s transition tables say which Essential Eight
               strategy and maturity level contributes, and whether fully or only in part. This page
@@ -97,7 +104,7 @@ export function TransitionPage() {
           </section>
 
           <section aria-labelledby="by-domain">
-            <h2 id="by-domain">By domain and priority phase</h2>
+            <h2 id="by-domain">ASD Essentials by domain and priority phase</h2>
             {phases.map((phase) => {
               const groups = transition.domains.filter((d) => d.priorityPhase === phase);
               if (groups.length === 0) return null;
@@ -121,7 +128,7 @@ export function TransitionPage() {
           </section>
 
           <section aria-labelledby="not-covered">
-            <h2 id="not-covered">Not covered by the Essential Eight</h2>
+            <h2 id="not-covered">ASD Essentials actions not covered by the Essential Eight</h2>
             <p>
               These ASD Essentials actions have no Essential Eight equivalent, so they need new work
               whatever your Essential Eight results.
@@ -129,18 +136,20 @@ export function TransitionPage() {
             {transition.notCovered.map((g) => (
               <details key={g.domain} className="domain" open={g.priorityPhase === 1}>
                 <summary>
-                  <span className="domain__name">{g.domain}</span>{' '}
+                  <span className="domain__name">ASD Essentials domain: {g.domain}</span>{' '}
                   <span className="muted">({PRIORITY_PHASE_HEADINGS[g.priorityPhase]})</span>
                 </summary>
                 {g.principles.map((p) => (
                   <div key={p.principleId}>
                     <p className="item__title">
-                      <span className="badge">{p.principleId}</span> {p.title}
+                      ASD Essentials principle <span className="badge">{p.principleId}</span>{' '}
+                      {p.title}
                     </p>
                     <ul>
                       {p.actionIds.map((id) => (
                         <li key={id}>
-                          <span className="badge">{id}</span> {actionsById.get(id)?.summary}
+                          ASD Essentials action <span className="badge">{id}</span>{' '}
+                          {actionsById.get(id)?.summary}
                         </li>
                       ))}
                     </ul>
@@ -151,16 +160,20 @@ export function TransitionPage() {
           </section>
 
           <section aria-labelledby="strengthen">
-            <h2 id="strengthen">Where your Essential Eight work may need strengthening</h2>
+            <h2 id="strengthen">
+              ASD Essentials: where your Essential Eight work may need strengthening
+            </h2>
             <p>
               ASD&apos;s points for each strategy, paraphrased. They apply even where your Essential
               Eight results are strong.
             </p>
             {e8ToEssentialsMap.strengthen.map((group) => (
               <div key={group.strategies.join()} className="item">
-                <p className="item__title">{group.strategies.join(' and ')}</p>
+                <p className="item__title">
+                  Essential Eight strategy: {group.strategies.join(' and ')}
+                </p>
                 <p className="item__meta">
-                  Your result:{' '}
+                  Your Essential Eight result:{' '}
                   {group.strategies
                     .map((s) => strategyResultText(e8.strategies.find((x) => x.strategy === s)!))
                     .join('; ')}
@@ -191,7 +204,7 @@ export function TransitionPage() {
               </div>
             ))}
             <div className="item">
-              <p className="item__title">Event logging, detection and response</p>
+              <p className="item__title">Essential Eight event logging, detection and response</p>
               <p className="item__meta">
                 Shared by several strategies. ASD maps these to the Visibility and response domain
                 and gives no action table.
@@ -211,7 +224,7 @@ export function TransitionPage() {
           </section>
 
           <section aria-labelledby="next-steps">
-            <h2 id="next-steps">ASD&apos;s recommended next steps</h2>
+            <h2 id="next-steps">ASD Essentials: ASD&apos;s recommended next steps</h2>
             <p>Paraphrased from Transitioning from the Essential Eight, pages 22 to 23:</p>
             <ol>
               <li>

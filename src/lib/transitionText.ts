@@ -76,12 +76,18 @@ export function findingLabel(finding: GapFinding): string {
   }
 }
 
+/** Every heading on the transition view names ASD Essentials, so it is never mistaken for E8 results. */
 export const PRIORITY_PHASE_HEADINGS = {
-  1: 'Priority phase 1',
-  all: 'All phases: capability domains',
-  2: 'Priority phase 2',
-  3: 'Priority phase 3',
+  1: 'ASD Essentials priority phase 1',
+  all: 'ASD Essentials: all phases (capability domains)',
+  2: 'ASD Essentials priority phase 2',
+  3: 'ASD Essentials priority phase 3',
 } as const;
+
+export const TRANSITION_TITLE = 'ASD Essentials transition view';
+
+export const TRANSITION_VIEW_LABEL =
+  'You are looking at ASD Essentials for enterprise IT, not your Essential Eight result. Everything here is indicative and built on ASD’s transition mapping.';
 
 /** Methodology D13. */
 export function noActionMappingText(principleTitle: string): string {

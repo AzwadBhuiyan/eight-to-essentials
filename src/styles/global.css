@@ -692,3 +692,22 @@ details.principle > summary {
 .contribution__note {
   font-style: italic;
 }
+
+/* Framework labels, so ASD Essentials content is never mistaken for Essential Eight results. */
+.framework-tag {
+  display: inline-block;
+  margin: 0.5rem 0 0;
+  padding: 0.1rem 0.6rem;
+  border: 2px solid var(--primary);
+  border-radius: 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.view-label {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--primary);
+  border-radius: 0.35rem;
+  font-weight: 600;
+}

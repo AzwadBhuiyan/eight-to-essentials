@@ -61,7 +61,7 @@ export function TransitionDomain({
   return (
     <details className="domain" open={open}>
       <summary>
-        <span className="domain__name">{group.domain}</span>{' '}
+        <span className="domain__name">ASD Essentials domain: {group.domain}</span>{' '}
         <span className="muted">({group.principles.length} principles)</span>
       </summary>
       <p className="muted">{domain.description}</p>
@@ -100,7 +100,7 @@ function PrincipleCard({
   return (
     <details className="principle">
       <summary>
-        <span className="badge">{p.principleId}</span> {p.title}:{' '}
+        ASD Essentials principle <span className="badge">{p.principleId}</span> {p.title}:{' '}
         <span className={`status ${tone(p.finding)}`}>{findingLabel(p.finding)}</span>
         {note && <span className="principle__note"> · {note}</span>}
       </summary>
@@ -133,7 +133,7 @@ function ActionResult({
   return (
     <li className="action">
       <p className="action__title">
-        <span className="badge">{a.actionId}</span> {summary}
+        ASD Essentials action <span className="badge">{a.actionId}</span> {summary}
       </p>
       <p>
         <span className={`status ${tone(a.status)}`}>{actionStatusLabel(a.status, a.domain)}</span>
@@ -156,7 +156,8 @@ function ActionResult({
           <ul>
             {a.evidenceControls.map((e) => (
               <li key={e.id}>
-                <span className="badge">{e.id}</span> {requirementText.get(e.id) ?? ''} Your answer:{' '}
+                Essential Eight requirement <span className="badge">{e.id}</span>{' '}
+                {requirementText.get(e.id) ?? ''} Your Essential Eight answer:{' '}
                 {e.answer ? ANSWER_LABELS[e.answer] : 'not answered'}.
               </li>
             ))}
@@ -190,7 +191,7 @@ function Contribution({
   return (
     <li className="contribution">
       <p>
-        <strong>{c.strategy}:</strong>{' '}
+        <strong>From your Essential Eight strategy {c.strategy}:</strong>{' '}
         <span className={`status ${tone(c.status)}`}>{contributionLabel(c.status, domain)}</span>
       </p>
       <p>{contributionExplanation(c, target)}</p>

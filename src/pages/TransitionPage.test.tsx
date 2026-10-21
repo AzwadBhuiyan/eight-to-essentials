@@ -27,7 +27,7 @@ describe('transition page', () => {
   it('shows the indicative-only banner and the disclaimer', async () => {
     await openTransition(allYes());
     expect(
-      screen.getByRole('heading', { level: 1, name: 'How this carries into ASD Essentials' }),
+      screen.getByRole('heading', { level: 1, name: 'ASD Essentials transition view' }),
     ).toBeInTheDocument();
     expect(screen.getByText(TRANSITION_BANNER)).toBeInTheDocument();
     expect(screen.getByText(DISCLAIMER)).toBeInTheDocument();
@@ -38,12 +38,14 @@ describe('transition page', () => {
     const phases = screen
       .getAllByRole('heading', { level: 3 })
       .map((h) => h.textContent)
-      .filter((t) => t?.startsWith('Priority') || t?.startsWith('All phases'));
+      .filter(
+        (t) => t?.startsWith('ASD Essentials priority') || t?.startsWith('ASD Essentials: all'),
+      );
     expect(phases).toEqual([
-      'Priority phase 1',
-      'All phases: capability domains',
-      'Priority phase 2',
-      'Priority phase 3',
+      'ASD Essentials priority phase 1',
+      'ASD Essentials: all phases (capability domains)',
+      'ASD Essentials priority phase 2',
+      'ASD Essentials priority phase 3',
     ]);
   });
 
@@ -86,13 +88,15 @@ describe('transition page', () => {
       /ASD cites these Essential Eight controls as possible evidence/,
     );
     expect(items.length).toBeGreaterThan(0);
-    expect(document.body.textContent).toContain('Your answer: Yes, and we can show evidence.');
+    expect(document.body.textContent).toContain(
+      'Your Essential Eight answer: Yes, and we can show evidence.',
+    );
   });
 
   it('lists the 22 actions not covered by the Essential Eight', async () => {
     await openTransition(allYes());
     const section = screen
-      .getByRole('heading', { name: 'Not covered by the Essential Eight' })
+      .getByRole('heading', { name: 'ASD Essentials actions not covered by the Essential Eight' })
       .closest('section')!;
     const ids = new Set(
       Array.from(section.querySelectorAll('li .badge')).map((b) => b.textContent),
@@ -104,7 +108,9 @@ describe('transition page', () => {
   it('shows strengthening points and principles with no action-level mapping (D13)', async () => {
     await openTransition(allYes());
     const section = screen
-      .getByRole('heading', { name: 'Where your Essential Eight work may need strengthening' })
+      .getByRole('heading', {
+        name: 'ASD Essentials: where your Essential Eight work may need strengthening',
+      })
       .closest('section')!;
     expect(section).toHaveTextContent(
       'ASD lists Legacy system management but gives no action-level mapping.',
@@ -137,6 +143,50 @@ describe('transition page', () => {
     expect(document.body.textContent).not.toMatch(
       /you are compliant|you meet ASD Essentials|certified/i,
     );
+  });
+});
+
+describe('ASD Essentials labelling', () => {
+  it('says clearly that this is ASD Essentials, not the Essential Eight result', async () => {
+    await openTransition(allYes());
+    expect(screen.getByRole('note')).toHaveTextContent(
+      'You are looking at ASD Essentials for enterprise IT, not your Essential Eight result.',
+    );
+    expect(screen.getByRole('link', { name: 'See your Essential Eight result' })).toHaveAttribute(
+      'href',
+      '#/results',
+    );
+    expect(document.title).toBe('ASD Essentials transition view · Eight to Essentials');
+  });
+
+  it('names ASD Essentials in every section heading', async () => {
+    await openTransition(allYes());
+    for (const level of [1, 2, 3] as const) {
+      for (const heading of screen.getAllByRole('heading', { level })) {
+        expect(heading.textContent, heading.textContent ?? '').toContain('ASD Essentials');
+      }
+    }
+  });
+
+  it('names ASD Essentials on every domain, principle and action', async () => {
+    await openTransition(allYes());
+    for (const summary of document.querySelectorAll('details.domain > summary')) {
+      expect(summary.textContent).toMatch(/^ASD Essentials domain: /);
+    }
+    for (const summary of document.querySelectorAll('details.principle > summary')) {
+      expect(summary.textContent).toMatch(/^ASD Essentials principle /);
+    }
+    for (const title of document.querySelectorAll('.action__title')) {
+      expect(title.textContent).toMatch(/^ASD Essentials action /);
+    }
+  });
+
+  it("names the Essential Eight wherever it refers to the user's own results", async () => {
+    await openTransition(allYes());
+    for (const li of document.querySelectorAll('li.contribution')) {
+      expect(li.textContent).toMatch(/^From your Essential Eight strategy /);
+    }
+    expect(document.body.textContent).not.toMatch(/Your answer:/);
   });
 });
 
